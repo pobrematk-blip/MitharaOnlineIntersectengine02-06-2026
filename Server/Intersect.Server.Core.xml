@@ -1,0 +1,2503 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intersect.Server.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Intersect.Server.Collections.Indexing.LookupKey">
+            <summary>
+            An ID (<see cref="T:System.Guid"/>) or a name (<see cref="T:System.String"/>) used to look up an entity.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Collections.Indexing.LookupKey.Id">
+            <summary>
+            The ID of the entity, if this <see cref="T:Intersect.Server.Collections.Indexing.LookupKey"/> is a <see cref="T:System.Guid"/>.
+            </summary>
+            <seealso cref="P:Intersect.Server.Collections.Indexing.LookupKey.IsId"/>
+            <seealso cref="P:Intersect.Server.Collections.Indexing.LookupKey.IsIdInvalid"/>
+        </member>
+        <member name="F:Intersect.Server.Collections.Indexing.LookupKey.Name">
+            <summary>
+            The name of the entity, if this <see cref="T:Intersect.Server.Collections.Indexing.LookupKey"/> is a <see cref="T:System.String"/>.
+            </summary>
+            <seealso cref="P:Intersect.Server.Collections.Indexing.LookupKey.IsName"/>
+            <seealso cref="P:Intersect.Server.Collections.Indexing.LookupKey.IsNameInvalid"/>
+        </member>
+        <member name="P:Intersect.Server.Collections.Indexing.LookupKey.IsName">
+            <summary>
+            If this <see cref="T:Intersect.Server.Collections.Indexing.LookupKey"/> is a <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Collections.Indexing.LookupKey.IsId">
+            <summary>
+            If this <see cref="T:Intersect.Server.Collections.Indexing.LookupKey"/> is a <see cref="T:System.Guid"/>.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.BadArgumentFormat">
+            <summary>
+            Argument matches neither the short nor long argument name format and is not positional.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.CommandNotFound">
+            <summary>
+            Command not found for the given name.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.DuplicateNamedArgument">
+            <summary>
+            Named argument was specified multiple times.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.FlagArgumentsIgnoreValue">
+            <summary>
+            Flag argument is provided a value, but they do not accept them.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.GenericError">
+            <summary>
+            Generic parser error message.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.IllegalArgumentFormat">
+             <summary>
+             Argument matches both the short and long argument name formats.
+            
+             Note that should not actually be possible.
+             </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.InvalidArgumentValue">
+            <summary>
+            The value provided is not valid for this argument.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.InvalidArgumentValueWithType">
+            <summary>
+            The value provided is not valid for this argument, expected one of the specified type.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.MissingArguments">
+            <summary>
+            Required arguments were missing.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.MissingArgumentsDelimeter">
+            <summary>
+            List delimeter for missing arguments.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.MissingNamedArgument">
+            <summary>
+            Named argument is required but missing for the given command.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.MissingPositionalArgument">
+            <summary>
+            Positional argument is required but missing for the given command.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.NoInput">
+            <summary>
+            No input was provided.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.UnhandledNamedArgument">
+            <summary>
+            Named argument is not valid for the given command.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.UnhandledPositionalArgument">
+            <summary>
+            Positional argument is not valid for the given command.
+            </summary>
+        </member>
+        <member name="T:Intersect.Server.Core.IServerContext">
+            <summary>
+            Declares the API surface of server contexts.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Core.IServerContext.LogicService">
+            <summary>
+            The server's core logic service.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Core.IServerContext.Network">
+            <summary>
+            The server's network processing service.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Core.LogicService.IsEnabled">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Core.LogicService.TaskStart(Intersect.Server.Core.IServerContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Core.LogicService.TaskStop(Intersect.Server.Core.IServerContext)">
+            <inheritdoc />
+        </member>
+        <member name="F:Intersect.Server.Core.LogicService.LogicThread.LogicLock">
+            <summary>
+            We lock on this in order to stop maps from entering the update queue. This is only done when the editor is saving/modifying game maps or the map grids are being rebuilt.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:Intersect.Server.Core.LogicService.LogicThread.LogicPool" -->
+        <member name="F:Intersect.Server.Core.LogicService.LogicThread.MapInstanceUpdateQueue">
+            <summary>
+            Queue of active maps which maps are added to after being updated. Once a map makes it to the front of the queue they are updated again.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.LogicService.LogicThread.MapInstanceProjectileQueue">
+            <summary>
+            Queue of active maps which maps are added to after being updated. Once a map makes it to the front of the queue they are updated again.
+            This queue is only used for projectile updates if the projectile update interval does not match the map update interval in the server config.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.LogicService.LogicThread.ActiveMapInstances">
+            <summary>
+            This is the set of maps determined to be 'active' based on player locations in the game. Our logic recalculates this hashset every 250ms.
+            When maps are updated they are not added back into the map update queues unless they exist in this hash set.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Core.LogicService.LogicThread.AddToQueue(Intersect.Server.Maps.MapInstance)">
+            <summary>
+            Adds a map instance to the map update queues for our logic loop to start processing.
+            </summary>
+            <param name="mapInstance">The map instance in which to process in our queues.</param>
+        </member>
+        <member name="M:Intersect.Server.Core.LogicService.LogicThread.UpdateMap(Intersect.Server.Maps.MapInstance,System.Boolean)">
+            <summary>
+            This function actually runs our map update function on the logic thread pool, and then re-queues our map for future updates if the map is still considered active.
+            </summary>
+            <param name="mapInstance">The <see cref="T:Intersect.Server.Maps.MapInstance"/> our thread updates.</param>
+            <param name="onlyProjectiles">If true only map projectiles are updated and not the entire map.</param>
+        </member>
+        <member name="T:Intersect.Server.Core.ServerContext">
+            <summary>
+            Implements <see cref="T:Intersect.Server.Core.IServerContext"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Database.ContextInterface`1.Database">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Database.ContextInterface`1.SaveChanges">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Database.ContextInterface`1.SaveChanges(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Database.ContextInterface`1.SaveChangesAsync(System.Boolean,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Database.ContextInterface`1.SaveChangesAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Database.ContextInterface`1.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Database.DataMigrations.UserVariablePopulateNewColumnId">
+            <see cref="T:Intersect.Server.Database.DataMigrations.Sqlite.SqliteUserVariablePopulateNewColumnId"/>
+            <see cref="T:Intersect.Server.Database.DataMigrations.MySql.MySqlUserVariablePopulateNewColumnId"/>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:Intersect.Server.Database.DbInterface.Pool" -->
+        <member name="M:Intersect.Server.Database.DbInterface.CreatePlayerContext(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Nullable{Microsoft.EntityFrameworkCore.QueryTrackingBehavior})">
+            <summary>
+            Creates a game context to query. Best practice is to scope this within a using statement.
+            </summary>
+            <param name="readOnly">Defines whether or not the context should initialize with change tracking. If readonly is true then SaveChanges will not work.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Intersect.Server.Database.GameData.GameContext">
+            <summary>
+            <see cref="T:Microsoft.EntityFrameworkCore.DbContext"/> implementation that contains static game content descriptors.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Database.GameData.GameContext.#ctor(Intersect.Server.Database.DatabaseContextOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Database.GameData.SqliteGameContext">
+            <summary>
+            SQLite-specific implementation of <see cref="T:Intersect.Server.Database.GameData.GameContext"/>
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Database.GameData.SqliteGameContext.#ctor(Intersect.Server.Database.DatabaseContextOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Database.IntersectDbContext`1">
+            <summary>
+            Abstract DbContext class for all Intersect database contexts.
+            </summary>
+            <inheritdoc cref="T:Microsoft.EntityFrameworkCore.DbContext" />
+            <inheritdoc cref="T:Intersect.Server.Database.ISeedableContext" />
+        </member>
+        <member name="P:Intersect.Server.Database.IntersectDbContext`1.IsEmpty">
+            <summary>
+            Checks if the database is empty by checking if there are any tables.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Database.Item.TryGetBag(Intersect.Server.Database.PlayerData.Players.Bag@)">
+            <summary>
+                Try to get the bag, with an additional attempt to load it if it is not already loaded (it should be if this is even
+                a bag item).
+            </summary>
+            <param name="bag">the bag if there is one associated with this <see cref="T:Intersect.Server.Database.Item" /></param>
+            <returns>if <paramref name="bag" /> is not <see langword="null" /></returns>
+        </member>
+        <member name="M:Intersect.Server.Database.Logging.Entities.ChatHistory.LogMessage(Intersect.Server.Entities.Player,System.String,Intersect.Enums.ChatMessageType,System.Guid)">
+            <summary>
+            Logs a chat message if chat message logging is enabled
+            </summary>
+            <param name="player">The player to which to send a message.</param>
+            <param name="message">The message to send.</param>
+            <param name="type">The type of message we are sending.</param>
+            <param name="target">The target id of this message, can be a player or guild id.</param>
+        </member>
+        <member name="T:Intersect.Server.Database.Logging.Entities.GuildHistory.GuildActivityType">
+            <summary>
+            Defines all different types of logged guild actions.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Database.Logging.Entities.GuildHistory.LogActivity(System.Guid,Intersect.Server.Entities.Player,Intersect.Server.Entities.Player,Intersect.Server.Database.Logging.Entities.GuildHistory.GuildActivityType,System.String)">
+            <summary>
+            Logs guild activity
+            </summary>
+            <param name="guildId">The player to which to send a message.</param>
+            <param name="player">The player which this activity impacts.</param>
+            <param name="initiator">The id of the player who caused this activity (or null if caused by the api or something else).</param>
+            <param name="type">The type of message we are sending.</param>
+            <param name="meta">Any other info regarding this activity</param>
+        </member>
+        <member name="M:Intersect.Server.Database.Logging.Entities.TradeHistory.LogTrade(System.Guid,Intersect.Server.Entities.Player,Intersect.Server.Entities.Player,Intersect.Server.Database.Item[],Intersect.Server.Database.Item[])">
+            <summary>
+            Log a trade if trade logging is enabled
+            </summary>
+            <param name="tradeId">Unique id for this trade</param>
+            <param name="player">First trader</param>
+            <param name="target">Second trader</param>
+            <param name="ourItems">The items the first trader offered</param>
+            <param name="theirItems">The items the second trader offered</param>
+        </member>
+        <member name="M:Intersect.Server.Database.Logging.Entities.UserActivityHistory.LogActivity(System.Guid,System.Guid,System.String,Intersect.Server.Database.Logging.Entities.UserActivityHistory.PeerType,Intersect.Server.Database.Logging.Entities.UserActivityHistory.UserAction,System.String)">
+            <summary>
+            Spawns a task in our database pool to write an activity into the user activity history table
+            </summary>
+            <param name="userId">Id of the user corresponding to this event</param>
+            <param name="playerId">Id of the player corresponding to this event</param>
+            <param name="ip">Ip of the client corresponding to this event</param>
+            <param name="peer">Peer type that raised this event, client or editor</param>
+            <param name="action">User action taken to be logged</param>
+            <param name="meta">Any extra metadata/notes for this event</param>
+        </member>
+        <member name="M:Intersect.Server.Database.Logging.LoggingContext.#ctor(Intersect.Server.Database.DatabaseContextOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Database.Logging.RequestLog.Mapper.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Intersect.Server.Database.Logging.RequestLog})">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Database.Logging.SqliteLoggingContext">
+            <summary>
+            SQLite-specific implementation of <see cref="T:Intersect.Server.Database.Logging.LoggingContext"/>
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Database.Logging.SqliteLoggingContext.#ctor(Intersect.Server.Database.DatabaseContextOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Database.MigrationBuilderExtensions.Sql(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder,System.ValueTuple{Intersect.Config.DatabaseType,System.String}[])">
+            <summary>
+            
+            </summary>
+            <param name="migrationBuilder"></param>
+            <param name="conditionalQueries"></param>
+            <param name="suppressTransaction"></param>
+            <returns></returns>
+            <see cref="M:Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder.Sql(System.String,System.Boolean)"/>
+        </member>
+        <member name="M:Intersect.Server.Database.MigrationBuilderExtensions.Sql(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder,System.ValueTuple{Intersect.Config.DatabaseType,System.String,System.Boolean}[])">
+            <summary>
+            
+            </summary>
+            <param name="migrationBuilder"></param>
+            <param name="conditionalQueries"></param>
+            <returns></returns>
+            <see cref="M:Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder.Sql(System.String,System.Boolean)"/>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.PlayerContext.#ctor(Intersect.Server.Database.DatabaseContextOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Bag.FindBagItemSlots(System.Guid,System.Int32)">
+            <summary>
+            Finds all bag slots matching the desired item and quantity.
+            </summary>
+            <param name="itemId">The item Id to look for.</param>
+            <param name="quantity">The quantity of the item to look for.</param>
+            <returns>A list of <see cref="T:Intersect.Server.Database.PlayerData.Players.InventorySlot"/> containing the requested item.</returns>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Bag.FindOpenBagSlots">
+            <summary>
+            Retrieves a list of open bag slots for this bag.
+            </summary>
+            <returns>A list of <see cref="T:Intersect.Server.Database.PlayerData.Players.BagSlot"/></returns>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Bag.FindSlotIndex(Intersect.Server.Database.PlayerData.Players.BagSlot)">
+            <summary>
+            Finds the index of a given <see cref="T:Intersect.Server.Database.PlayerData.Players.BagSlot"/> within this bag's Slots.
+            </summary>
+            <param name="slot">The <see cref="T:Intersect.Server.Database.PlayerData.Players.BagSlot"/>to search for</param>
+            <returns>The index if found, otherwise -1</returns>
+        </member>
+        <member name="T:Intersect.Server.Database.PlayerData.Players.Guild">
+            <summary>
+            A class containing the definition of each guild, alongside the methods to use them.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Database.PlayerData.Players.Guild.Id">
+            <summary>
+            The database Id of the guild.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Database.PlayerData.Players.Guild.Name">
+            <summary>
+            The name of the guild.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Database.PlayerData.Players.Guild.FoundingDate">
+            <summary>
+            The date on which this guild was founded.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Database.PlayerData.Players.Guild.Bank">
+            <summary>
+            Guild bank slots
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Database.PlayerData.Players.Guild.BankSlotsCount">
+            <summary>
+            Sets the number of bank slots alotted to this guild. Banks lots can only expand.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Database.PlayerData.Players.Guild.GuildInstanceId">
+            <summary>
+            The guild's instance id. This is a unique identifier generated at guild creation time that
+            we can use to reference this guild alone when requesting a warp to a "Guild" instance, ensuring
+            that players in the same guild will be warped to the same instance.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Database.PlayerData.Players.Guild.Members">
+            <summary>
+            Contains a record of all guild members
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Database.PlayerData.Players.Guild.LastUpdateTime">
+            <summary>
+            The last time this guilds status was updated and memberlist was send to online players
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Database.PlayerData.Players.Guild.Variables">
+            <summary>
+            Guild Variable Values
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Database.PlayerData.Players.Guild.mLock">
+            <summary>
+            Locking context to prevent saving this guild to the db twice at the same time, and to prevent bank items from being withdrawed/deposited into by 2 threads at the same time
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.CreateGuild(Intersect.Server.Entities.Player,System.String)">
+            <summary>
+            Create a new Guild instance.
+            </summary>
+            <param name="creator">The <see cref="T:Intersect.Server.Entities.Player"/> that created the guild.</param>
+            <param name="name">The Name of the guild.</param>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.LoadGuild(System.Guid)">
+            <summary>
+            Loads a guild and it's members from the database
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.FindOnlineMembers">
+            <summary>
+            Find all online members of this guild.
+            </summary>
+            <returns>A list of online players.</returns>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.TryAddMember(Intersect.Server.Entities.Player,System.Int32,Intersect.Server.Entities.Player)">
+            <summary>
+            Joins a player into the guild.
+            </summary>
+            <param name="player">The player to join into the guild.</param>
+            <param name="rank">Integer index of the rank to give this new member.</param>
+            <param name="initiator">The player who initiated this change (null if done by the api or some other method).</param>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.TryRemoveMember(System.Guid,Intersect.Server.Entities.Player,Intersect.Server.Entities.Player,Intersect.Server.Database.Logging.Entities.GuildHistory.GuildActivityType)">
+            <summary>
+            Removes a player from the guild.
+            </summary>
+            <param name="targetId">The ID of the player to remove from the guild.</param>
+            <param name="targetPlayer">The player to remove from the guild.</param>
+            <param name="initiator">The player who initiated this change (null if done by the api or some other method).</param>
+            <param name="guildActivityType">The reason the member is being removed.</param>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.Update">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.UpdateMemberList">
+            <summary>
+            Send an updated version of our guild's memberlist to each online member.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.SetPlayerRank(System.Guid,System.Int32,Intersect.Server.Entities.Player)">
+            <summary>
+            Sets a player's guild rank.
+            </summary>
+            <param name="id">The player to set the rank for.</param>
+            <param name="rank">The integer index of the rank to assign.</param>
+            <param name="initiator">The player who initiated this change (null if done by the api or some other method).</param>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.SetPlayerRank(System.Guid,Intersect.Server.Entities.Player,System.Int32,Intersect.Server.Entities.Player)">
+            <summary>
+            Sets a player's guild rank.
+            </summary>
+            <param name="targetId">The player to set the rank for.</param>
+            <param name="targetPlayer">The player to set the rank for.</param>
+            <param name="rank">The integer index of the rank to assign.</param>
+            <param name="initiator">The player who initiated this change (null if done by the api or some other method).</param>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.GetPlayerRank(System.Guid)">
+            <summary>
+            Returns the rank of a player within this guild.
+            </summary>
+            <param name="id">The Id of the player to search for.</param>
+            <returns>Returns the integer index of the rank of a player within this guild.</returns>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.GetPlayerRank(Intersect.Server.Entities.Player)">
+            <summary>
+            Returns the rank of a player within this guild.
+            </summary>
+            <param name="player">The player to search for.</param>
+            <returns>Returns the integer index of the rank of a player within this guild.</returns>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.IsMember(System.Guid)">
+            <summary>
+            Check whether a specified player is a member of this guild.
+            </summary>
+            <param name="id">The Id to check against.</param>
+            <returns>Whether or not this player is a member of this guild</returns>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.IsMember(Intersect.Server.Entities.Player)">
+            <summary>
+            Check whether a specified player is a member of this guild.
+            </summary>
+            <param name="player">The player to check against.</param>
+            <returns>Whether or not this player is a member of this guild</returns>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.GetGuild(System.Guid)">
+            <summary>
+            Search for a guild by Id.
+            </summary>
+            <param name="id">The guild Id to search for.</param>
+            <returns>Returns a <see cref="T:Intersect.Server.Database.PlayerData.Players.Guild"/> that matches the Id, if any.</returns>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.GetGuild(System.String)">
+            <summary>
+            Search for a guild by Name.
+            </summary>
+            <param name="name">The guild Name to search for.</param>
+            <returns>Returns a <see cref="T:Intersect.Server.Database.PlayerData.Players.Guild"/> that matches the Name, if any.</returns>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.GuildExists(System.String)">
+            <summary>
+            Determines wether or not a guild already exists with a given name
+            </summary>
+            <param name="name">Guild name to check</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.DeleteGuild(Intersect.Server.Database.PlayerData.Players.Guild,Intersect.Server.Entities.Player)">
+            <summary>
+            Completely removes a guild from the game.
+            </summary>
+            <param name="guild">The <see cref="T:Intersect.Server.Database.PlayerData.Players.Guild"/> to delete.</param>
+            <param name="initiator">The player who initiated this change (null if done by the api or some other method).</param>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.TransferOwnership(Intersect.Server.Entities.Player,Intersect.Server.Entities.Player)">
+            <summary>
+            Transfers guild ownership to another member
+            </summary>
+            <param name="newOwner">The new owner.</param>
+            <param name="initiator">The player who initiated this change (null if done by the api or some other method).</param>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.WipeStaleGuilds">
+            <summary>
+            Removes all guilds in which only have 1 member that haven't been online in the configured number of days
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Database.PlayerData.Players.Guild.Lock">
+            <summary>
+            Getter for the guild lock
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.BankSlotUpdated(System.Int32)">
+            <summary>
+            Send bank slot update to all players in this guild who are online and in the bank
+            </summary>
+            <param name="slot">Slot index to send the update for</param>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.ExpandBankSlots(System.Int32)">
+            <summary>
+            Updates the number of bank slots alotted to this guild for use, only expanding because we don't want to risk wiping items
+            </summary>
+            <param name="count"></param>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.Rename(System.String,Intersect.Server.Entities.Player)">
+            <summary>
+            Renames this guild and then saves the new name to the db
+            </summary>
+            <param name="name"></param>
+            <param name="initiator">The player who initiated this change (null if done by the api or some other method).</param>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.GetVariable(System.Guid,System.Boolean)">
+            <summary>
+            Returns a variable object given a guild variable id
+            </summary>
+            <param name="id">Variable id</param>
+            <param name="createIfNull">Creates this variable for the guild if it hasn't been set yet</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.CreateVariable(System.Guid)">
+            <summary>
+            Creates a variable for this guild with a given id if it doesn't already exist
+            </summary>
+            <param name="id">Variablke id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.GetVariableValue(System.Guid)">
+            <summary>
+            Gets the value of a guild variable given a variable id
+            </summary>
+            <param name="id">Variable id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.StartCommonEventsWithTriggerForAll(Intersect.Framework.Core.GameObjects.Events.CommonEventTrigger,System.String,System.String)">
+            <summary>
+            Starts all common events with a specified trigger for all online guild members
+            </summary>
+            <param name="trigger">The common event trigger to run</param>
+            <param name="command">The command which started this common event</param>
+            <param name="param">Common event parameter</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Intersect.Server.Database.PlayerData.Players.Guild.Save" -->
+        <member name="M:Intersect.Server.Database.PlayerData.Players.Guild.List(System.String,System.String,Intersect.Server.Collections.Sorting.SortDirection,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Retrieves a list of guilds from the db as an IList
+            </summary>
+        </member>
+        <member name="T:Intersect.Server.Database.PlayerData.SqlitePlayerContext">
+            <summary>
+            SQLite-specific implementation of <see cref="T:Intersect.Server.Database.PlayerData.PlayerContext"/>
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.SqlitePlayerContext.#ctor(Intersect.Server.Database.DatabaseContextOptions)">
+            <inheritdoc />
+        </member>
+        <member name="F:Intersect.Server.Database.PlayerData.User.UpdatedVariables">
+            <summary>
+                Variables that have been updated for this account which need to be saved to the db
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Database.PlayerData.User.Variables">
+            <summary>
+                User Variable Values
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.User.Update">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.User.GetVariable(System.Guid,System.Boolean)">
+            <summary>
+                Returns a variable object given a user variable id
+            </summary>
+            <param name="id">Variable id</param>
+            <param name="createIfNull">Creates this variable for the user if it hasn't been set yet</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.User.CreateVariable(System.Guid)">
+            <summary>
+                Creates a variable for this user with a given id if it doesn't already exist
+            </summary>
+            <param name="id">Variablke id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.User.GetVariableValue(System.Guid)">
+            <summary>
+                Gets the value of a account variable given a variable id
+            </summary>
+            <param name="id">Variable id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.User.StartCommonEventsWithTriggerForAll(Intersect.Framework.Core.GameObjects.Events.CommonEventTrigger,System.String,System.String)">
+            <summary>
+                Starts all common events with a specified trigger for any character online of this account
+            </summary>
+            <param name="trigger">The common event trigger to run</param>
+            <param name="command">The command which started this common event</param>
+            <param name="param">Common event parameter</param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Entity.CompareName(System.String,System.String)">
+            <summary>
+            Compares two player names, returning if they are equivalent.
+            </summary>
+            <param name="name">a name</param>
+            <param name="nameOther">a name to compare with</param>
+            <returns><code>false</code> if <code>null</code> or non-byte-equal ignoring case</returns>
+        </member>
+        <member name="P:Intersect.Server.Entities.Entity.JsonColor">
+            <summary>
+            The database compatible version of <see cref="P:Intersect.Server.Entities.Entity.Color"/>
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Entities.Entity.Color">
+            <summary>
+            Defines the ARGB color settings for this Entity.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Entities.Entity.UpdateSpellCooldown(Intersect.GameObjects.SpellDescriptor,System.Int32)">
+            <summary>
+                Updates the entity's spell cooldown for the specified <paramref name="spellDescriptor"/>.
+                <para> This method is called when a spell is casted by an entity. </para>
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Entities.Entity.CanMoveInDirection(Intersect.Enums.Direction)">
+            <summary>
+                Determines if this entity can move in the specified <paramref name="direction"/>.
+            </summary>
+            <param name="direction">The <see cref="T:Intersect.Enums.Direction"/> the entity is attempting to move in.</param>
+            <returns>If the entity is able to move in the specified direction.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Entity.CanMoveInDirection(Intersect.Enums.Direction,Intersect.Server.Entities.MovementBlockerType@,Intersect.Enums.EntityType@)">
+            <summary>
+                Determines if this entity can move in the specified <paramref name="direction"/>.
+            </summary>
+            <param name="direction">The <see cref="T:Intersect.Enums.Direction"/> the entity is attempting to move in.</param>
+            <param name="blockerType">The type of blocker, if any.</param>
+            <param name="entityType">
+                The type of entity that is blocking movement, if <paramref name="blockerType"/> is set to <see cref="F:Intersect.Server.Entities.MovementBlockerType.Entity"/>.
+            </param>
+            <returns>If the entity is able to move in the specified direction.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Entity.CanMoveInDirection(Intersect.Enums.Direction,Intersect.Server.Entities.MovementBlockerType@,Intersect.Enums.EntityType@,Intersect.Server.Entities.Entity@)">
+            <summary>
+                Determines if this entity can move in the specified <paramref name="direction"/>.
+            </summary>
+            <param name="direction">The <see cref="T:Intersect.Enums.Direction"/> the entity is attempting to move in.</param>
+            <param name="blockerType">The type of blocker, if any.</param>
+            <param name="entityType">
+                The type of entity that is blocking movement, if <paramref name="blockerType"/> is set to <see cref="F:Intersect.Server.Entities.MovementBlockerType.Entity"/>.
+            </param>
+            <param name="blockingEntity">The entity (if any) that is blocking movement.</param>
+            <returns>If the entity is able to move in the specified direction.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Events.EventPageInstance.Move(Intersect.Enums.Direction,Intersect.Server.Entities.Player,System.Boolean,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Entities.Events.EventPageInstance.CanMoveInDirection(Intersect.Enums.Direction,Intersect.Server.Entities.MovementBlockerType@,Intersect.Enums.EntityType@)">
+            <inheritdoc />
+        </member>
+        <member name="F:Intersect.Server.Entities.Npc.DamageMap">
+            <summary>
+            Damage Map - Keep track of who is doing the most damage to this npc and focus accordingly
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Entities.Npc.DamageMapHighest">
+            <summary>
+            Returns the entity that ranks the highest on this NPC's damage map.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Entities.Npc.AggroCenterMap">
+            <summary>
+            The map on which this NPC was "aggro'd" and started chasing a target.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Entities.Npc.AggroCenterX">
+            <summary>
+            The X value on which this NPC was "aggro'd" and started chasing a target.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Entities.Npc.AggroCenterY">
+            <summary>
+            The Y value on which this NPC was "aggro'd" and started chasing a target.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Entities.Npc.AggroCenterZ">
+            <summary>
+            The Z value on which this NPC was "aggro'd" and started chasing a target.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Entities.Npc.CanMoveInDirection(Intersect.Enums.Direction,Intersect.Server.Entities.MovementBlockerType@,Intersect.Enums.EntityType@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Entities.Npc.ResetAggroCenter(System.Guid@)">
+            <summary>
+            Resets the NPCs position to be "pulled" from
+            </summary>
+            <param name="targetMap">For referencing the map that the enemy's target WAS on before a reset.</param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Npc.GetAggression(Intersect.Server.Entities.Player)">
+            <summary>
+            Determines the aggression of this NPC towards a player.
+            </summary>
+            <param name="player">The player to check the relationship with.</param>
+            <returns>The NPC's aggression towards the player.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Pathfinding.PriorityQueue`1.Push(`0)">
+            <summary>
+                Push an object onto the PQ
+            </summary>
+            <param name="item">The new object</param>
+            <returns>
+                The index in the list where the object is _now_. This will change when objects are taken from or put onto the
+                PQ.
+            </returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Pathfinding.PriorityQueue`1.Pop">
+            <summary>
+                Get the smallest object and remove it.
+            </summary>
+            <returns>The smallest object</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Pathfinding.PriorityQueue`1.Update(`0)">
+            <summary>
+                Notify the PQ that the object at position i has changed
+                and the PQ needs to restore order.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Entities.Pathfinding.PriorityQueue`1.Peek">
+            <summary>
+                Get the smallest object without removing it.
+            </summary>
+            <returns>The smallest object</returns>
+        </member>
+        <member name="T:Intersect.Server.Entities.Pathfinding.SpatialAStar">
+            <summary>
+                Uses about 50 MB for a 1024x1024 grid.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Entities.Pathfinding.SpatialAStar.Search(Intersect.Point,Intersect.Point,Intersect.Server.Entities.Pathfinding.PathNode)">
+            <summary>
+                Returns null, if no path is found. Start- and End-Node are included in returned path. The user context
+                is passed to IsWalkable().
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Entities.Player.EquippedItems">
+            <summary>
+            Returns a list of all equipped <see cref="T:Intersect.Server.Database.Item"/>s
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Entities.Player.GuildBank">
+            <summary>
+            Used to determine whether the player is operating in the guild bank vs player bank
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Entities.Player.IsFading">
+            <summary>
+            Used to tell events when to continue when dealing with fade in/out events and knowing when they're complete on the client's end
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Entities.Player.LastAttackingWeapon">
+            <summary>
+            Reference stored of the last weapon used for an auto-attack
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Entities.Player.SharedMapInstanceId">
+            <summary>
+            This instance Id is shared amongst members of a party. Party members will use the shared ID of the party leader.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.GetExperienceToNextLevel(System.Int32)">
+            <summary>
+            Returns the required experience for the next level based on <see cref="T:Intersect.Framework.Core.GameObjects.PlayerClass.ClassDescriptor"/>. Returns -1 if MaxLevel.
+            </summary>
+            <param name="level">The current player level. Before leveling up.</param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.UpdateSpellCooldown(Intersect.GameObjects.SpellDescriptor,System.Int32)">
+            <summary>
+                Updates the player's spell cooldown for the specified <paramref name="spellDescriptor"/>.
+                <para> This method is called when a spell is casted by a player. </para>
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.SetLevel(System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Sets the player's level to a sepecific value. Then sends all relevent data through <see cref="T:Intersect.Server.Networking.PacketSender"/>
+            </summary>
+            <param name="newLevel">Does nothing if less than 1. Clamped to <see cref="T:Intersect.Options"/> MaxLevel</param>
+            <param name="resetExperience">Unless <paramref name="newLevel"/> is zero, will reset Exp to 0 if true.</param>
+            <param name="sendPackets">If set to false, will not send packets or <see cref="M:Intersect.Server.Entities.Player.RecalculateStatsAndPoints"/> or <see cref="M:Intersect.Server.Entities.Player.UnequipInvalidItems"/>/></param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.AddLevels(System.Int32,System.Boolean)">
+            <summary>
+            Adds levels to the player based on what level they're currently at. Then sends all relevent data through <see cref="T:Intersect.Server.Networking.PacketSender"/>
+            <para>If <paramref name="amount"/> is zero, will still call <see cref="M:Intersect.Server.Networking.PacketSender.SendExperience(Intersect.Server.Entities.Player)"/> but do nothing else.</para>
+            </summary>
+            <param name="amount">Adds levels if positive, removes if negative and does nothing if zero.</param>
+            <param name="resetExperience">If levels is not zero, and this is true, resets the Exp to zero after adjusting levels.</param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.CheckLevelUp">
+            <summary>
+            Checks if the player has enough Exp to level. Removes EXP and calls <see cref="M:Intersect.Server.Entities.Player.AddLevels(System.Int32,System.Boolean)"/> with the number of levels gained.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.ValidTauntTarget(Intersect.Server.Entities.Entity)">
+            <summary>
+            Check for taunt status and trying to attack a target that has not taunted you.
+            </summary>
+            <param name="target">The target the player is attempting to attack</param>
+            <returns>True if the player can attack that target according to their taunt status</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.GetItemStatBuffs(Intersect.Enums.Stat)">
+            <summary>
+            Get all StatBuffs for the relevant <see cref="T:Intersect.Enums.Stat"/>
+            </summary>
+            <param name="statType">The <see cref="T:Intersect.Enums.Stat"/> to retrieve the amounts for.</param>
+            <returns>Returns a <see cref="T:System.Tuple"/> containing the Flat stats on Item1, and Percentage stats on Item2</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.LoginWarp">
+            <summary>
+            Warps the player on login, taking care of instance management depending on the instance type the player
+            is attempting to login to.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.WarpToLastOverworldLocation(System.Boolean)">
+            <summary>
+            Warps the player to the last location they were at on the "Overworld" (empty Guid) map instance. Useful for kicking out of
+            instances in a variety of situations.
+            </summary>
+            <param name="fromLogin">Whether or not we're coming to this method via the player login/join game flow</param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.CanChangeToInstanceType(System.Nullable{Intersect.Framework.Core.GameObjects.Maps.MapInstanceType},System.Boolean,System.Guid)">
+            <summary>
+            Checks to see if we CAN go to the requested instance type
+            </summary>
+            <param name="instanceType">The instance type we're requesting a warp to</param>
+            <param name="fromLogin">Whether or not this is from the login flow</param>
+            <param name="newMapId">The map ID we will be warping to</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.SendToNewMapInstance(Intersect.Server.Maps.MapController)">
+            <summary>
+            In charge of sending the necessary packet information on an instance change
+            </summary>
+            <param name="newMap">The <see cref="T:Intersect.Server.Maps.MapController"/> we are warping to</param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.ProcessMapInstanceChange(System.Nullable{Intersect.Framework.Core.GameObjects.Maps.MapInstanceType},System.Boolean)">
+            <summary>
+            Checks to see if the <see cref="T:Intersect.Framework.Core.GameObjects.Maps.MapInstanceType"/> we're warping to is different than what type we are currently
+            on, and, if so, takes care of updating our instance settings.
+            </summary>
+            <param name="mapInstanceType">The <see cref="T:Intersect.Framework.Core.GameObjects.Maps.MapInstanceType"/> the player is currently on</param>
+            <param name="fromLogin">Whether or not we're coming to this method via a login warp.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.CreateNewInstanceIdFromType(System.Nullable{Intersect.Framework.Core.GameObjects.Maps.MapInstanceType},System.Boolean)">
+            <summary>
+            Creates an instance id based on the type of instance we are heading to, and whether or not we should generate a fresh id or use a saved id.
+            </summary>
+            <remarks>
+            Note that if we are coming to this method, we have already checked to see whether or not we CAN go to the requested instance.
+            </remarks>
+            <param name="mapInstanceType">The <see cref="T:Intersect.Framework.Core.GameObjects.Maps.MapInstanceType"/> we are switching to</param>
+            <param name="fromLogin">Whether or not we are coming to this method via player login. We may prefer to use saved values instead of generate new
+            values if this is the case.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.UpdateLastOverworldLocation(System.Guid,System.Int32,System.Int32)">
+            <summary>
+            /// Updates the player's last overworld location. Useful for warping out of instances if need be.
+            </summary>
+            <param name="overworldMapId">Which map we were on before the instance change</param>
+            <param name="overworldX">X before instance change</param>
+            <param name="overworldY">Y before instance change</param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.UpdateSharedInstanceRespawnLocation(System.Guid,System.Int32,System.Int32,Intersect.Enums.Direction)">
+            <summary>
+            Updates the shared instance respawn location - for respawning on death in a shared instance (when this is enabled)
+            </summary>
+            <param name="respawnMapId"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="dir"></param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.ResetSavedInstanceIds">
+            <summary>
+            Resets instance ids we've saved on the player. Generally called when going back to the overworld.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.CanGiveItem(System.Guid,System.Int32,System.Int32)">
+            <summary>
+            Checks whether a player can or can not receive the specified item and its quantity.
+            </summary>
+            <param name="itemId">The item Id to check if the player can receive.</param>
+            <param name="quantity">The amount of this item to check if the player can receive.</param>
+            <param name="slot">The inventory slot to check against.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.CanGiveItem(Intersect.Server.Database.Item,System.Int32)">
+            <summary>
+            Checks whether a player can or can not receive the specified item and its quantity.
+            </summary>
+            <param name="item">The <see cref="T:Intersect.Server.Database.Item"/> to check if this player can receive.</param>
+            /// <param name="slot">The inventory slot to check against.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.CanGiveItem(System.Guid,System.Int32)">
+            <summary>
+            Checks whether a player can or can not receive the specified item and its quantity.
+            </summary>
+            <param name="itemId">The item Id to check if the player can receive.</param>
+            <param name="quantity">The amount of this item to check if the player can receive.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.CanGiveItem(Intersect.Server.Database.Item,Intersect.Server.Database.PlayerData.Players.BagSlot[]@)">
+            <summary>
+            Checks whether a player can or can not receive the specified item and its quantity.
+            </summary>
+            <param name="item">The <see cref="T:Intersect.Server.Database.Item"/> to check if this player can receive.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.CanTakeItem(System.Guid,System.Int32)">
+            <summary>
+            Checks whether or not a player has enough items in their inventory to be taken.
+            </summary>
+            <param name="itemId">The ItemId to see if it can be taken away from the player.</param>
+            <param name="quantity">The quantity of above item to see if we can take away from the player.</param>
+            <returns>Whether or not the item can be taken away from the player in the requested quantity.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.CanTakeItem(Intersect.Server.Database.Item)">
+            <summary>
+            Checks whether or not a player has enough items in their inventory to be taken.
+            </summary>
+            <param name="item">The <see cref="T:Intersect.Server.Database.Item"/> to see if it can be taken away from the player.</param>
+            <returns>Whether or not the item can be taken away from the player.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.TryGetSlot(System.Int32,Intersect.Server.Database.PlayerData.Players.InventorySlot@,System.Boolean)">
+            <summary>
+            Gets the item at <paramref name="slotIndex"/> and stores it in <paramref name="slot"/>.
+            </summary>
+            <param name="slotIndex">the slot to load the <see cref="T:Intersect.Server.Database.Item"/> from</param>
+            <param name="slot">the <see cref="T:Intersect.Server.Database.Item"/> at <paramref name="slotIndex"/></param>
+            <param name="createSlotIfNull">if the slot is in an invalid state (<see langword="null"/>), set it</param>
+            <returns>returns <see langword="false"/> if <paramref name="slot"/> is set to <see langword="null"/></returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.TryGetItemAt(System.Int32,Intersect.Server.Database.Item@)">
+            <summary>
+            Gets the item at <paramref name="slotIndex"/> and stores it in <paramref name="item"/>.
+            </summary>
+            <param name="slotIndex">the slot to load the <see cref="T:Intersect.Server.Database.Item"/> from</param>
+            <param name="item">the <see cref="T:Intersect.Server.Database.Item"/> at <paramref name="slotIndex"/></param>
+            <returns>returns <see langword="false"/> if <paramref name="item"/> is set to <see langword="null"/></returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.TryGiveItem(Intersect.Server.Database.Item,System.Int32)">
+            <summary>
+            Attempts to give the player an item. Returns whether or not it succeeds.
+            </summary>
+            <param name="item">The <see cref="T:Intersect.Server.Database.Item"/> to give to the player.</param>
+            <param name="slot">The inventory slot to put this item into.</param>
+            <returns>Whether the player received the item or not.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.TryGiveItem(Intersect.Server.Database.Item,Intersect.Framework.Core.GameObjects.Items.ItemHandling)">
+            <summary>
+            Attempts to give the player an item. Returns whether or not it succeeds.
+            </summary>
+            <param name="item">The <see cref="T:Intersect.Server.Database.Item"/> to give to the player.</param>
+            <param name="handler">The way to handle handing out this item.</param>
+            <returns>Whether the player received the item or not.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.TryGiveItem(System.Guid,System.Int32)">
+            <summary>
+            Attempts to give the player an item. Returns whether or not it succeeds.
+            </summary>
+            <param name="itemId">The Id for the item to be handed out to the player.</param>
+            <param name="quantity">The quantity of items to be handed out to the player.</param>
+            <returns>Whether the player received the item or not.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.TryGiveItem(System.Guid,System.Int32,Intersect.Framework.Core.GameObjects.Items.ItemHandling)">
+            <summary>
+            Attempts to give the player an item. Returns whether or not it succeeds.
+            </summary>
+            <param name="itemId">The Id for the item to be handed out to the player.</param>
+            <param name="quantity">The quantity of items to be handed out to the player.</param>
+            <param name="handler">The way to handle handing out this item.</param>
+            <returns>Whether the player received the item or not.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.TryGiveItem(System.Guid,System.Int32,Intersect.Framework.Core.GameObjects.Items.ItemHandling,System.Boolean,System.Int32,System.Boolean)">
+            <summary>
+            Attempts to give the player an item. Returns whether or not it succeeds.
+            </summary>
+            <param name="itemId">The Id for the item to be handed out to the player.</param>
+            <param name="quantity">The quantity of items to be handed out to the player.</param>
+            <param name="handler">The way to handle handing out this item.</param>
+            <param name="bankOverflow">Should we allow the items to overflow into the player's bank when their inventory is full.</param>
+            <param name="slot">The inventory slot to put this item into.</param>
+            <param name="sendUpdate">Should we send an inventory update when we are done changing the player's items.</param>
+            <returns>Whether the player received the item or not.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.TryGiveItem(Intersect.Server.Database.Item,Intersect.Framework.Core.GameObjects.Items.ItemHandling,System.Boolean,System.Int32,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Attempts to give the player an item. Returns whether or not it succeeds.
+            </summary>
+            <param name="item">The <see cref="T:Intersect.Server.Database.Item"/> to give to the player.</param>
+            <param name="handler">The way to handle handing out this item.</param>
+            <param name="bankOverflow">Should we allow the items to overflow into the player's bank when their inventory is full.</param>
+            <param name="slot">The inventory slot to put this item into.</param>
+            <param name="sendUpdate">Should we send an inventory update when we are done changing the player's items.</param>
+            <param name="overflowTileX">The x coordinate of the tile in which overflow should spawn on, if the player cannot hold the full amount.</param>
+            <param name="overflowTileY">The y coordinate of the tile in which overflow should spawn on, if the player cannot hold the full amount.</param>
+            <returns>Whether the player received the item or not.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.AsItemSource">
+            <summary>
+            Creates an item source for the player entity.
+            </summary>
+            <returns>A new <see cref="T:Intersect.Server.Framework.Items.EntityItemSource"/> object.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.GiveItem(Intersect.Server.Database.Item,System.Int32,System.Boolean,Intersect.Server.Database.PlayerData.Players.BagSlot[])">
+            <summary>
+            Gives the player an item. NOTE: This method MAKES ZERO CHECKS to see if this is possible!
+            Use TryGiveItem where possible!
+            </summary>
+            <param name="item"></param>
+            <param name="sendUpdate"></param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.FindOpenInventorySlots">
+            <summary>
+            Retrieves a list of open inventory slots for this player.
+            </summary>
+            <returns>A list of <see cref="T:Intersect.Server.Database.PlayerData.Players.InventorySlot"/></returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.FindOpenInventorySlot">
+            <summary>
+            Finds the first open inventory slot this player has.
+            </summary>
+            <returns>An <see cref="T:Intersect.Server.Database.PlayerData.Players.InventorySlot"/> instance, or null if none are found.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.SwapItems(System.Int32,System.Int32)">
+            <summary>
+            Swap items between <paramref name="fromSlotIndex"/> and <paramref name="toSlotIndex"/>.
+            </summary>
+            <param name="fromSlotIndex">the slot index to swap from</param>
+            <param name="toSlotIndex">the slot index to swap to</param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.TryDropItemFrom(System.Int32,System.Int32)">
+            <summary>
+            Attempt to drop <paramref name="amount"/> of the item in the slot
+            identified by <paramref name="slotIndex"/>, returning false if it
+            is unable to drop the item for any reason.
+            </summary>
+            <param name="slotIndex">the slot to drop from</param>
+            <param name="amount">the amount to drop</param>
+            <returns>if an item was dropped</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.DropItemFrom(System.Int32,System.Int32)">
+            <summary>
+            Drops <paramref name="amount"/> of the item in the slot identified by <paramref name="slotIndex"/>.
+            </summary>
+            <param name="slotIndex">the slot to drop from</param>
+            <param name="amount">the amount to drop</param>
+            <see cref="M:Intersect.Server.Entities.Player.TryDropItemFrom(System.Int32,System.Int32)"/>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.TryTakeItem(Intersect.Server.Database.PlayerData.Players.InventorySlot,System.Int32,Intersect.Framework.Core.GameObjects.Items.ItemHandling,System.Boolean)">
+            <summary>
+            Try to take an item away from the player by slot.
+            </summary>
+            <param name="slot">The inventory slot to take the item away from.</param>
+            <param name="amount">The amount of this item we intend to take away from the player.</param>
+            <param name="handler">The method in which we intend to handle taking away the item from our player.</param>
+            <param name="sendUpdate">Do we need to send an inventory update after taking away the item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.TryTakeItem(System.Guid,System.Int32,Intersect.Framework.Core.GameObjects.Items.ItemHandling,System.Boolean)">
+            <summary>
+            Try to take away an item from the player by Id.
+            </summary>
+            <param name="itemId">The Id of the item we're trying to take away from the player.</param>
+            <param name="amount">The amount of this item we intend to take away from the player.</param>
+            <param name="handler">The method in which we intend to handle taking away the item from our player.</param>
+            <param name="sendUpdate">Do we need to send an inventory update after taking away the item.</param>
+            <returns>Whether the item was taken away successfully or not.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.TakeItem(Intersect.Server.Database.PlayerData.Players.InventorySlot,System.Int32,System.Boolean)">
+            <summary>
+            Take an item away from the player, or an amount of it if they have more. NOTE: This method MAKES ZERO CHECKS to see if this is possible!
+            Use TryTakeItem where possible!
+            </summary>
+            <param name="slot"></param>
+            <param name="amount"></param>
+            <param name="sendUpdate"></param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.FindInventoryItemQuantity(System.Guid)">
+            <summary>
+            Find the amount of a specific item a player has.
+            </summary>
+            <param name="itemId">The item Id to look for.</param>
+            <returns>The amount of the requested item the player has on them.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.FindInventoryItemSlot(System.Guid,System.Int32)">
+            <summary>
+            Finds an inventory slot matching the desired item and quantity.
+            </summary>
+            <param name="itemId">The item Id to look for.</param>
+            <param name="quantity">The quantity of the item to look for.</param>
+            <returns>An <see cref="T:Intersect.Server.Database.PlayerData.Players.InventorySlot"/> that contains the item, or null if none are found.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.FindInventoryItemSlotIndex(Intersect.Server.Database.PlayerData.Players.InventorySlot)">
+            <summary>
+            Finds the index of a given inventory slot
+            </summary>
+            <param name="slot">The <see cref="T:Intersect.Server.Database.PlayerData.Players.InventorySlot"/> to find</param>
+            <returns>An <see cref="T:System.Int32"/>containing the relevant index, or -1 if not found</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.FindInventoryItemSlots(System.Guid,System.Int32)">
+            <summary>
+            Finds all inventory slots matching the desired item and quantity.
+            </summary>
+            <param name="itemId">The item Id to look for.</param>
+            <param name="quantity">The quantity of the item to look for.</param>
+            <returns>A list of <see cref="T:Intersect.Server.Database.PlayerData.Players.InventorySlot"/> containing the requested item.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.GetEquipmentBonusEffect(Intersect.Framework.Core.GameObjects.Items.ItemEffect)">
+            <summary>
+            Gets the percentage value of a bonus effect as granted by the currently equipped gear.
+            </summary>
+            <param name="effect">The <see cref="T:Intersect.Framework.Core.GameObjects.Items.ItemEffect"/> to retrieve the amount for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.TryFillInventoryStacksOfItemFromBagSlot(Intersect.Server.Database.PlayerData.Players.Bag,System.Int32,System.Collections.Generic.List{Intersect.Server.Database.PlayerData.Players.InventorySlot},Intersect.Framework.Core.GameObjects.Items.ItemDescriptor,System.Int32)">
+            <summary>
+            Fills an inventory with items from a <see cref="T:Intersect.Server.Database.PlayerData.Players.BagSlot"/>, mostly making sure stacks play along correctly
+            </summary>
+            <param name="bag">The <see cref="T:Intersect.Server.Database.PlayerData.Players.Bag"/> we're pulling from</param>
+            <param name="bagSlotIdx">The index of the bag that we're choosing to withrdaw</param>
+            <param name="inventorySlots">A list of inventory slots that are valid locations for the withdrawal</param>
+            <param name="itemDescriptor">The <see cref="T:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor"/> of the item that is getting moved around.</param>
+            <param name="amountToGive">How many of the item that we're moving, if stackable.</param>
+            <returns>A <see cref="T:System.Boolean"/> saying whether or not we successfully deposited ALL the items</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.TryFillBagStacksOfItemFromInventorySlot(Intersect.Server.Database.PlayerData.Players.Bag,System.Int32,System.Collections.Generic.List{Intersect.Server.Database.PlayerData.Players.BagSlot},Intersect.Framework.Core.GameObjects.Items.ItemDescriptor,System.Int32)">
+            <summary>
+            Fills a bag with items from a <see cref="T:Intersect.Server.Database.PlayerData.Players.InventorySlot"/>, mostly making sure stacks play along correctly
+            </summary>
+            <param name="bag">The <see cref="T:Intersect.Server.Database.PlayerData.Players.Bag"/> we're putting items into from</param>
+            <param name="inventorySlotIdx">The index of the players inventory that we're withrdawing from</param>
+            <param name="bagSlots">A list of valid bag slots that could ccontain the item</param>
+            <param name="itemDescriptor">The <see cref="T:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor"/> of the item that is getting moved around.</param>
+            <param name="amountToGive">How many of the item that we're moving, if stackable.</param>
+            <returns>A <see cref="T:System.Boolean"/> saying whether or not we successfully deposited ALL the items</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.ConsumeSpellProjectile(Intersect.GameObjects.SpellDescriptor)">
+            <summary>
+            Checks if the caster has the required projectile(s) for the spell and tries to take them.
+            This method is used when a spell that requires projectile is casted.
+            If the spell has a valid ProjectileId, it retrieves the projectile and checks if it has a valid AmmoItemId.
+            If it does, it attempts to take the required amount of ammo from the player's inventory.
+            </summary>
+            <param name="spellDescriptor">The spell that is being cast.</param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.SetEquipmentSlot(System.Int32,System.Int32)">
+            <summary>
+            Safely sets an equipment slot, if valid
+            </summary>
+            <param name="equipmentSlot">The slot in <see cref="P:Intersect.Server.Entities.Player.Equipment"/> to set</param>
+            <param name="inventorySlot">The inventory slot of the item</param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.TryGetEquippedItem(System.Int32,Intersect.Server.Database.Item@)">
+            <summary>
+            Returns an equipped item from some equipment slot
+            </summary>
+            <param name="equipmentSlot">The slot in <see cref="P:Intersect.Server.Entities.Player.Equipment"/> that we're checking for</param>
+            <param name="equippedItem">The equipped <see cref="T:Intersect.Server.Database.Item"/>, if found</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.SlotIsEquipped(System.Int32,System.Int32@)">
+            <summary>
+            Determines whether or not a given inventory slot is currently equipped
+            </summary>
+            <param name="slot">The iventory slot of the item</param>
+            <param name="equippedSlot">The equipment slot found, if any</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.UnequipInvalidItems">
+            <summary>
+            Unequips any items that the player is currently wearing in which they no longer meet the conditions for
+            Also unequips any items that are not actually equipment anymore
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.CanMoveInDirection(Intersect.Enums.Direction,Intersect.Server.Entities.MovementBlockerType@,Intersect.Enums.EntityType@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.UpdateCooldown(Intersect.Framework.Core.GameObjects.Items.ItemDescriptor)">
+            <summary>
+            Update the cooldown for a specific item.
+            </summary>
+            <param name="item">The <see cref="T:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor"/> to update the cooldown for.</param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.UpdateCooldown(Intersect.GameObjects.SpellDescriptor)">
+            <summary>
+            Update the cooldown for a specific spell.
+            </summary>
+            <param name="item">The <see cref="T:Intersect.GameObjects.SpellDescriptor"/> to update the cooldown for.</param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.UpdateGlobalCooldown">
+            <summary>
+            Forces an update of the global cooldown.
+            Does nothing when disabled by configuration.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.UpdateCooldownGroup(Intersect.Enums.GameObjectType,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Update all cooldowns within the specified cooldown group on a type of object, or all when configured as such.
+            </summary>
+            <param name="type">The <see cref="T:Intersect.Enums.GameObjectType"/> to set trigger the cooldown group for. Currently only accepts Items and Spells</param>
+            <param name="group">The cooldown group to trigger.</param>
+            <param name="cooldown">The base cooldown of the object that triggered this cooldown group.</param>
+            <param name="ignoreCdr">Whether or not this item/spell is set to ignore cdr, in which case the group will ignore it too.</param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.AssignItemCooldown(System.Guid,System.Int64)">
+            <summary>
+            Assign a cooldown time to a specified item.
+            WARNING: Makes no checks at all to see whether this SHOULD happen!
+            </summary>
+            <param name="itemId">The <see cref="T:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor"/> id to assign the cooldown for.</param>
+            <param name="cooldownTime">The cooldown time to assign.</param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.AssignSpellCooldown(System.Guid,System.Int64)">
+            <summary>
+            Assign a cooldown time to a specified spell.
+            WARNING: Makes no checks at all to see whether this SHOULD happen!
+            </summary>
+            <param name="itemId">The <see cref="T:Intersect.GameObjects.SpellDescriptor"/> id to assign the cooldown for.</param>
+            <param name="cooldownTime">The cooldown time to assign.</param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.RemoveItemCooldown(System.Guid)">
+            <summary>
+            Remove the cooldown time entry for a specified Item.
+            </summary>
+            <param name="itemId">The <see cref="T:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor"/> id to remove the cooldown entry for.</param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.RemoveSpellCooldown(System.Guid)">
+            <summary>
+            Remove the cooldown time entry for a specified Spell.
+            </summary>
+            <param name="itemId">The <see cref="T:Intersect.GameObjects.SpellDescriptor"/> id to remove the cooldown entry for.</param>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.RemoveStaleSpellCooldowns">
+            <summary>
+            Remove all stale spell cooldowns.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Entities.Player.RemoveStaleItemCooldowns">
+            <summary>
+            Remove all stale item cooldowns.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Entities.PlayerStore.AsItemSource">
+            <summary>
+            Creates an item source for the player store entity.
+            </summary>
+            <returns>A new <see cref="T:Intersect.Server.Framework.Items.EntityItemSource"/> object.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Projectile.AddProjectileSpawns">
+            <summary>
+            Adds projectile spawns based on predefined spawn locations and directions.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Entities.Projectile.FindProjectileRotation(Intersect.Enums.Direction,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Finds the projectile rotation value based on the direction, position and the axis.
+            </summary>
+            <param name="direction">The direction of the projectile.</param>
+            <param name="x">The x-coordinate value.</param>
+            <param name="y">The y-coordinate value.</param>
+            <param name="isXAxis">True for horizontal (X-axis), false for vertical (Y-axis) calculation.</param>
+            <returns>The rotation value for the specified axis based on the direction.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Projectile.GetRange(Intersect.Enums.Direction,System.Single,System.Boolean)">
+            <summary>
+            Calculates the projectile range based on the given direction, range, and axis.
+            </summary>
+            <param name="direction">The direction of the projectile.</param>
+            <param name="range">The range of the projectile.</param>
+            <param name="isXAxis">True for horizontal (X-axis), false for vertical (Y-axis) calculation.</param>
+            <returns>The calculated range value.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Projectile.CheckForCollision(Intersect.Server.Entities.ProjectileSpawn)">
+            <summary>
+            Checks for collision between the projectile with other entities and attributes on the map.
+            </summary>
+            <param name="spawn">The projectile spawn information.</param>
+            <returns>True if the projectile collides with an entity or attributes, false otherwise.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Projectile.GetProjectileOffset(Intersect.Server.Entities.ProjectileSpawn,System.Boolean)">
+            <summary>
+            Calculates the offset for the projectile spawn position based on the target map and spawn location.
+            </summary>
+            <param name="spawn">The projectile spawn information.</param>
+            <param name="isXAxis">True for horizontal (X-axis), false for vertical (Y-axis) calculation.</param>
+            <returns>The calculated offset value.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Projectile.MoveFragment(Intersect.Server.Entities.ProjectileSpawn,System.Boolean)">
+            <summary>
+            Moves the projectile fragment based on the specified spawn information. This method is responsible for
+            updating the position of the projectile, handling homing and direct shot behaviors, and checking for out-of-bounds conditions.
+            </summary>
+            <param name="spawn">The projectile spawn information, including current position, direction, and other relevant details.</param>
+            <param name="move">Indicates whether the fragment should be moved. This can be used to pause movement if needed. Default is true.</param>
+            <returns>True if the projectile goes out of bounds after moving, false otherwise.</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Projectile.AdjustPositionOnMapBoundaries(System.Single@,System.Single@,Intersect.Server.Entities.ProjectileSpawn@)">
+            <summary>
+            Adjusts the position of a projectile when it crosses the boundaries of the current map.
+            This method checks if the projectile crosses the map boundaries and, if so, attempts to
+            transition the projectile to the adjacent map in the direction it is moving. The new position
+            on the adjacent map is calculated to maintain the continuity of the projectile's path.
+            </summary>
+            <param name="newx">The new x-coordinate of the projectile, which may be adjusted if crossing map boundaries.</param>
+            <param name="newy">The new y-coordinate of the projectile, which may be adjusted if crossing map boundaries.</param>
+            <param name="spawn">The projectile spawn information, including the current map ID, which may be updated to a new map.</param>
+        </member>
+        <member name="M:Intersect.Server.Entities.ProjectileSpawn.ShouldHook(Intersect.Server.Entities.Entity)">
+            <summary>
+            Returns whether or not to hook the player to the target
+            </summary>
+            <param name="en"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.ProjectileSpawn.HookEntity">
+            <summary>
+            Hook the player to the target
+            </summary>
+        </member>
+        <member name="T:Intersect.Server.Maps.MapController">
+            <summary>
+            A <see cref="T:Intersect.Server.Maps.MapController"/> exists to provide a reference to some <see cref="!:Map"/> and it's neighbors, as well as give
+            hooks to the Instance's list of <see cref="T:Intersect.Server.Maps.MapInstance"/>.
+            <remarks>
+            A Map Controller is generally not responsible for sending packets to players, that is the job of the Instances, stored in <see cref="F:Intersect.Server.Maps.MapController.mInstances"/>.
+            However, the exception to that case is whenever we want to perform some action for ALL players on a map, regardless of
+            whatever Instance they are currently on. In those cases, that logic should live here, and generally means iterating
+            over the map instance that belong to this <see cref="T:Intersect.Server.Maps.MapController"/>.
+            <para>
+            A good example of this can be seen in the Respawn/Despawning functions of a <see cref="T:Intersect.Server.Maps.MapController"/> - these functions are called
+            when we update a Map from the editor, or otherwise need to refresh what a <see cref="!:Map"/> looks like under the hood, and the
+            methods go out to each instance to refresh the packets that are being sent to the player/instances that are being processed
+            by the <see cref="T:Intersect.Server.Maps.MapInstance"/>.
+            </para>
+            </remarks>
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Maps.MapController.SurroundingMapIds">
+            <summary>
+            Contains a list of all surrounding Map (controller) IDs
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Maps.MapController.SurroundingMaps">
+            <summary>
+            Contains a list of all surrounding maps (controllers)
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Maps.MapController.Lookup">
+            <summary>
+            Quick reference for DB lookup of the relevant <see cref="T:Intersect.Framework.Core.GameObjects.Maps.MapDescriptor"/>
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.Get(System.Guid)">
+            <summary>
+            Quick reference to get a Map Controller from its <see cref="T:Intersect.Framework.Core.GameObjects.Maps.MapDescriptor"/> ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.TryGet(System.Guid,Intersect.Server.Maps.MapController@)">
+            <summary>
+            Tries to get a Map Controller from its <see cref="T:Intersect.Framework.Core.GameObjects.Maps.MapDescriptor"/> ID
+            </summary>
+            <param name="id"></param>
+            <param name="mapController">The retrieved Map Controller, if successful</param>
+            <returns><c>true</c> if the Map Controller was found; otherwise, <c>false</c></returns>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.TryGetInstanceFromMap(System.Guid,System.Guid,Intersect.Server.Maps.MapInstance@)">
+            <summary>
+            Tries to get a <see cref="T:Intersect.Server.Maps.MapInstance"/> when given an instanceId.
+            </summary>
+            <param name="mapControllerId">The id of the <see cref="T:Intersect.Server.Maps.MapController"/></param>
+            <param name="instanceId">The instance ID we want - crucially, NOT the unique ID of the <see cref="T:Intersect.Server.Maps.MapInstance"/>. Matches with some entity's InstanceId</param>
+            <param name="mapInstance">Out value for the successfully found <see cref="T:Intersect.Server.Maps.MapInstance"/></param>
+            <returns>True if successful in retrieving a <see cref="T:Intersect.Server.Maps.MapInstance"/>, false otherwise</returns>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.GetSurroundingMapInstances(System.Guid,System.Guid,System.Boolean,System.Boolean)">
+            <summary>
+            Gets each instance of a map's surrounding maps with a given instanceID
+            </summary>
+            <param name="mapControllerId">The relevant map controller ID</param>
+            <param name="instanceId">The instance ID we're requesting from each map</param>
+            <param name="includeSelf">Whether or not to include the map of which we're checking the surroundings of</param>
+            <param name="createIfNew">Whether or not to create any instances that do not exist with the requested InstanceID on any of the surrounding maps</param>
+            <returns>A list of <see cref="T:Intersect.Server.Maps.MapInstance"/>, containing the instances of the requested surrounding maps with the given instance ID.</returns>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.Initialize">
+            <summary>
+            Refreshes all of this controller's instances
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.Load(System.String,System.Int32)">
+            <summary>
+            Load this map from JSON
+            </summary>
+            <param name="json">The JSON containing map data</param>
+            <param name="keepRevision">The revision number</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.DespawnNpcAcrossInstances(Intersect.Framework.Core.GameObjects.NPCs.NPCDescriptor)">
+            <summary>
+            Despawns NPCs of a given <see cref="T:Intersect.Framework.Core.GameObjects.NPCs.NPCDescriptor"/> from all instances of this controller.
+            </summary>
+            <param name="npcDescriptor">The <see cref="T:Intersect.Framework.Core.GameObjects.NPCs.NPCDescriptor"/> to despawn</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.DespawnResourceAcrossInstances(Intersect.Framework.Core.GameObjects.Resources.ResourceDescriptor)">
+            <summary>
+            Despawns resources of a given <see cref="T:Intersect.Framework.Core.GameObjects.Resources.ResourceDescriptor"/> from all instances of this controller.
+            </summary>
+            <param name="resourceDescriptor">The <see cref="T:Intersect.Framework.Core.GameObjects.Resources.ResourceDescriptor"/> to despawn</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.DespawnProjectileAcrossInstances(Intersect.GameObjects.ProjectileDescriptor)">
+            <summary>
+            Despawns projectiles of a given <see cref="T:Intersect.GameObjects.ProjectileDescriptor"/> from all instances of this controller.
+            </summary>
+            <param name="projectileDescriptor">The <see cref="T:Intersect.GameObjects.ProjectileDescriptor"/> to despawn</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.DespawnItemAcrossInstances(Intersect.Framework.Core.GameObjects.Items.ItemDescriptor)">
+            <summary>
+            Despawns items of a given <see cref="T:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor"/> from all instances of this controller.
+            </summary>
+            <param name="itemDescriptor">The <see cref="T:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor"/> to despawn</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.GetSurroundingMaps(System.Boolean)">
+            <summary>
+            Gets an array of MapControllers out of the maps surrounding this one
+            </summary>
+            <param name="includingSelf">Whether or not to also include the calling controller in the array</param>
+            <returns>An array of MapControllers out of the maps surrounding this one</returns>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.GetSurroundingMapIds(System.Boolean)">
+            <summary>
+            Gets an array of Guids out of the map IDs surrounding this one
+            </summary>
+            <param name="includingSelf">Whether or not to also include the calling controller in the array</param>
+            <returns>An array of Guids out of the maps surrounding this one</returns>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.GetPlayersOnAllInstances">
+            <summary>
+            Gets every player that is on every instance of this map controller
+            </summary>
+            <returns>A generic collection of <see cref="T:Intersect.Server.Entities.Player"/>s</returns>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.GetEntitiesOnAllInstances">
+            <summary>
+            Gets every entity that is on every instance of this map controller
+            </summary>
+            <returns>A generic collection of <see cref="T:Intersect.Server.Entities.Entity"/>s</returns>s
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.ClearConnections(Intersect.Enums.Direction)">
+            <summary>
+            Destroys connections to other maps from this controller
+            </summary>
+            <param name="side">Which side to destroy connections from. -1 will clear all directionsm and is the default</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.DespawnAllInstances">
+            <summary>
+            Despawns all entities/items/projectiles on each instance that belongs to this controller
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.RespawnAllInstances">
+            <summary>
+            Respawns all entities/items/projectiles on each instance that belongs to this controller.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.TryCreateInstance(System.Guid,Intersect.Server.Maps.MapInstance@,Intersect.Server.Entities.Player)">
+            <summary>
+            Creates a new instance
+            </summary>
+            <param name="instanceId"></param>
+            <returns>Whether or not we needed to create a new map instance</returns>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.TryGetInstance(System.Guid,Intersect.Server.Maps.MapInstance@)">
+            <summary>
+            Attempts to get an instance with some given instance ID
+            </summary>
+            <param name="mapInstanceId">The id of the instance - NOT the unique id of a <see cref="T:Intersect.Server.Maps.MapInstance"/></param>
+            <param name="instance">Out value - the mapInstance we find. Null if not found</param>
+            <returns>True if successful in finding the requested instance, false otherwise</returns>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.RemoveEntityFromAllSurroundingMapsInInstance(Intersect.Server.Entities.Entity,System.Guid)">
+            <summary>
+            Removes a requested <see cref="T:Intersect.Server.Entities.Entity"/> from a requested instance on all surrounding maps, including this one
+            </summary>
+            <param name="entity">The entity we wish to remove</param>
+            <param name="mapInstanceId">The instance we're removing the entity from</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.DisposeInstanceWithId(System.Guid)">
+            <summary>
+            Disposes of an instance from this controllers <see cref="F:Intersect.Server.Maps.MapController.mInstances"/>
+            </summary>
+            <param name="mapInstanceId">The instance ID to dispose of</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.GetPlayersOnSharedInstance(System.Guid,Intersect.Server.Entities.Entity)">
+            <summary>
+            Gets a list of players that are on the same instance
+            </summary>
+            <param name="mapInstanceId">The instance ID to check for</param>
+            <param name="except">An entity that we do NOT wish to include in the returned list</param>
+            <returns>A list of players on this map who share the same instance ID</returns>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.ClearAllInstances">
+            <summary>
+            Clears <see cref="F:Intersect.Server.Maps.MapController.mInstances"/>
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.DestroyOrphanedLayers">
+            <summary>
+            Gets rid of any orphaned tile layers
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.Delete">
+            <summary>
+            Removes this map from the database
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.FindSurroundingTiles(Intersect.Point,System.Int32)">
+            <summary>
+            Get back a list of tiles surrounding a requested tile, with a given distance
+            </summary>
+            <param name="location">The tile to search for</param>
+            <param name="distance">The distance from the requested tile to search out from</param>
+            <returns>A dictionary of tiles on their own maps</returns>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapController.Finalize">
+            <summary>
+            A destructor, responsible for making sure that if a map controller is removed, all of its instances are as well
+            </summary>
+        </member>
+        <member name="T:Intersect.Server.Maps.MapInstance">
+            <summary>
+            A <see cref="T:Intersect.Server.Maps.MapInstance"/> exists to process map updates, but on a "layered" system, where a single map can be processing
+            differently for each instance that exists upon it.
+            <remarks>
+            <para>
+            A <see cref="T:Intersect.Server.Maps.MapController"/> contains a list <see cref="F:Intersect.Server.Maps.MapController.mInstances"/>, each one responsible for sending the necessary
+            packet updates to the players that exist on that instance.
+            </para>
+            <para>
+            By taking the processing out of the <see cref="T:Intersect.Server.Maps.MapController"/> itself, we can support map "Instancing" - ergo, the ability to process
+            the same map differently for different players/parties. This allows for concepts such as dungeons and personal cutscenes, minigames,
+            duel arenas, etc etc.
+            </para>
+            <para>
+            A <see cref="T:Intersect.Server.Entities.Player"/> is the sole creator of MapInstances. A new instance will be created (via a call to <see cref="!:MapController.TryCreateInstance(Guid, out MapInstance)"/>)
+            when a player:
+            <list type="number">
+            <item>
+            Warps to a new map, or their <see cref="P:Intersect.Server.Entities.Entity.MapInstanceId"/> has otherwise changed.
+            </item>
+            <item>
+            Walks across a map boundary and fetches new maps from <see cref="M:Intersect.Server.Maps.MapController.GetSurroundingMaps(System.Boolean)"/>.
+            </item>
+            </list>
+            </para>
+            <para>
+            A <see cref="T:Intersect.Server.Maps.MapInstance"/> needs to know when it is ready to be cleaned up, if its instance ID is not that of the overworld. A MapController can be marked for cleanup if there are no players on itself
+            or any of its surrounding layers, and at least <see cref="!:Options.TimeUntilMapCleanup"/> ms have passed since the last player was on the map/its neighbors.
+            </para>
+            </remarks>
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Maps.MapInstance.OverworldInstanceId">
+            <summary>
+            Reference to stay consistent/easy-to-read with overworld behavior
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Maps.MapInstance.mLastUpdateTime">
+            <summary>
+            The last time the instance's properties were updated and packets were sent to players
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:Intersect.Server.Maps.MapInstance.mIsProcessing" -->
+        <member name="P:Intersect.Server.Maps.MapInstance.Id">
+            <summary>
+            A unique identifier referring to this processing instance alone.
+            <remarks>
+            Note that this is NOT the Instance instance identifier - that is <see cref="P:Intersect.Server.Maps.MapInstance.MapInstanceId"/>
+            </remarks>
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Maps.MapInstance.MapInstanceId">
+            <summary>
+            An ID referring to which instance this processer belongs to.
+            <remarks>
+            Entities/Items/Etc with that share an <see cref="P:Intersect.Server.Entities.Entity.MapInstanceId"/> with <see cref="P:Intersect.Server.Maps.MapInstance.MapInstanceId"/>
+            will be processed and fed packets by that processer.
+            </remarks>
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Maps.MapInstance.LastRequestedUpdateTime">
+            <summary>
+            The last time the <see cref="T:Intersect.Server.Core.LogicService.LogicThread"/> made a call to <see cref="M:Intersect.Server.Maps.MapInstance.Update(System.Int64)"/>.
+            <remarks>
+            This is used to determine when enough time has passed to cleanup this instance (remove it from it's parent <see cref="T:Intersect.Server.Maps.MapController"/>).
+            </remarks>
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Maps.MapInstance.UpdateQueueStart">
+            <summary>
+            When the <see cref="T:Intersect.Server.Core.LogicService.LogicThread"/> started processing this instance.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.Initialize">
+            <summary>
+            Initializes the processing instance for processing - called in the constructor. Essentially refreshes the instance
+            so that it can give everything it has to offer to the player by the time they arrive in it
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.GetControllerLock">
+            <summary>
+            Gets our _parent's_ map lock.
+            </summary>
+            <returns>The parent map instance's map lock</returns>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.DespawnEverything">
+            <summary>
+            Destroys the processable elements of the instance - RespawnEverything() to bring them back, and begin processing them
+            in the update loop once more
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.RespawnEverything">
+            <summary>
+            Respawns everything - if this isn't called, the map will never begin processing anything in it's update loop, as
+            it will have nothing to process. Note this also refreshes the event cache - refreshing events, global and local
+            alike, when an Instance is refreshed.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.Update(System.Int64)">
+            <summary>
+            The update loop - runs everytime the job in the LogicThread class executes it. Takes care of:
+            - Checking if items need to spawn/be despawned
+            - Move/process entity actions, regen
+            - Determine if NPCs need respawned/regen'd
+            - Determine if Resources need respawned/regen'd
+            - Update global event processing
+            </summary>
+            <param name="timeMs">The current time the update was called. Used for determining updates to things such as respawn timers.</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.AddEntity(Intersect.Server.Entities.Entity)">
+            <summary>
+            Adds an entity to the MapInstance so that the instance knows to process them.
+            </summary>
+            <param name="entity">The entity to add.</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.RemoveEntity(Intersect.Server.Entities.Entity)">
+            <summary>
+            Removes an entity. After removal, that entity will no longer be updated by the processing instance.
+            If this entity is a player, they will experience a complete desync from the server, as the map
+            would not be sending them update packets any longer - so be mindful of what you're removing and when.
+            </summary>
+            <param name="en">The entity to remove.</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.GetEntities(System.Boolean)">
+            <summary>
+            Returns a list of all the entities (NPCs, Resources, Players, EventPageInstances, Projectiles) being processed by this map.
+            </summary>
+            <param name="includeSurroundingMaps">Whether we should look at surrounding maps with a shared processing ID
+            while acquiring this list.</param>
+            <returns>A list of Entities</returns>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.PlayerEnteredMap(Intersect.Server.Entities.Player)">
+            <summary>
+            Sends all the information a Player must receive when they've entered this Instance.
+            </summary>
+            <param name="player">The player who's entered</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.SendMapEntitiesTo(Intersect.Server.Entities.Player)">
+            <summary>
+            Sends entities on the map to some player.
+            </summary>
+            <param name="player">The player to send entities to</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.GetPlayers(System.Boolean)">
+            <summary>
+            Gets all the players on a map instance
+            </summary>
+            <param name="includeSurrounding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.SpawnMapNpcs">
+            <summary>
+            Spawn map NPCs that the MapController has in it's list of spawns
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.FindNpcSpawnLocation(Intersect.Framework.Core.GameObjects.Maps.NpcSpawn,System.Int32@,System.Int32@,Intersect.Enums.Direction@)">
+            <summary>
+            Finds the requested spawn of an NPC based on its controller's properties
+            </summary>
+            <param name="spawn">The <see cref="T:Intersect.Framework.Core.GameObjects.Maps.NpcSpawn"/> to spawn</param>
+            <param name="x">The X-coordinate to spawn at; out</param>
+            <param name="y">The Y-coordinate to spawn at; out</param>
+            <param name="dir">The direction to spawn at; out</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.SpawnNpc(System.Byte,System.Byte,Intersect.Enums.Direction,System.Guid,System.Boolean)">
+            <summary>
+            Physically places an NPC on our map instance
+            </summary>
+            <param name="tileX">X Spawn Co-ordinate</param>
+            <param name="tileY">Y Spawn Co-ordinate</param>
+            <param name="dir">Direction to face after spawn</param>
+            <param name="npcId">NPC Entity ID to spawn</param>
+            <param name="despawnable">Whether or not this NPC can be despawned (for example, if spawned via event command)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.ResetNpcSpawns">
+            <summary>
+            Forcibly reset all Npcs originating from this map.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.DespawnNpcs">
+            <summary>
+            Despawns all NPCs, and removes them from our dictionary of Spawn Instances.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.ClearEntityTargetsOf(Intersect.Server.Entities.Entity)">
+            <summary>
+            Clears the given entity of any targets that an NPC has on them. For AI purposes.
+            </summary>
+            <param name="en">The entitiy to clear targets of.</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.SpawnAttributeResource(System.Byte,System.Byte)">
+            <summary>
+            Spawns a map resource attribute at its editor-given location
+            </summary>
+            <param name="x">X co-ordinate to spawn at</param>
+            <param name="y">Y co-ordinate to spawn at</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.SpawnMapResources">
+            <summary>
+            Freshly spawns all map resources within our list of Resource Spawns.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.SpawnMapResource(Intersect.Framework.Core.GameObjects.Maps.ResourceSpawn)">
+            <summary>
+            Spawns the given resource, and adds it to our list for processing
+            </summary>
+            <param name="spawn"></param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.DespawnResources">
+            <summary>
+            Despawns all resources, and clears our list of spawn instances
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.AddItem(Intersect.Server.Framework.Items.IItemSource,Intersect.Server.Maps.MapItem)">
+            <summary>
+            Add a map item to this map.
+            </summary>
+            <param name="source">The source of the item, e.g. a player who dropped it, or a monster who spawned it on death, or the map instance in which it was spawned.</param>
+            <param name="item">The <see cref="T:Intersect.Server.Maps.MapItem"/> to add to the map.</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.SpawnItem(Intersect.Server.Framework.Items.IItemSource,System.Int32,System.Int32,Intersect.Server.Database.Item,System.Int32)">
+            <summary>
+            Spawn an item to this map instance.
+            </summary>
+            <param name="source">The source of the item, e.g. a player who dropped it, or a monster who spawned it on death, or the map instance in which it was spawned</param>
+            <param name="x">The horizontal location of this item</param>
+            <param name="y">The vertical location of this item.</param>
+            <param name="item">The <see cref="T:Intersect.Server.Database.Item"/> to spawn on the map.</param>
+            <param name="amount">The amount of times to spawn this item to the map. Set to the <see cref="T:Intersect.Server.Database.Item"/> quantity, overwrites quantity if stackable!</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.SpawnItem(Intersect.Server.Framework.Items.IItemSource,System.Int32,System.Int32,Intersect.Server.Database.Item,System.Int32,System.Guid,System.Boolean)">
+            <summary>
+            Spawn an item to this map instance.
+            </summary>
+            <param name="source">The source of the item, e.g. a player who dropped it, or a monster who spawned it on death, or the map instance in which it was spawned</param>
+            <param name="x">The horizontal location of this item</param>
+            <param name="y">The vertical location of this item.</param>
+            <param name="item">The <see cref="T:Intersect.Server.Database.Item"/> to spawn on the map.</param>
+            <param name="amount">The amount of times to spawn this item to the map. Set to the <see cref="T:Intersect.Server.Database.Item"/> quantity, overwrites quantity if stackable!</param>
+            <param name="owner">The player Id that will be the temporary owner of this item.</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.FindItem(System.Guid)">
+            <summary>
+            Find a Map Item on this map based on its Unique Id;
+            </summary>
+            <param name="uniqueId">The Unique Id of the Map Item to look for.</param>
+            <returns>Returns a <see cref="T:Intersect.Server.Maps.MapItem"/> if one is found with the desired Unique Id.</returns>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.FindItemsAt(System.Int32)">
+            <summary>
+            /// Find all map items at a specificed location.
+            </summary>
+            <param name="tileIndex">The integer value representation of the tile.</param>
+            <returns>Returns a <see cref="!:ICollection"/> of <see cref="T:Intersect.Server.Maps.MapItem"/></returns>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.RemoveItem(Intersect.Server.Maps.MapItem,System.Boolean)">
+            <summary>
+            Removes some item from this processing instance
+            </summary>
+            <param name="item">The item to remove from the instance</param>
+            <param name="respawn">Whether or not this item will respawn</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.DespawnItems">
+            <summary>
+            Despawns all items, and removes them from our list of them.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.SpawnAttributeItem(System.Int32,System.Int32)">
+            <summary>
+            Spawns an item that was placed via editor Item map attribute
+            </summary>
+            <param name="x">X co-ordinate to spawn</param>
+            <param name="y">Y co-ordinate to spawn</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.SpawnAttributeItems">
+            <summary>
+            Spawns map atribute items/resources
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.SpawnMapProjectile(Intersect.Server.Entities.Entity,Intersect.GameObjects.ProjectileDescriptor,Intersect.GameObjects.SpellDescriptor,Intersect.Framework.Core.GameObjects.Items.ItemDescriptor,System.Guid,System.Byte,System.Byte,System.Byte,Intersect.Enums.Direction,Intersect.Server.Entities.Entity)">
+            <summary>
+            Spawn a projectile on the map instance
+            </summary>
+            <param name="owner">Who spawned the projectile</param>
+            <param name="projectile">Which projectile to spawn</param>
+            <param name="parentSpell">If the projectile was spawned via spell</param>
+            <param name="parentItem">If the projectile was spawned via item</param>
+            <param name="mapId">What MapController the projectile was spawned on</param>
+            <param name="x">X co-ordinate to spawn at</param>
+            <param name="y">Y co-ordinate ot spawn at</param>
+            <param name="z">Z co-ordinate to spawn at, if enabled in config</param>
+            <param name="direction">Direction in which to spawn</param>
+            <param name="target">The target of the projectil</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapInstance.DespawnProjectiles">
+            <summary>
+            Despawns all projectiles on the instance.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Maps.MapItem.UniqueId">
+            <summary>
+            The Unique Id of this particular MapItemInstance so we can refer to it elsewhere.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Maps.MapItem.SetupStatBuffs(Intersect.Server.Database.Item)">
+            <summary>
+            Sets up the Stat Buffs on this map item from a supplied item.
+            </summary>
+            <param name="item">The item to take the Stat Buffs from and apply them to this MapItem.</param>
+        </member>
+        <member name="M:Intersect.Server.Maps.TileHelper.#ctor(System.Guid,System.Int32,System.Int32)">
+            <summary>
+                Creates a new tile helper instance in a position given.
+            </summary>
+            <param name="mapId"></param>
+            <param name="tileX"></param>
+            <param name="tileY"></param>
+        </member>
+        <member name="M:Intersect.Server.Maps.TileHelper.Translate(System.Int32,System.Int32)">
+            <summary>
+                Moves our tile and then attempts to adjust the map location of we walked out of bounds. Will return true if the
+                position is valid. False if not.
+            </summary>
+            <param name="xOffset"></param>
+            <param name="yOffset"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Metrics.MetricsRoot.#ctor">
+            <summary>
+            Creates and configures metric tracking for our various controllers
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Metrics.MetricsRoot.Instance">
+            <summary>
+            Serverwide metrics collecting instance
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Metrics.MetricsRoot.Init">
+            <summary>
+            Setup our metric counters/histograms if metrics are enabled in the server config
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Metrics.MetricsRoot.Disable">
+            <summary>
+            Clears our cached metrics dump so that the api returns an empty object while metrics are disabled.
+            </summary>
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.Net7Upgrade">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.Net7Upgrade.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.Net7Upgrade.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.Net7Upgrade.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.StatRangeMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.StatRangeMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.StatRangeMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.StatRangeMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.ItemEventTriggerMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.ItemEventTriggerMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.ItemEventTriggerMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.ItemEventTriggerMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.HomingProjectile">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.HomingProjectile.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.HomingProjectile.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.HomingProjectile.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.ParallelEvents">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.ParallelEvents.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.ParallelEvents.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.ParallelEvents.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.FixVariables">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.FixVariables.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.FixVariables.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.FixVariables.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.RenameVariableDescriptorTypes">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameVariableDescriptorTypes.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameVariableDescriptorTypes.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameVariableDescriptorTypes.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.RenameAnimationDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameAnimationDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameAnimationDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameAnimationDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.RenameClassDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameClassDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameClassDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameClassDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.RenameCraftingDescriptors">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameCraftingDescriptors.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameCraftingDescriptors.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameCraftingDescriptors.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.RenameEventDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameEventDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameEventDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameEventDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.RenameItemDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameItemDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameItemDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameItemDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.RenameNPCDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameNPCDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameNPCDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameNPCDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.RenameProjectileDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameProjectileDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameProjectileDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameProjectileDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.RenameQuestDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameQuestDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameQuestDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameQuestDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.RenameResourceDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameResourceDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameResourceDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameResourceDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.RenameShopDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameShopDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameShopDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameShopDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.RenameSpellDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameSpellDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameSpellDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameSpellDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.RenameTilesetDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameTilesetDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameTilesetDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameTilesetDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.RenameDaylightCycleDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameDaylightCycleDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameDaylightCycleDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameDaylightCycleDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.RenameLightDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameLightDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameLightDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.RenameLightDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.ChangeGameObjectNamespaces">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.ChangeGameObjectNamespaces.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.ChangeGameObjectNamespaces.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.ChangeGameObjectNamespaces.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.ResourceStates">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.ResourceStates.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.ResourceStates.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.ResourceStates.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.CreatedPetBase">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.CreatedPetBase.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.CreatedPetBase.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.CreatedPetBase.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.AddedPetSpells">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.AddedPetSpells.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.AddedPetSpells.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.AddedPetSpells.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Game.AddedNpcDeathAnimation">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.AddedNpcDeathAnimation.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.AddedNpcDeathAnimation.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Game.AddedNpcDeathAnimation.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Logging.Net7Upgrade">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Logging.Net7Upgrade.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Logging.Net7Upgrade.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Logging.Net7Upgrade.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Player.Net7Upgrade">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.Net7Upgrade.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.Net7Upgrade.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.Net7Upgrade.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Player.UpdatingQuestHotbarSwitchIdsToAutoGenerate">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.UpdatingQuestHotbarSwitchIdsToAutoGenerate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.UpdatingQuestHotbarSwitchIdsToAutoGenerate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.UpdatingQuestHotbarSwitchIdsToAutoGenerate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Player.UserVariables_AddStandaloneIdPK">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.UserVariables_AddStandaloneIdPK.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.UserVariables_AddStandaloneIdPK.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.UserVariables_AddStandaloneIdPK.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Player.SqliteGuildForeignKey">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.SqliteGuildForeignKey.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.SqliteGuildForeignKey.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.SqliteGuildForeignKey.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Player.GuildCorrections">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.GuildCorrections.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.GuildCorrections.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.GuildCorrections.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Player.OfflineGuildInvites">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.OfflineGuildInvites.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.OfflineGuildInvites.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.OfflineGuildInvites.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Player.ChangeCollationOfUserInputsToCaseInsensitive">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.ChangeCollationOfUserInputsToCaseInsensitive.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.ChangeCollationOfUserInputsToCaseInsensitive.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.ChangeCollationOfUserInputsToCaseInsensitive.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.Sqlite.Player.AddedPlayerOwnedPets">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.AddedPlayerOwnedPets.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.AddedPlayerOwnedPets.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.Sqlite.Player.AddedPlayerOwnedPets.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Server.Networking.Client.TimedBufferPacketsRemaining">
+            <summary>
+            Number of "grace" packets that the client has remaining if speedhacking is accidentally detected.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Networking.Client.Send(Intersect.Network.IPacket)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Networking.Client.Send(Intersect.Network.IPacket,Intersect.Network.TransmissionMode)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Networking.PacketSender.SendChatMsg(Intersect.Server.Entities.Player,System.String,Intersect.Enums.ChatMessageType,System.String)">
+            <summary>
+            Sends a chat message to the specified player.
+            </summary>
+            <param name="player">The player to which to send a message.</param>
+            <param name="message">The message to send.</param>
+            <param name="type">The type of message we are sending.</param>
+            <param name="target">The sender of this message, should we decide to respond from the client.</param>
+        </member>
+        <member name="M:Intersect.Server.Networking.PacketSender.SendChatMsg(Intersect.Server.Entities.Player,System.String,Intersect.Enums.ChatMessageType,Intersect.Color,System.String)">
+            <summary>
+            Sends a chat message to the specified player.
+            </summary>
+            <param name="player">The player to which to send a message.</param>
+            <param name="message">The message to send.</param>
+            <param name="type">The type of message we are sending.</param>
+            <param name="color">The color assigned to this message.</param>
+            <param name="target">The sender of this message, should we decide to respond from the client.</param>
+        </member>
+        <member name="M:Intersect.Server.Networking.PacketSender.SendGlobalMsg(System.String,System.String)">
+            <summary>
+            Sends a global chat message to every user online.
+            </summary>
+            <param name="message">The message to send.</param>
+            <param name="target">The sender of this message, should we decide to respond from the client.</param>
+        </member>
+        <member name="M:Intersect.Server.Networking.PacketSender.SendGlobalMsg(System.String,Intersect.Color,System.String,Intersect.Enums.ChatMessageType)">
+            <summary>
+            Sends a global chat message to every user online.
+            </summary>
+            <param name="message">The message to send.</param>
+            <param name="color">The color assigned to this message.</param>
+            <param name="target">The sender of this message, should we decide to respond from the client.</param>
+            <param name="type">The type of message we are sending.</param>
+        </member>
+        <member name="M:Intersect.Server.Networking.PacketSender.SendProximityMsg(System.String,Intersect.Enums.ChatMessageType,System.Guid,System.String)">
+            <summary>
+            Sends a chat message to the proximity of a specified map.
+            </summary>
+            <param name="message">The message to send.</param>
+            <param name="type">The type of message we are sending.</param>
+            <param name="mapId">The Map we are sending this message to (and its surroundings).</param>
+            <param name="target">The sender of this message, should we decide to respond from the client.</param>
+            <returns>Returns whether or not the message was sent successfully.</returns>
+        </member>
+        <member name="M:Intersect.Server.Networking.PacketSender.SendProximityMsg(System.String,Intersect.Enums.ChatMessageType,System.Guid,Intersect.Color,System.String)">
+            <summary>
+            Sends a chat message to the proximity of a specified map.
+            </summary>
+            <param name="message">The message to send.</param>
+            <param name="type">The type of message we are sending.</param>
+            <param name="mapId">The Map we are sending this message to (and its surroundings).</param>
+            <param name="color">The color assigned to this message.</param>
+            <param name="target">The sender of this message, should we decide to respond from the client.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Networking.PacketSender.SendProximityMsgToLayer(System.String,Intersect.Enums.ChatMessageType,System.Guid,System.Guid,Intersect.Color,System.String)">
+            <summary>
+            Sends a chat message to the proximity of a specified map.
+            </summary>
+            <param name="message">The message to send.</param>
+            <param name="type">The type of message we are sending.</param>
+            <param name="mapId">The Map we are sending this message to (and its surroundings).</param>
+            <param name="mapInstanceId">The ID of the map instance to send the message to.</param>
+            <param name="color">The color assigned to this message.</param>
+            <param name="target">The sender of this message, should we decide to respond from the client.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Networking.PacketSender.SendAdminMsg(System.String,Intersect.Color,System.String)">
+            <summary>
+            Sends a message to all online staff members.
+            </summary>
+            <param name="message">The message to send.</param>
+            <param name="color">The color assigned to this message.</param>
+            <param name="target">The sender of this message, should we decide to respond from the client.</param>
+        </member>
+        <member name="M:Intersect.Server.Networking.PacketSender.SendPartyMsg(Intersect.Server.Entities.Player,System.String,Intersect.Color,System.String)">
+            <summary>
+            Sends a message to our player's party.
+            </summary>
+            <param name="player">The player of which to send a message to their party.</param>
+            <param name="message">The message to send.</param>
+            <param name="color">The color assigned to this message.</param>
+            <param name="target">The sender of this message, should we decide to respond from the client.</param>
+        </member>
+        <member name="M:Intersect.Server.Networking.PacketSender.SendMapItemUpdate(System.Guid,System.Guid,Intersect.Server.Maps.MapItem,System.Boolean,System.Boolean,System.Guid)">
+            <summary>
+            Send a map item update to the relevant players.
+            </summary>
+            <param name="mapId">The Id of the <see cref="T:Intersect.Server.Maps.MapController"/> containing the relevant instance.</param>
+            <param name="mapInstanceId">The instance ID of the <see cref="T:Intersect.Server.Maps.MapInstance"/> we are sending the item update for.</param>
+            <param name="uniqueId">The Id for the <see cref="T:Intersect.Server.Maps.MapItem"/> we are sending the item update for.</param>
+            <param name="itemRef">The map item that we are sending (or null if removing), passing this saves us a lookup for it.</param>
+            <param name="sendToAll">If we are removing the item from the map, do we send this data to everyone?</param>
+            <param name="owner">The previous owner of an item being removed when the data is not send to everyone.</param>
+        </member>
+        <member name="M:Intersect.Server.Networking.PacketSender.SendGameAnnouncement(System.String,System.Int64)">
+            <summary>
+            Send a game announcement to all players.
+            </summary>
+            <param name="message">The message to send as an announcement.</param>
+            <param name="duration">The duration (in milliseconds) for the message to display.</param>
+        </member>
+        <member name="M:Intersect.Server.Networking.PacketSender.SendGuild(Intersect.Server.Entities.Player)">
+            <summary>
+            Send a player their guild member list.
+            </summary>
+            <param name="player"></param>
+        </member>
+        <member name="T:Intersect.Server.Plugins.Helpers.ServerLifecycleHelper">
+            <inheritdoc cref="T:Intersect.Server.Plugins.Helpers.IServerLifecycleHelper"/>
+        </member>
+        <member name="M:Intersect.Server.Plugins.Helpers.ServerLifecycleHelper.#ctor(Intersect.Server.Plugins.IServerPluginContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Plugins.ServerPluginContext">
+            <summary>
+            Implementation of <see cref="T:Intersect.Server.Plugins.IServerPluginContext"/>.
+            </summary>
+        </member>
+        <member name="T:Intersect.Server.Plugins.ServerPluginContext.Factory">
+            <summary>
+            <see cref="T:Intersect.Plugins.IPluginContext"/> factory that creates instances of <see cref="T:Intersect.Server.Plugins.IServerPluginContext"/>.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Plugins.ServerPluginContext.Factory.Create(System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Plugins.ServerPluginContext.#ctor(Intersect.Plugins.Plugin)">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Server.Plugins.ServerPluginContext.Lifecycle">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

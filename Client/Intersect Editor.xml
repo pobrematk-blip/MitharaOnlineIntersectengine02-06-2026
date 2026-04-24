@@ -1,0 +1,1974 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intersect Editor</name>
+    </assembly>
+    <members>
+        <!-- Badly formed XML comment ignored for member "F:Intersect.Editor.Classes.ContentManagement.TexturePacker.FreeRectChoiceHeuristic.RectBestLongSideFit" -->
+        <!-- Badly formed XML comment ignored for member "F:Intersect.Editor.Classes.ContentManagement.TexturePacker.FreeRectChoiceHeuristic.RectBestAreaFit" -->
+        <!-- Badly formed XML comment ignored for member "F:Intersect.Editor.Classes.ContentManagement.TexturePacker.FreeRectChoiceHeuristic.RectBottomLeftRule" -->
+        <!-- Badly formed XML comment ignored for member "F:Intersect.Editor.Classes.ContentManagement.TexturePacker.FreeRectChoiceHeuristic.RectContactPointRule" -->
+        <member name="M:Intersect.Editor.Classes.ContentManagement.TexturePacker.Occupancy">
+            Computes the ratio of used surface area.
+        </member>
+        <member name="M:Intersect.Editor.Classes.ContentManagement.TexturePacker.CommonIntervalLength(System.Int32,System.Int32,System.Int32,System.Int32)">
+            Returns 0 if the two intervals i1 and i2 are disjoint, or the length of their overlap otherwise.
+        </member>
+        <member name="M:Intersect.Editor.Core.Graphics.DrawFog(Microsoft.Xna.Framework.Graphics.RenderTarget2D)">
+            <summary>
+            Draws the fog over the map editor view.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Core.Program.Main(System.String[])">
+            <summary>
+                The main entry point for the application.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Controls.AutoDragPanel.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Controls.AutoDragPanel.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Controls.AutoDragPanel.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Controls.GameObjectList.Init(Intersect.Editor.Forms.Controls.GameObjectList.UpdateToolstripDelegate,Intersect.Editor.Forms.Controls.GameObjectList.UpdateItemDelegate,Intersect.Editor.Forms.Controls.GameObjectList.ToolstripButtonClickDelegate,Intersect.Editor.Forms.Controls.GameObjectList.ToolstripButtonClickDelegate,Intersect.Editor.Forms.Controls.GameObjectList.ToolstripButtonClickDelegate,Intersect.Editor.Forms.Controls.GameObjectList.ToolstripButtonClickDelegate,Intersect.Editor.Forms.Controls.GameObjectList.ToolstripButtonClickDelegate)">
+            <summary>
+            Sets up this game object list for working with our editor
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Controls.GameObjectList.GameObjectList_NodeMouseClick(System.Object,System.Windows.Forms.TreeNodeMouseClickEventArgs)">
+            <summary>
+            This function copies item ids to clipboards if right clicking. Otherwise it handles expanding/closing folders
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Controls.GameObjectList.GameObjectList_AfterSelect(System.Object,System.Windows.Forms.TreeViewEventArgs)">
+            <summary>
+            This function tells our editor that we selected a new item to edit
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Controls.GameObjectList.UpdateText(System.String)">
+            <summary>
+            Updates the name of the currently selected node
+            </summary>
+            <param name="text">New name</param>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Controls.GameObjectList.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Controls.GameObjectList.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Controls.GameObjectList.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Controls.LightEditorCtrl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Controls.LightEditorCtrl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Controls.LightEditorCtrl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Controls.MapAttributeTooltip.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Controls.MapAttributeTooltip.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Controls.MapAttributeTooltip.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Controls.MapTreeList.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Controls.MapTreeList.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Controls.MapTreeList.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Controls.SearchableDarkTreeView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Controls.SearchableDarkTreeView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Controls.SearchableDarkTreeView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.DockingElements.FrmMapEditor.CreateCursorInGrid(System.Drawing.Bitmap,Intersect.Point,System.String)">
+            <summary>
+            Creates a cursor from a bitmap depending on the user preferences and selected tool.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.DockingElements.FrmMapEditor.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.DockingElements.FrmMapEditor.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.DockingElements.FrmMapEditor.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.DockingElements.FrmMapGrid.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.DockingElements.FrmMapGrid.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.DockingElements.FrmMapGrid.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.DockingElements.FrmMapLayers.HideAttributeMenus">
+            <summary>
+                A method that hides all of the extra group boxes for tile data related to the map attributes.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.DockingElements.FrmMapLayers.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.DockingElements.FrmMapLayers.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.DockingElements.FrmMapLayers.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.DockingElements.FrmMapList.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.DockingElements.FrmMapList.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.DockingElements.FrmMapList.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.DockingElements.FrmMapProperties.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.DockingElements.FrmMapProperties.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.DockingElements.FrmMapProperties.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.CommandPrinter.Truncate(System.String,System.Int32)">
+            <summary>
+                Takes a string and a length value. If the string is longer than the length it will cut the string and add a ...,
+                otherwise it will return the original string.
+            </summary>
+            <param name="value">String to process.</param>
+            <param name="maxChars">Max length allowed for the string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.CommandPrinter.PrintCommandList(Intersect.Framework.Core.GameObjects.Events.EventPage,System.Collections.Generic.List{Intersect.Framework.Core.GameObjects.Events.Commands.EventCommand},System.String,System.Windows.Forms.ListBox,System.Collections.Generic.List{Intersect.Editor.Forms.Editors.Events.CommandListProperties},Intersect.Editor.Maps.MapInstance)">
+            <summary>
+                Recursively prints the referenced command list and all of it's children.
+            </summary>
+            <param name="commandList">The command list to print.</param>
+            <param name="indent">The starting indent of commands in this list.</param>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_EquippedItem.components">
+            <summary> 
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_EquippedItem.Dispose(System.Boolean)">
+            <summary> 
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_EquippedItem.InitializeComponent">
+            <summary> 
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_EquippedSlot.components">
+            <summary> 
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_EquippedSlot.Dispose(System.Boolean)">
+            <summary> 
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_EquippedSlot.InitializeComponent">
+            <summary> 
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_HasItemOrSlots.components">
+            <summary> 
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_HasItemOrSlots.Dispose(System.Boolean)">
+            <summary> 
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_HasItemOrSlots.InitializeComponent">
+            <summary> 
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_Map.components">
+            <summary> 
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_Map.Dispose(System.Boolean)">
+            <summary> 
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_Map.InitializeComponent">
+            <summary> 
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_MapZone.components">
+            <summary> 
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_MapZone.Dispose(System.Boolean)">
+            <summary> 
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_MapZone.InitializeComponent">
+            <summary> 
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_NoNpcOnMap.components">
+            <summary> 
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_NoNpcOnMap.Dispose(System.Boolean)">
+            <summary> 
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_NoNpcOnMap.InitializeComponent">
+            <summary> 
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_PlayerClass.components">
+            <summary> 
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_PlayerClass.Dispose(System.Boolean)">
+            <summary> 
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_PlayerClass.InitializeComponent">
+            <summary> 
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_PlayerGender.components">
+            <summary> 
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_PlayerGender.Dispose(System.Boolean)">
+            <summary> 
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_PlayerGender.InitializeComponent">
+            <summary> 
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_PlayerGuild.components">
+            <summary> 
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_PlayerGuild.Dispose(System.Boolean)">
+            <summary> 
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_PlayerGuild.InitializeComponent">
+            <summary> 
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_PlayerPower.components">
+            <summary> 
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_PlayerPower.Dispose(System.Boolean)">
+            <summary> 
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_PlayerPower.InitializeComponent">
+            <summary> 
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_PlayerSpell.components">
+            <summary> 
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_PlayerSpell.Dispose(System.Boolean)">
+            <summary> 
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_PlayerSpell.InitializeComponent">
+            <summary> 
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_PlayerStat.components">
+            <summary> 
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_PlayerStat.Dispose(System.Boolean)">
+            <summary> 
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_PlayerStat.InitializeComponent">
+            <summary> 
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_QuestCanStart.components">
+            <summary> 
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_QuestCanStart.Dispose(System.Boolean)">
+            <summary> 
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_QuestCanStart.InitializeComponent">
+            <summary> 
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_QuestCompleted.components">
+            <summary> 
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_QuestCompleted.Dispose(System.Boolean)">
+            <summary> 
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_QuestCompleted.InitializeComponent">
+            <summary> 
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_QuestInProgress.components">
+            <summary> 
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_QuestInProgress.Dispose(System.Boolean)">
+            <summary> 
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_QuestInProgress.InitializeComponent">
+            <summary> 
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_SelfSwitch.components">
+            <summary> 
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_SelfSwitch.Dispose(System.Boolean)">
+            <summary> 
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_SelfSwitch.InitializeComponent">
+            <summary> 
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_TimeBetween.components">
+            <summary> 
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_TimeBetween.Dispose(System.Boolean)">
+            <summary> 
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_TimeBetween.InitializeComponent">
+            <summary> 
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_Variable.components">
+            <summary> 
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_Variable.Dispose(System.Boolean)">
+            <summary> 
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.Conditions.ConditionControl_Variable.InitializeComponent">
+            <summary> 
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommand_CastSpellOn.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommand_CastSpellOn.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommand_CastSpellOn.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeFace.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeFace.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeFace.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeGender.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeGender.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeGender.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeItems.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeItems.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeItems.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeLevel.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeLevel.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeLevel.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeName.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeName.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeName.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeNameColor.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeNameColor.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeNameColor.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangePlayerColor.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangePlayerColor.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangePlayerColor.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangePlayerLabel.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangePlayerLabel.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangePlayerLabel.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeSpells.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeSpells.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeSpells.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeSprite.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeSprite.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeSprite.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeVital.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeVital.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChangeVital.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChatboxText.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChatboxText.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandChatboxText.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandCompleteQuestTask.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandCompleteQuestTask.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandCompleteQuestTask.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandConditionalBranch.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandConditionalBranch.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandConditionalBranch.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandCreateGuild.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandCreateGuild.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandCreateGuild.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandEndQuest.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandEndQuest.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandEndQuest.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandEquipItems.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandEquipItems.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandEquipItems.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandGiveExperience.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandGiveExperience.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandGiveExperience.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandGotoLabel.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandGotoLabel.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandGotoLabel.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandInput.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandInput.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandInput.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandLabel.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandLabel.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandLabel.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandOpenCraftingTable.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandOpenCraftingTable.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandOpenCraftingTable.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandOpenShop.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandOpenShop.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandOpenShop.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandOptions.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandOptions.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandOptions.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandPlayAnimation.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandPlayAnimation.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandPlayAnimation.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandPlayBgm.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandPlayBgm.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandPlayBgm.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandPlayBgs.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandPlayBgs.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandPlayBgs.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommand_ScreenFade.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommand_ScreenFade.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommand_ScreenFade.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandSelfSwitch.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandSelfSwitch.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandSelfSwitch.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandSetAccess.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandSetAccess.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandSetAccess.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandSetClass.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandSetClass.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandSetClass.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandSetGuildBankSlots.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandSetGuildBankSlots.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandSetGuildBankSlots.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommand_ShowPicture.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommand_ShowPicture.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommand_ShowPicture.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandSpawnNpc.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandSpawnNpc.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandSpawnNpc.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandStartCommonEvent.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandStartCommonEvent.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandStartCommonEvent.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandStartQuest.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandStartQuest.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandStartQuest.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandText.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandText.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandText.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandVariable.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandVariable.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandVariable.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandWait.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandWait.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandWait.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandWaitForRouteCompletion.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandWaitForRouteCompletion.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandWaitForRouteCompletion.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandWarp.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandWarp.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventCommandWarp.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventGraphicSelector.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventGraphicSelector.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventGraphicSelector.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventMoveRouteAnimationSelector.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventMoveRouteAnimationSelector.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventMoveRouteAnimationSelector.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventMoveRouteDesigner.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventMoveRouteDesigner.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.Event_Commands.EventMoveRouteDesigner.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.FrmEvent.pnlPreview_DoubleClick(System.Object,System.EventArgs)">
+            <summary>
+                Opens the graphic selector window to pick the default graphic for this event page.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.FrmEvent.frmEvent_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+            <summary>
+                Intercepts the form closing event to ask the user if they want to save their changes or not.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.FrmEvent.InitEditor(System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+                This function creates a backup of the event we are editting just in case we canel our revisions.
+                It also populates General lists in our editor (ie. switches/variables) for event spawning conditions.
+                If the event is a common event (not a map entity) we hide the entity Options on the form.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.FrmEvent.LoadPage(System.Int32)">
+            <summary>
+                Initializes all of the form controls with values from the passed event page.
+            </summary>
+            <param name="pageNum">The index of the page to load.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.FrmEvent.ListPageCommands">
+            <summary>
+                Clears the listbox that displays event commands and re-populates it.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.FrmEvent.OpenEditCommand(Intersect.Framework.Core.GameObjects.Events.Commands.EventCommand)">
+            <summary>
+                Given a new or existing command this creates the window to select to edit it's values.
+            </summary>
+            <param name="command">The command that will be modified.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.FrmEvent.FinishCommandEdit(System.Boolean)">
+            <summary>
+                Resets the form when a user saves a command they are creating or editting.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.FrmEvent.CancelCommandEdit(System.Boolean,System.Boolean)">
+            <summary>
+                Resets the form when a user cancels editting or creating a new command for the event.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.FrmEvent.btnInsert_Click(System.Object,System.EventArgs)">
+            <summary>
+                Opens the 'Add Command' window in order to insert a command at the select location in the command list.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.FrmEvent.lstEventCommands_DrawItem(System.Object,System.Windows.Forms.DrawItemEventArgs)">
+            <summary>
+            Custom renderer for event commands to draw labels in green for easier visibility.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Events.FrmEvent.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.FrmEvent.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Events.FrmEvent.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.FrmAnimation.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmAnimation.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmAnimation.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.FrmClass.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmClass.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmClass.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.FrmCommonEvent.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmCommonEvent.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmCommonEvent.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.FrmCraftingTables.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmCraftingTables.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmCraftingTables.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.FrmCrafts.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmCrafts.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmCrafts.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.FrmDynamicRequirements.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmDynamicRequirements.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmDynamicRequirements.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmItem.DrawItemIcon">
+            <summary>
+            Draw the item Icon to the form.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmItem.DrawItemPaperdoll(Intersect.Enums.Gender)">
+            <summary>
+            Draw the item Paperdoll to the form for the specified Gender.
+            </summary>
+            <param name="gender"></param>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.FrmItem.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmItem.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmItem.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.FrmNpc.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmNpc.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmNpc.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.FrmPets.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmPets.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmPets.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.FrmProjectile.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmProjectile.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmProjectile.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.FrmResource.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmResource.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmResource.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.FrmShop.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmShop.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmShop.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.FrmSpell.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmSpell.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmSpell.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.FrmTime.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmTime.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmTime.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.FrmSwitchVariable.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmSwitchVariable.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.FrmSwitchVariable.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Quest.FrmQuest.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Quest.FrmQuest.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Quest.FrmQuest.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.Editors.Quest.QuestTaskEditor.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Quest.QuestTaskEditor.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Editors.Quest.QuestTaskEditor.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.FrmAbout.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.FrmAbout.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.FrmAbout.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.FrmLogin.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.FrmLogin.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.FrmLogin.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.FrmMain.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.FrmMain.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.FrmMain.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.FrmOptions.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.FrmOptions.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.FrmOptions.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.FrmProgress.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.FrmProgress.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.FrmProgress.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.FrmUpdate.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.FrmUpdate.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.FrmUpdate.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.FrmVariableSelector.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.FrmVariableSelector.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.FrmVariableSelector.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Editor.Forms.FrmWarpSelection.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.FrmWarpSelection.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Intersect.Editor.Forms.FrmWarpSelection.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Intersect.Editor.Forms.Helpers.GridHelper">
+            <summary>
+            Helper class for drawing grids on <see cref="T:System.Drawing.Bitmap"/>s.
+            </summary>
+        </member>
+        <member name="P:Intersect.Editor.Forms.Helpers.GridHelper.ColorBackground">
+            <summary>
+            Mutable background color for all grids, default <see cref="P:System.Drawing.Color.White"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Editor.Forms.Helpers.GridHelper.ColorForeground">
+            <summary>
+            Mutable foreground color for all grids (only affects the grid lines, not text color), default <see cref="P:System.Drawing.Color.Black"/>.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Helpers.GridHelper.ColorInterpolate(System.Drawing.Color,System.Drawing.Color,System.Single)">
+            <summary>
+            Interpolates between two colors by a given ratio.
+            </summary>
+        </member>
+        <member name="P:Intersect.Editor.Forms.Helpers.GridHelper.ColorSelection">
+            <summary>
+            Mutable selection tile color for all grids, default <see cref="P:System.Drawing.Color.Red"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Editor.Forms.Helpers.GridHelper.DefaultFont">
+            <summary>
+            Mutable fallback font for text rendering on grids, default Arial 14pt.
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Helpers.GridHelper.DrawGrid(Intersect.Editor.Forms.Helpers.Grid)">
+            <summary>
+            Creates a bitmap of the given grid.
+            </summary>
+            <param name="grid">the grid to draw</param>
+            <returns>a bitmap with the configured grid drawn on it</returns>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Helpers.GridHelper.DrawGrid(System.Int32,System.Int32,System.Int32,System.Int32,Intersect.Editor.Forms.Helpers.GridCell[])">
+            <summary>
+            Creates a bitmap of the given dimensions and renders a grid with the specified dimensions and optional cell contents.
+            </summary>
+            <param name="bitmapWidth">width of the bitmap in pixels</param>
+            <param name="bitmapHeight">height of the bitmap in pixels</param>
+            <param name="gridColumns">number of columns the grid should have</param>
+            <param name="gridRows">number of rows the grid should have</param>
+            <param name="gridCells">the optional cell contents</param>
+            <returns>a bitmap with the configured grid drawn on it</returns>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Helpers.GridHelper.DrawGrid(System.Int32,System.Int32,System.Int32,System.Int32,System.Drawing.Font,Intersect.Editor.Forms.Helpers.GridCell[])">
+            <summary>
+            Creates a bitmap of the given dimensions and renders a grid with the specified dimensions and optional cell contents.
+            </summary>
+            <param name="bitmapWidth">width of the bitmap in pixels</param>
+            <param name="bitmapHeight">height of the bitmap in pixels</param>
+            <param name="gridColumns">number of columns the grid should have</param>
+            <param name="gridRows">number of rows the grid should have</param>
+            <param name="font">the font to use for text rendering</param>
+            <param name="gridCells">the optional cell contents</param>
+            <returns>a bitmap with the configured grid drawn on it</returns>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Helpers.GridHelper.DrawGrid(System.Drawing.Bitmap,System.Int32,System.Int32,Intersect.Editor.Forms.Helpers.GridCell[])">
+            <summary>
+            Renders a grid on the provided bitmap with the specified dimensions and optional cell contents.
+            </summary>
+            <param name="bitmap">the bitmap to render the grid on</param>
+            <param name="gridColumns">number of columns the grid should have</param>
+            <param name="gridRows">number of rows the grid should have</param>
+            <param name="gridCells">the optional cell contents</param>
+            <returns>a bitmap with the configured grid drawn on it</returns>
+        </member>
+        <member name="M:Intersect.Editor.Forms.Helpers.GridHelper.DrawGrid(System.Drawing.Bitmap,System.Int32,System.Int32,System.Drawing.Font,Intersect.Editor.Forms.Helpers.GridCell[])">
+            <summary>
+            Renders a grid on the provided bitmap with the specified dimensions and optional cell contents.
+            </summary>
+            <param name="bitmap">the bitmap to render the grid on</param>
+            <param name="gridColumns">number of columns the grid should have</param>
+            <param name="gridRows">number of rows the grid should have</param>
+            <param name="font">the font to use for text rendering</param>
+            <param name="gridCells">the optional cell contents</param>
+            <returns>a bitmap with the configured grid drawn on it</returns>
+        </member>
+        <member name="F:Intersect.Editor.Networking.Network.ServerStatusPingInterval">
+            <summary>
+            Interval between status pings in ms (e.g. full, bad version, etc.)
+            </summary>
+        </member>
+        <member name="M:Intersect.Editor.Networking.PacketHandler.VirtualPacketSender.Send(Intersect.Network.IPacket)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Editor.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Intersect.Editor.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Intersect.Editor.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Intersect.Editor.Properties.Resources.layer">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Intersect.Editor.Properties.Resources.layer_face">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Intersect.Editor.Properties.Resources.layer_face_sel">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Intersect.Editor.Properties.Resources.layer_hidden">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Intersect.Editor.Properties.Resources.layer_sel">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>

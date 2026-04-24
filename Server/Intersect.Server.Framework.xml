@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intersect.Server.Framework</name>
+    </assembly>
+    <members>
+        <member name="T:Intersect.Server.Plugins.Helpers.IServerLifecycleHelper">
+            <summary>
+            Defines the API for accessing server lifecycle information and events.
+            </summary>
+            <see cref="T:Intersect.Plugins.Interfaces.ILifecycleHelper"/>
+        </member>
+        <member name="T:Intersect.Server.Plugins.IServerPluginContext">
+            <summary>
+            Declares the plugin API surface for the Intersect server
+            </summary>
+        </member>
+    </members>
+</doc>

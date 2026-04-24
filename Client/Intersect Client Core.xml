@@ -1,0 +1,853 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intersect Client Core</name>
+    </assembly>
+    <members>
+        <member name="M:Intersect.Client.Core.Audio.PlayMusic(System.String,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Play a music track, automatically fading out the old track with the configured values.
+            </summary>
+            <param name="filename">The song file name to start playing. A blank filename will only stop the currently playing music track.</param>
+            <param name="fadein">The time (in ms) it should take to fade in the new music track.</param>
+            <param name="fadeout">The time (in ms) it should take to fade out the current music track.</param>
+            <param name="loop">Determines whether the song loops once it's over or not.</param>
+        </member>
+        <member name="M:Intersect.Client.Core.Audio.StartMusic(System.String,System.Int32,System.Boolean)">
+            <summary>
+            Start playing a new music track.
+            </summary>
+            <param name="filename">The song file name to start playing.</param>
+            <param name="fadein">The time (in ms) it should take to fade in the new music track.</param>
+            <param name="loop">Determines whether the song loops once it's over or not.</param>
+        </member>
+        <member name="M:Intersect.Client.Core.Audio.StopMusic(System.Int32)">
+            <summary>
+            Stops the current playing music track.
+            </summary>
+            <param name="fadeout">The time (in ms) it should take to fade out the current music track.</param>
+        </member>
+        <member name="T:Intersect.Client.Core.ClientContext">
+            <summary>
+            Implements <see cref="T:Intersect.Client.Core.IClientContext"/>.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Core.ClientContext.InternalStart">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Core.Graphics.ConvertToWorldPoint(System.Numerics.Vector2)">
+            <summary>
+            Convert a position on the screen to a position on the actual map for rendering.
+            </summary>
+            <param name="windowPoint">The point to convert.</param>
+            <returns>The converted point.</returns>
+        </member>
+        <member name="M:Intersect.Client.Core.Graphics.ConvertToWorldPointNoZoom(System.Numerics.Vector2)">
+            <summary>
+            Converts a point in the window to its place in the world view without respecting zoom
+            </summary>
+            <param name="windowPoint">The point to convert.</param>
+            <returns>The converted point.</returns>
+        </member>
+        <member name="M:Intersect.Client.Core.Graphics.DrawGameTexture(Intersect.Client.Framework.Graphics.IGameTexture,System.Single,System.Single,Intersect.Client.Framework.Graphics.IGameRenderTexture,Intersect.Client.Framework.Graphics.GameBlendModes,Intersect.Client.Framework.Graphics.GameShader,System.Single,System.Boolean)">
+            <summary>
+                Renders a specified texture onto a RenderTexture or the GameScreen (if renderTarget is passed as null) at the
+                coordinates given using a specified blending mode.
+            </summary>
+            <param name="tex">The texture to draw</param>
+            <param name="x">X coordinate on the render target to draw to</param>
+            <param name="y">Y coordinate on the render target to draw to</param>
+            <param name="renderTarget">Where to draw to. If null it this will draw to the game screen.</param>
+            <param name="blendMode">Which blend mode to use when rendering</param>
+            <param name="shader">Which shader to use when rendering</param>
+            <param name="rotationDegrees">How much to rotate the texture in degrees</param>
+            <param name="drawImmediate">If true, the texture will be drawn immediately. If false, it will be queued for drawing.</param>
+        </member>
+        <member name="M:Intersect.Client.Core.Graphics.DrawGameTexture(Intersect.Client.Framework.Graphics.IGameTexture,System.Single,System.Single,Intersect.Color,Intersect.Client.Framework.Graphics.IGameRenderTexture,Intersect.Client.Framework.Graphics.GameBlendModes,Intersect.Client.Framework.Graphics.GameShader,System.Single,System.Boolean)">
+            <summary>
+                Renders a specified texture onto a RenderTexture or the GameScreen (if renderTarget is passed as null) at the
+                coordinates given using a specified blending mode.
+            </summary>
+            <param name="tex">The texture to draw</param>
+            <param name="x">X coordinate on the render target to draw to</param>
+            <param name="y">Y coordinate on the render target to draw to</param>
+            <param name="renderColor">Color mask to draw with. Default is Color.White</param>
+            <param name="renderTarget">Where to draw to. If null it this will draw to the game screen.</param>
+            <param name="blendMode">Which blend mode to use when rendering</param>
+            <param name="shader">Which shader to use when rendering</param>
+            <param name="rotationDegrees">How much to rotate the texture in degrees</param>
+            <param name="drawImmediate">If true, the texture will be drawn immediately. If false, it will be queued for drawing.</param>
+        </member>
+        <member name="M:Intersect.Client.Core.Graphics.DrawGameTexture(Intersect.Client.Framework.Graphics.IGameTexture,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,Intersect.Client.Framework.Graphics.IGameRenderTexture,Intersect.Client.Framework.Graphics.GameBlendModes,Intersect.Client.Framework.Graphics.GameShader,System.Single,System.Boolean)">
+            <summary>
+                Renders a specified texture onto a RenderTexture or the GameScreen (if renderTarget is passed as null) at the
+                coordinates given using a specified blending mode.
+            </summary>
+            <param name="tex">The texture to draw</param>
+            <param name="dx">X coordinate on the renderTarget to draw to.</param>
+            <param name="dy">Y coordinate on the renderTarget to draw to.</param>
+            <param name="sx">X coordinate on the source texture to grab from.</param>
+            <param name="sy">Y coordinate on the source texture to grab from.</param>
+            <param name="w">Width of the texture part we are rendering.</param>
+            <param name="h">Height of the texture part we are rendering.</param>
+            <param name="renderTarget">>Where to draw to. If null it this will draw to the game screen.</param>
+            <param name="blendMode">Which blend mode to use when rendering</param>
+            <param name="shader">Which shader to use when rendering</param>
+            <param name="rotationDegrees">How much to rotate the texture in degrees</param>
+            <param name="drawImmediate">If true, the texture will be drawn immediately. If false, it will be queued for drawing.</param>
+        </member>
+        <member name="T:Intersect.Client.Core.Program">
+            <summary>
+                The main class.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Core.Program.Main(System.Reflection.Assembly,System.String[])">
+            <summary>
+                The main entry point for the application.
+            </summary>
+        </member>
+        <member name="P:Intersect.Client.Entities.Entity.IsStealthed">
+            <summary>
+            Returns whether this entity is Stealthed or not.
+            </summary>
+        </member>
+        <member name="P:Intersect.Client.Entities.Entity.ShouldDraw">
+            <summary>
+            Returns whether this entity should be drawn.
+            </summary>
+        </member>
+        <member name="P:Intersect.Client.Entities.Entity.ShouldDrawName">
+            <summary>
+            Returns whether the name of this entity should be drawn.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Entities.Entity.DrawEquipment(System.String,Intersect.Color)">
+            <summary>
+            Draws the equipment of entities using paperdoll texture files.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Entities.Entity.DirectionToTarget(Intersect.Client.Entities.Entity)">
+            <summary>
+            <para>Returns the direction to a player's selected target.</para>
+            <para>Original logic made by Daywalkr (Middle Ages: Online), thanks for sharing!</para>
+            <para>Modified by Arufonsu for the Intersect Engine along with support for 8 directions when enabled.</para>
+            </summary>
+            <param name="en">entity's target</param>
+            <returns>direction to player's selected target</returns>
+        </member>
+        <member name="M:Intersect.Client.Entities.Entity.IsTileBlocked(Intersect.Point,System.Int32,System.Guid,Intersect.Client.Framework.Entities.IEntity@,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+                Returns -6 if the tile is blocked by a global (non-event) entity
+                Returns -5 if the tile is completely out of bounds.
+                Returns -4 if a tile is blocked because of a local event.
+                Returns -3 if a tile is blocked because of a Z dimension tile
+                Returns -2 if a tile does not exist or is blocked by a map attribute.
+                Returns -1 is a tile is passable.
+                Returns any value zero or greater matching the entity index that is in the way.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Intersect.Client.Entities.Player.Guild">
+            <summary>
+            Name of our guild if we are in one.
+            </summary>
+        </member>
+        <member name="P:Intersect.Client.Entities.Player.Rank">
+            <summary>
+            Index of our rank where 0 is the leader
+            </summary>
+        </member>
+        <member name="P:Intersect.Client.Entities.Player.IsInGuild">
+            <summary>
+            Returns whether or not we are in a guild by checking to see if we are assigned a guild name
+            </summary>
+        </member>
+        <member name="P:Intersect.Client.Entities.Player.GuildRank">
+            <summary>
+            Obtains our rank and permissions from the game config
+            </summary>
+        </member>
+        <member name="F:Intersect.Client.Entities.Player.GuildMembers">
+            <summary>
+            Contains a record of all members of this player's guild.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Entities.Player.TryStoreItemInBank(System.Int32,Intersect.Client.Framework.Items.IItem,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Attempts to deposit the item from the inventory into the bank.
+            </summary>
+            <param name="inventorySlotIndex"></param>
+            <param name="slot"></param>
+            <param name="bankSlotIndex"></param>
+            <param name="quantityHint"></param>
+            <param name="skipPrompt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Client.Entities.Player.TryRetrieveItemFromBank(System.Int32,Intersect.Client.Framework.Items.IItem,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Attempts to withdraw items from the bank into the inventory.
+            </summary>
+            <param name="bankSlotIndex"></param>
+            <param name="slot"></param>
+            <param name="inventorySlotIndex"></param>
+            <param name="quantityHint"></param>
+            <param name="skipPrompt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Client.Entities.Player.TryPickupItem(System.Guid,System.Int32,System.Guid,System.Boolean)">
+            <summary>
+            Attempts to pick up an item at the specified location.
+            </summary>
+            <param name="mapId">The Id of the map we are trying to loot from.</param>
+            <param name="tileIndex"> The index of the tile we are trying to loot from.</param>
+            <param name="uniqueId">The Unique Id of the specific item we want to pick up, leave <see cref="F:System.Guid.Empty"/> to not specificy an item and pick up the first thing we can find.</param>
+            <param name="firstOnly">Defines whether we only want to pick up the first item we can find when true, or all items when false.</param>
+            <returns> Whether the action was successful or not </returns>
+        </member>
+        <member name="M:Intersect.Client.Entities.Player.CalculateAttackTime(System.Int32)">
+            <summary>
+            Calculate the attack time for the player as if they have a specified speed stat.
+            </summary>
+            <param name="speed"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Client.Entities.Projectiles.Projectile.#ctor(System.Guid,Intersect.Network.Packets.Server.ProjectileEntityPacket)">
+            <summary>
+            The constructor for the inherated projectile class
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Entities.Projectiles.Projectile.Dispose">
+            <summary>
+            Disposes of the resources used by this instance, preventing any further use.
+            </summary>
+        </member>
+        <member name="P:Intersect.Client.Entities.Projectiles.Projectile.CanBeAttacked">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Entities.Projectiles.Projectile.FindSpawnAnimationData">
+            <summary>
+            Determines the appropriate animation data index for the current spawn wave of the projectile.
+            This method iterates through the available animations defined in the projectile's base configuration,
+            selecting the one whose spawn range encompasses the current quantity of spawns.
+            </summary>
+            <returns>The index of the animation data to use for the current spawn wave.</returns>
+        </member>
+        <member name="M:Intersect.Client.Entities.Projectiles.Projectile.AddProjectileSpawns">
+            <summary>
+            Adds projectile spawns based on predefined spawn locations and directions.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Entities.Projectiles.Projectile.FindProjectileRotation(Intersect.Enums.Direction,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Finds the projectile rotation value based on the direction, position and the axis.
+            </summary>
+            <param name="direction">The direction of the projectile.</param>
+            <param name="x">The x-coordinate value.</param>
+            <param name="y">The y-coordinate value.</param>
+            <param name="isXAxis">True for horizontal (X-axis), false for vertical (Y-axis) calculation.</param>
+            <returns>The rotation value for the specified axis based on the direction.</returns>
+        </member>
+        <member name="M:Intersect.Client.Entities.Projectiles.Projectile.GetRange(Intersect.Enums.Direction,System.Single,System.Boolean)">
+            <summary>
+            Calculates the projectile range based on the given direction, range, and axis.
+            </summary>
+            <param name="direction">The direction of the projectile.</param>
+            <param name="range">The range of the projectile.</param>
+            <param name="isXAxis">True for horizontal (X-axis), false for vertical (Y-axis) calculation.</param>
+            <returns>The calculated range value.</returns>
+        </member>
+        <member name="M:Intersect.Client.Entities.Projectiles.Projectile.GetDisplacement(System.Int64)">
+            <summary>
+            Gets the displacement of the projectile during projection
+            </summary>
+            <returns>The displacement from the co-ordinates if placed on a Options.Instance.Map.TileHeight grid.</returns>
+        </member>
+        <member name="M:Intersect.Client.Entities.Projectiles.Projectile.Update">
+            <summary>
+            Overwrite updating the offsets for projectile movement.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Entities.Projectiles.Projectile.GetProjectileOffset(Intersect.Client.Entities.Projectiles.ProjectileSpawns,System.Boolean)">
+            <summary>
+            Calculates the offset for the projectile spawn position based on the target map and spawn location.
+            </summary>
+            <param name="spawn">The projectile spawn information.</param>
+            <param name="isXAxis">True for horizontal (X-axis), false for vertical (Y-axis) calculation.</param>
+            <returns>The calculated offset value.</returns>
+        </member>
+        <member name="M:Intersect.Client.Entities.Projectiles.Projectile.GetProjectileLerping(Intersect.Client.Entities.Projectiles.ProjectileSpawns,System.Boolean)">
+            <summary>
+            Calculates the interpolated (lerped) position value for a projectile along the X or Y axis.
+            </summary>
+            <param name="spawn">The spawn information of the projectile, including its initial position and spawn time.</param>
+            <param name="isXAxis">True for horizontal (X-axis), false for vertical (Y-axis) calculation.</param>
+            <returns>The interpolated position value for the projectile on the specified axis, taking into account the projectile's travel direction, speed, and elapsed time since spawning.</returns>
+            <remarks>
+            This method determines the projectile's current position by interpolating between its initial offset and its desired position at the current time.
+            It calculates the direction and magnitude of the projectile's movement, normalizes this to obtain a unit vector in the direction of movement,
+            and then applies linear interpolation based on the elapsed time since the projectile was spawned.
+            The interpolation factor is clamped to ensure that the projectile does not overshoot its target position.
+            </remarks>
+        </member>
+        <member name="M:Intersect.Client.Entities.Projectiles.Projectile.SetProjectileRotation(Intersect.Client.Entities.Projectiles.ProjectileSpawns)">
+            <summary>
+            Sets the rotation of a projectile based on its spawn information.
+            </summary>
+            <param name="spawn">The spawn information of the projectile, including its current animation state and position.</param>
+            <remarks>
+            This method calculates the angle between the projectile's current position and its target,
+            converting the angle from radians to degrees and adjusting it by 90 degrees to align with the game's coordinate system.
+            The calculated angle is then applied to the projectile's animation state to visually orient the projectile towards its target.
+            </remarks>
+        </member>
+        <member name="M:Intersect.Client.Entities.Projectiles.Projectile.CheckForCollision">
+            <summary>
+            Checks for collision of the projectile with other entities or map boundaries.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Entities.Projectiles.Projectile.AdjustPositionOnMapBoundaries(System.Single@,System.Single@,Intersect.Client.Maps.MapInstance@)">
+            <summary>
+            Adjusts the position of a projectile on the map boundaries, potentially changing its map instance.
+            </summary>
+            <param name="newx">The new x-coordinate of the projectile.</param>
+            <param name="newy">The new y-coordinate of the projectile.</param>
+            <param name="spawnMap">The map instance where the projectile is spawned. This may be updated if the projectile crosses map boundaries.</param>
+            <remarks>
+            This method checks if the projectile crosses the boundaries of its current map. If it does, it attempts to move the projectile
+            to the adjacent map in the direction it crossed the boundary. This includes handling corner cases where the projectile crosses
+            at the corners of the map, potentially moving it diagonally to a new map. The new position of the projectile is adjusted to
+            visually reflect its entry point into the adjacent map.
+            </remarks>
+        </member>
+        <member name="M:Intersect.Client.Entities.Projectiles.Projectile.Collided(System.Int32)">
+            <summary>
+            Determines if a projectile spawn has collided with an entity, resource, or map block.
+            </summary>
+            <param name="i">The index of the projectile spawn in the _spawns array.</param>
+            <returns>True if the projectile spawn has collided and should be destroyed; otherwise, false.</returns>
+        </member>
+        <member name="M:Intersect.Client.Entities.Projectiles.Projectile.Draw">
+            <summary>
+            Rendering all of the individual projectiles from a singular spawn to a map.
+            </summary>
+        </member>
+        <member name="P:Intersect.Client.Entities.Resource.CanBeAttacked">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.General.Globals.SoftLogout">
+            <summary>
+                This is used to prevent the client from showing unnecessary disconnect messages
+            </summary>
+        </member>
+        <member name="P:Intersect.Client.General.Globals.GameState">
+            <see cref="T:Intersect.Client.General.GameStates" />
+        </member>
+        <member name="T:Intersect.Client.Interface.Game.AnnouncementWindow">
+            <summary>
+            The GUI class for the Announcement Window that can pop up on-screen during gameplay.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.AnnouncementWindow.#ctor(Intersect.Client.Framework.Gwen.Control.Canvas)">
+            <summary>
+            Create a new instance of the <see cref="T:Intersect.Client.Interface.Game.AnnouncementWindow"/> class.
+            </summary>
+            <param name="gameCanvas">The <see cref="T:Intersect.Client.Framework.Gwen.Control.Canvas"/> to render this control on.</param>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.AnnouncementWindow.Update">
+            <summary>
+            Update this control...
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.AnnouncementWindow.ShowAnnouncement(System.String,System.Int64)">
+            <summary>
+            Display an announcement.
+            </summary>
+            <param name="announcementText">The text to display.</param>
+            <param name="displayTime">The time for which to display the announcement.</param>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.Character.CharacterWindow.UpdateExtraBuffs">
+            <summary>
+            Update Extra Buffs Effects like hp/mana regen and items effect types
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.Character.CharacterWindow.UpdateExtraBuffs(System.Guid)">
+            <summary>
+            Update Extra Buffs Effects like hp/mana regen and items effect types
+            </summary>
+            <param name="itemId">Id of item to update extra buffs</param>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.Character.CharacterWindow.Show">
+            <summary>
+            Show the window
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.Character.CharacterWindow.IsVisible">
+            <summary>
+            </summary>
+            <returns>Returns if window is visible</returns>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.Character.CharacterWindow.Hide">
+            <summary>
+            Hide the window
+            </summary>
+        </member>
+        <member name="F:Intersect.Client.Interface.Game.Chat.Chatbox.mTabButtons">
+            <summary>
+            A dictionary of all chat tab buttons based on the <see cref="T:Intersect.Enums.ChatboxTab"/> enum.
+            </summary>
+        </member>
+        <member name="F:Intersect.Client.Interface.Game.Chat.Chatbox.mCurrentTab">
+            <summary>
+            Defines which chat tab we are currently looking at.
+            </summary>
+        </member>
+        <member name="F:Intersect.Client.Interface.Game.Chat.Chatbox.mLastTab">
+            <summary>
+            The last tab that was looked at before switching around, if a switch was made at all.
+            </summary>
+        </member>
+        <member name="F:Intersect.Client.Interface.Game.Chat.Chatbox.mLastChatChannel">
+            <summary>
+            Keep track of what chat channel we were chatting in on certain tabs so we can remember this when switching back to them.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.Chat.Chatbox.MenuItem_Selected(Intersect.Client.Framework.Gwen.Control.Base,Intersect.Client.Framework.Gwen.Control.EventArguments.ItemSelectedEventArgs)">
+            <summary>
+            Handle logic after a chat channel menu item is selected.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.Chat.Chatbox.EnableChatTabs">
+            <summary>
+            Enables all the chat tab buttons.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.Chat.Chatbox.TabButtonClicked(Intersect.Client.Framework.Gwen.Control.Base,Intersect.Client.Framework.Gwen.Control.EventArguments.MouseButtonState)">
+            <summary>
+            Handles the click event of a chat tab button.
+            </summary>
+            <param name="sender">The button that was clicked.</param>
+            <param name="arguments">The arguments passed by the event.</param>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.Chat.Chatbox.SetChannelToTab(Intersect.Enums.ChatboxTab)">
+            <summary>
+            Sets the selected chat channel to type in by default to the channel corresponding to the provided tab.
+            </summary>
+            <param name="tab">The tab to use for reference as to which channel we want to speak in.</param>
+        </member>
+        <member name="F:Intersect.Client.Interface.Game.Chat.ChatboxMsg.sTabMessageTypes">
+            <summary>
+            Contains the configuration of which message types to display in each chat tab.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.Chat.ChatboxMsg.#ctor(System.String,Intersect.Color,Intersect.Enums.ChatMessageType,System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:Intersect.Client.Interface.Game.Chat.ChatboxMsg"/> class.
+            </summary>
+            <param name="msg">The message to add.</param>
+            <param name="clr">The color of the message.</param>
+            <param name="type">The type of the message.</param>
+            <param name="target">The target of the message.</param>
+        </member>
+        <member name="P:Intersect.Client.Interface.Game.Chat.ChatboxMsg.Message">
+            <summary>
+            The contents of this message.
+            </summary>
+        </member>
+        <member name="P:Intersect.Client.Interface.Game.Chat.ChatboxMsg.Color">
+            <summary>
+            The color of this message.
+            </summary>
+        </member>
+        <member name="P:Intersect.Client.Interface.Game.Chat.ChatboxMsg.Type">
+            <summary>
+            The type of this message.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.Chat.ChatboxMsg.AddMessage(Intersect.Client.Interface.Game.Chat.ChatboxMsg)">
+            <summary>
+            Adds a new chat message to the stored list.
+            </summary>
+            <param name="msg">The message to add.</param>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.Chat.ChatboxMsg.GetMessages">
+            <summary>
+            Retrieves all chat messages.
+            </summary>
+            <returns>Returns a list of chat messages.</returns>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.Chat.ChatboxMsg.GetMessages(Intersect.Enums.ChatboxTab)">
+            <summary>
+            Retrieves all messages that should be displayed in the provided tab.
+            </summary>
+            <param name="tab">The tab for which to retrieve all messages.</param>
+            <returns>Returns a list of chat messages.</returns>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.Chat.ChatboxMsg.ClearMessages">
+            <summary>
+            Clears all stored messages.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.Components.ComponentBase.CorrectWidth">
+            <summary>
+            Corrects the width of the component compared to the parent size.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.Components.DescriptionComponent.AddText(System.String,Intersect.Color)">
+            <summary>
+            Add text to the description with the provided <see cref="T:Intersect.Color"/>.
+            </summary>
+            <param name="description">The description to place on this component.</param>
+            <param name="color">The <see cref="T:Intersect.Color"/> the description text should render with.</param>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.Components.DescriptionComponent.AddLineBreak">
+            <summary>
+            Adds a line break to the description.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.Components.DescriptionComponent.CorrectWidth">
+            <inheritdoc/>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.Components.HeaderComponent.SetIcon(Intersect.Client.Framework.Graphics.IGameTexture,Intersect.Color)">
+            <summary>
+            Set the icon on this header.
+            </summary>
+            <param name="texture">The <see cref="T:Intersect.Client.Framework.Graphics.IGameTexture"/> to use for display purposes.</param>
+            <param name="color">The <see cref="T:Intersect.Color"/> to use to display the texture.</param>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.Components.HeaderComponent.SetTitle(System.String,Intersect.Color)">
+            <summary>
+            Set the title on this header.
+            </summary>
+            <param name="title">The title text to use.</param>
+            <param name="color">The <see cref="T:Intersect.Color"/> to use to display this title.</param>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.Components.HeaderComponent.SetSubtitle(System.String,Intersect.Color)">
+            <summary>
+            Set the subtitle on this header.
+            </summary>
+            <param name="subtitle">The subtitle text to use.</param>
+            <param name="color">The <see cref="T:Intersect.Color"/> to use to display this subtitle.</param>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.Components.HeaderComponent.SetDescription(System.String,Intersect.Color)">
+            <summary>
+            Set the description on this header.
+            </summary>
+            <param name="description">The description text to use.</param>
+            <param name="color">The <see cref="T:Intersect.Color"/> to use to display this description.</param>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.Components.KeyValueRowComponent.SetKeyTextColor(Intersect.Color)">
+            <summary>
+            Set the <see cref="T:Intersect.Color"/> of the key text.
+            </summary>
+            <param name="color">The <see cref="T:Intersect.Color"/> to draw the key text in.</param>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.Components.KeyValueRowComponent.SetValueTextColor(Intersect.Color)">
+            <summary>
+            Set the <see cref="T:Intersect.Color"/> of the value text.
+            </summary>
+            <param name="color">The <see cref="T:Intersect.Color"/> to draw the value text in.</param>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.Components.RowContainerComponent.CorrectWidth">
+            <inheritdoc/>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.Components.RowContainerComponent.AddKeyValueRow(System.String,System.String)">
+            <summary>
+            Add a new <see cref="T:Intersect.Client.Interface.Game.DescriptionWindows.Components.KeyValueRowComponent"/> row to the container.
+            </summary>
+            <param name="key">The key to display.</param>
+            <param name="value">The value to display.</param>
+            <returns>Returns a new instance of <see cref="T:Intersect.Client.Interface.Game.DescriptionWindows.Components.KeyValueRowComponent"/> with the provided settings.</returns>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.DescriptionWindowBase.AddHeader(System.String,System.Boolean)">
+            <summary>
+            Adds a <see cref="T:Intersect.Client.Interface.Game.DescriptionWindows.Components.HeaderComponent"/> to the current window.
+            </summary>
+            <param name="name">The name of the component.</param>
+            <param name="loadLayout">Should we load the layour json file automatically?</param>
+            <returns>Returns a new instance of the <see cref="T:Intersect.Client.Interface.Game.DescriptionWindows.Components.HeaderComponent"/> class</returns>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.DescriptionWindowBase.AddDivider(System.String,System.Boolean)">
+            <summary>
+            Adds a <see cref="T:Intersect.Client.Interface.Game.DescriptionWindows.Components.DividerComponent"/> to the current window.
+            </summary>
+            <param name="name">The name of the component.</param>
+            <param name="loadLayout">Should we load the layour json file automatically?</param>
+            <returns>Returns a new instance of the <see cref="T:Intersect.Client.Interface.Game.DescriptionWindows.Components.DividerComponent"/> class</returns>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.DescriptionWindowBase.AddDescription(System.String,System.Boolean)">
+            <summary>
+            Adds a <see cref="T:Intersect.Client.Interface.Game.DescriptionWindows.Components.DescriptionComponent"/> to the current window.
+            </summary>
+            <param name="name">The name of the component.</param>
+            <param name="loadLayout">Should we load the layour json file automatically?</param>
+            <returns>Returns a new instance of the <see cref="T:Intersect.Client.Interface.Game.DescriptionWindows.Components.DescriptionComponent"/> class</returns>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.DescriptionWindowBase.AddRowContainer(System.String)">
+            <summary>
+            Adds a <see cref="T:Intersect.Client.Interface.Game.DescriptionWindows.Components.RowContainerComponent"/> to the current window.
+            </summary>
+            <param name="name">The name of the component.</param>
+            <returns>Returns a new instance of the <see cref="T:Intersect.Client.Interface.Game.DescriptionWindows.Components.DescriptionComponent"/> class</returns>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.DescriptionWindowBase.PositionComponent(Intersect.Client.Interface.Game.DescriptionWindows.Components.ComponentBase)">
+            <summary>
+            Positions a component correctly on the current window.
+            </summary>
+            <param name="component">The <see cref="T:Intersect.Client.Interface.Game.DescriptionWindows.Components.ComponentBase"/> to place.</param>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.DescriptionWindowBase.FinalizeWindow">
+            <summary>
+            Position and resize all components properly for display.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Interface.Game.DescriptionWindows.DescriptionWindowBase.PositionToHoveredControl">
+            <inheritdoc/>
+        </member>
+        <member name="T:Intersect.Client.Interface.Game.TargetContextMenu">
+            <summary>
+            The GUI class for the Target Context Menu that pop up on-screen during gameplay.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Interface.Menu.EscapeMenuWindow.ToggleHidden">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.Interface.Menu.MenuGuiBase.Children">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Interface.Menu.MenuGuiBase.Create``1(System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Interface.Menu.MenuGuiBase.Find``1(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Interface.Menu.MenuGuiBase.FindAll``1(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Interface.Menu.MenuGuiBase.Remove``1(``0,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.Interface.MutableInterface.Children">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Interface.MutableInterface.Create``1(System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Interface.MutableInterface.Find``1(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Interface.MutableInterface.FindAll``1(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Interface.MutableInterface.Remove``1(``0,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.Items.MapItemInstance.Id">
+            <summary>
+            The Unique Id of this particular MapItemInstance so we can refer to it elsewhere.
+            </summary>
+        </member>
+        <member name="P:Intersect.Client.Maps.MapGrid.Content">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.Maps.MapGrid.Height">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.Maps.MapGrid.Width">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.Maps.MapInstance.X">
+            <summary>
+            X coordinate of the map in world space
+            </summary>
+        </member>
+        <member name="P:Intersect.Client.Maps.MapInstance.Y">
+            <summary>
+            Y coordinate of the map in world space
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Maps.MapInstance.DrawItemNames">
+            <summary>
+            Draws all names of the items on the tile the user is hovering over.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Maps.MapInstance.DrawFog">
+            <summary>
+            Draws the fog over the game view.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.MonoGame.Audio.MonoAudioInstance`2.#ctor(Intersect.Client.Framework.Audio.GameAudioSource,`1)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.MonoGame.File_Management.MonoContentManager.Load``1(System.Collections.Generic.Dictionary{System.String,Intersect.Client.Framework.Content.IAsset},Intersect.Client.Framework.Content.ContentType,System.String,System.Func{System.IO.Stream})">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.MonoGame.Input.MonoClipboard.SetText(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.MonoGame.Input.MonoClipboard.GetText">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.MonoGame.Input.MonoClipboard.IsEmpty">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.MonoGame.Input.MonoClipboard.IsEnabled">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Client.MonoGame.IntersectGame">
+            <summary>
+                This is the main type for your game.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.MonoGame.IntersectGame.Initialize">
+            <summary>
+                Allows the game to perform any initialization it needs to before starting to run.
+                This is where it can query for any required services and load any non-graphic
+                related content.  Calling base.Initialize will enumerate through any components
+                and initialize them as well.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.MonoGame.IntersectGame.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+                Allows the game to run logic such as updating the world,
+                checking for collisions, gathering input, and playing audio.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:Intersect.Client.MonoGame.IntersectGame.Draw(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+                This is called when the game should draw itself.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="T:Intersect.Client.MonoGame.IntersectGame.MonoGameRunner">
+            <summary>
+            Implements <see cref="T:Intersect.Client.Core.IPlatformRunner"/> for MonoGame.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.MonoGame.IntersectGame.MonoGameRunner.Start(Intersect.Client.Core.IClientContext,System.Action)">
+            <inheritdoc />
+        </member>
+        <member name="F:Intersect.Client.MonoGame.Network.MonoSocket.ServerStatusPingInterval">
+            <summary>
+            Interval between status pings in ms (e.g. full, bad version, etc.)
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Networking.PacketHandler.VirtualPacketSender.Send(Intersect.Network.IPacket)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Plugins.Audio.AudioManager.PlayMapSound(System.String,System.Int32,System.Int32,System.Guid,System.Boolean,System.Int32,System.Int32,Intersect.Client.Framework.Entities.IEntity)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Plugins.Audio.AudioManager.PlaySound(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Plugins.Audio.AudioManager.StopSound(Intersect.Client.Framework.Core.Sounds.ISound)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Plugins.Audio.AudioManager.StopSound(Intersect.Client.Framework.Core.Sounds.IMapSound)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Plugins.Audio.AudioManager.StopAllSounds">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Plugins.Audio.AudioManager.PlayMusic(System.String,System.Int32,System.Int32,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Plugins.Audio.AudioManager.StopMusic(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Client.Plugins.Contexts.ClientPluginContext">
+            <summary>
+            Implementation of <see cref="T:Intersect.Client.Plugins.IClientPluginContext"/>.
+            </summary>
+        </member>
+        <member name="T:Intersect.Client.Plugins.Contexts.ClientPluginContext.Factory">
+            <summary>
+            <see cref="T:Intersect.Plugins.IPluginContext"/> factory that creates instances of <see cref="T:Intersect.Client.Plugins.IClientPluginContext"/>.
+            </summary>
+        </member>
+        <member name="M:Intersect.Client.Plugins.Contexts.ClientPluginContext.Factory.Create(System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Plugins.Contexts.ClientPluginContext.#ctor(Intersect.Plugins.Plugin,Intersect.Plugins.Interfaces.IPacketHelper)">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.Plugins.Contexts.ClientPluginContext.ContentManager">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.Plugins.Contexts.ClientPluginContext.Graphics">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.Plugins.Contexts.ClientPluginContext.Audio">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.Plugins.Contexts.ClientPluginContext.Lifecycle">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.Plugins.Contexts.ClientPluginContext.Network">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.Plugins.Contexts.ClientPluginContext.Input">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.Plugins.Contexts.ClientPluginContext.Options">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Client.Plugins.Helpers.ClientLifecycleHelper">
+            <inheritdoc cref="T:Intersect.Client.Plugins.Interfaces.IClientLifecycleHelper"/>
+        </member>
+        <member name="E:Intersect.Client.Plugins.Helpers.ClientLifecycleHelper.GameUpdate">
+            <inheritdoc />
+        </member>
+        <member name="E:Intersect.Client.Plugins.Helpers.ClientLifecycleHelper.GameDraw">
+            <inheritdoc />
+        </member>
+        <member name="E:Intersect.Client.Plugins.Helpers.ClientLifecycleHelper.LifecycleChangedState">
+            <inheritdoc />
+        </member>
+        <member name="E:Intersect.Client.Plugins.Helpers.ClientLifecycleHelper.LifecycleChangingState">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.Plugins.Helpers.ClientLifecycleHelper.Interface">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Plugins.Helpers.ClientLifecycleHelper.EmitLifecycleChangedState(Intersect.Client.General.GameStates)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Plugins.Helpers.ClientLifecycleHelper.EmitLifecycleChangingState(Intersect.Client.General.GameStates)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Plugins.Helpers.ClientLifecycleHelper.EmitGameUpdate(Intersect.Client.General.GameStates,Intersect.Client.Framework.Entities.IPlayer,System.Collections.Generic.Dictionary{System.Guid,Intersect.Client.Framework.Entities.IEntity},System.TimeSpan)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Plugins.Helpers.ClientLifecycleHelper.EmitGameDraw(Intersect.Client.Framework.Graphics.DrawStates,System.TimeSpan)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Plugins.Helpers.ClientLifecycleHelper.EmitGameDraw(Intersect.Client.Framework.Graphics.DrawStates,Intersect.Client.Framework.Entities.IEntity,System.TimeSpan)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Client.Plugins.Helpers.ClientNetworkHelper">
+            <summary>
+            Implementation if <see cref="T:Intersect.Client.Framework.Plugins.Interfaces.IClientNetworkHelper"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Client.Plugins.Helpers.ClientNetworkHelper.IsConnected">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.Plugins.Helpers.ClientNetworkHelper.IsServerOnline">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.Plugins.Helpers.ClientNetworkHelper.PacketSender">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.Plugins.Helpers.ClientNetworkHelper.Statistics">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Client.Plugins.Helpers.PluginPacketSender.ApplicationContext">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Client.Plugins.Helpers.PluginPacketSender.Send(Intersect.Network.IPacket)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

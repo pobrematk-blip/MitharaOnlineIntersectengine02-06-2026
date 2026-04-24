@@ -1,0 +1,49 @@
+# Logs
+logs/
+Client/logs/
+Server/logs/
+*.log
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+gamedata.db
+playerdata.db
+logging.db
+mapcache.db
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.vs/
+*.user
+*.suo
+*.sln.DotSettings
+
+# Build output
+bin/
+obj/
+dist/
+build/
+
+# Package files
+packages/
+.nuget/
+*.nupkg
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# Node modules (if any web dev)
+node_modules/

@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intersect.Framework</name>
+    </assembly>
+    <members>
+        <member name="M:Intersect.Framework.Converters.Json.GenericSystemJsonConverterFactory.CanConvert(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Intersect.Framework.Converters.Json.GenericSystemJsonConverterFactory.CreateConverter(System.Type,System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Intersect.Framework.Converters.Json.HandleSystemJsonConverterFactory">
+            <summary>
+            Creates <see cref="T:System.Text.Json.Serialization.JsonConverter`1"/> instances for <see cref="T:Intersect.Framework.Id`1"/>.
+            </summary>
+        </member>
+        <member name="T:Intersect.Framework.Converters.Json.IdSystemJsonConverterFactory">
+            <summary>
+            Creates <see cref="T:System.Text.Json.Serialization.JsonConverter`1"/> instances for <see cref="T:Intersect.Framework.Id`1"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Eventing.AggregateSender.CurrentSender">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Framework.Eventing.AggregateSender.OriginalSender">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Framework.Eventing.AggregateSender`1.CurrentSender">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Framework.Eventing.AggregateSender`1.OriginalSender">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Framework.Handle`1">
+            <summary>
+            Represents a type-bound handle (pointer).
+            </summary>
+            <param name="Pointer">the generic pointer</param>
+            <typeparam name="T">the type this Handle is for</typeparam>
+        </member>
+        <member name="M:Intersect.Framework.Handle`1.#ctor(System.IntPtr)">
+            <summary>
+            Represents a type-bound handle (pointer).
+            </summary>
+            <param name="Pointer">the generic pointer</param>
+            <typeparam name="T">the type this Handle is for</typeparam>
+        </member>
+        <member name="P:Intersect.Framework.Handle`1.Pointer">
+            <summary>the generic pointer</summary>
+        </member>
+        <member name="F:Intersect.Framework.Handle`1.None">
+            <summary>
+            Empty handle with zeroed internal <see cref="T:System.IntPtr"/>.
+            </summary>
+        </member>
+        <member name="M:Intersect.Framework.Handle`1.op_Implicit(Intersect.Framework.Handle{`0})~System.IntPtr">
+            <summary>
+            Converts an <see cref="T:Intersect.Framework.Handle`1"/> to the contained <see cref="P:Intersect.Framework.Handle`1.Pointer"/>.
+            </summary>
+            <param name="handle">the <see cref="T:Intersect.Framework.Handle`1"/> to convert</param>
+        </member>
+        <member name="T:Intersect.Framework.Id`1">
+            <summary>
+            Represents a type-bound unique identifier.
+            </summary>
+            <param name="Guid">the generic unique identifier value</param>
+            <typeparam name="T">the type this Id is for</typeparam>
+        </member>
+        <member name="M:Intersect.Framework.Id`1.#ctor(System.Guid)">
+            <summary>
+            Represents a type-bound unique identifier.
+            </summary>
+            <param name="Guid">the generic unique identifier value</param>
+            <typeparam name="T">the type this Id is for</typeparam>
+        </member>
+        <member name="P:Intersect.Framework.Id`1.Guid">
+            <summary>the generic unique identifier value</summary>
+        </member>
+        <member name="F:Intersect.Framework.Id`1.None">
+            <summary>
+            Empty ID with zeroed internal <see cref="T:System.Guid"/>.
+            </summary>
+        </member>
+        <member name="M:Intersect.Framework.Id`1.New">
+            <summary>
+            Initializes a new <see cref="T:Intersect.Framework.Id`1"/> value.
+            </summary>
+            <returns>a new unique <see cref="T:Intersect.Framework.Id`1"/> for <typeparamref name="T"/></returns>
+        </member>
+        <member name="M:Intersect.Framework.Id`1.op_Explicit(Intersect.Framework.Id{`0})~System.Guid">
+            <summary>
+            Converts an <see cref="T:Intersect.Framework.Id`1"/> to the contained <see cref="P:Intersect.Framework.Id`1.Guid"/>.
+            </summary>
+            <param name="id">the <see cref="T:Intersect.Framework.Id`1"/> to convert</param>
+        </member>
+        <member name="T:Intersect.Framework.Reflection.AssemblyExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Reflection.Assembly"/>.
+            </summary>
+        </member>
+        <member name="M:Intersect.Framework.Reflection.AssemblyExtensions.CreateInstanceOf``1(System.Reflection.Assembly,System.Object[])">
+            <inheritdoc cref="M:Intersect.Framework.Reflection.AssemblyExtensions.CreateInstanceOf``1(System.Reflection.Assembly,System.Func{System.Type,System.Boolean},System.Object[])"/>
+        </member>
+        <member name="M:Intersect.Framework.Reflection.AssemblyExtensions.CreateInstanceOf``1(System.Reflection.Assembly,System.Func{System.Type,System.Boolean},System.Object[])">
+            <summary>
+            Creates an instance of <typeparamref name="TParentType"/> given <paramref name="args"/>.
+            </summary>
+            <typeparam name="TParentType">the type to search for subtypes and create an instance of</typeparam>
+            <param name="assembly">the <see cref="T:System.Reflection.Assembly"/> to search for subtypes in</param>
+            <param name="predicate">a function to filter subtypes with</param>
+            <param name="args">the arguments to create the instance with</param>
+            <returns>an instance of <typeparamref name="TParentType"/></returns>
+            <exception cref="T:System.InvalidOperationException">if no matching subtypes are found, or instance creation fails</exception>
+        </member>
+        <member name="E:Intersect.Framework.Services.ExceptionHandling.ExceptionHandlingService.UnhandledException">
+            <inheritdoc />
+        </member>
+        <member name="E:Intersect.Framework.Services.ExceptionHandling.ExceptionHandlingService.UnobservedTaskException">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Framework.Threading.ActionQueue`2.InvokePending">
+             <summary>
+            
+             </summary>
+             <returns>Returns true if the queue was non-empty and is now empty.</returns>
+        </member>
+    </members>
+</doc>

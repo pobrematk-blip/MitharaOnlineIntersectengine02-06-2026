@@ -1,0 +1,1442 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intersect Core</name>
+    </assembly>
+    <members>
+        <member name="T:Intersect.Compression.AssetPacker">
+            <summary>
+            Allows for packaging up assets and extracting them from packaged files.
+            </summary>
+        </member>
+        <member name="P:Intersect.Compression.AssetPacker.PackageLocation">
+            <summary>
+            The location given at the creation of this object defining where we can find our asset packs.
+            </summary>
+        </member>
+        <member name="P:Intersect.Compression.AssetPacker.CachedPackages">
+            <summary>
+            A list of all packages currently being cached.
+            </summary>
+        </member>
+        <member name="P:Intersect.Compression.AssetPacker.FileList">
+            <summary>
+            A list of all files contained within the asset packs.
+            </summary>
+        </member>
+        <member name="M:Intersect.Compression.AssetPacker.#ctor(System.String,System.String)">
+            <summary>
+            Create a new instance of <see cref="T:Intersect.Compression.AssetPacker"/>
+            </summary>
+            <param name="indexFile">The index file to load assets from.</param>
+            <param name="packLocation">The location to load asset packages from.</param>
+        </member>
+        <member name="M:Intersect.Compression.AssetPacker.GetAsset(System.String)">
+            <summary>
+            Retrieve an asset from the asset packages.
+            </summary>
+            <param name="fileName">The asset to retrieve.</param>
+            <returns>Returns a <see cref="T:System.IO.MemoryStream"/> containing the requested file.</returns>
+        </member>
+        <member name="M:Intersect.Compression.AssetPacker.Contains(System.String)">
+            <summary>
+            Checks whether or not an asset is contained within the loaded index file. This check is case insensitive!
+            </summary>
+            <param name="fileName">The file to look for.</param>
+            <returns>Returns whether or not the file was found in the loaded Asset Packs.</returns>
+        </member>
+        <member name="M:Intersect.Compression.AssetPacker.UpdateCache">
+            <summary>
+            Updates our cache timers and disposes of items no longer within the caching time limit.
+            </summary>
+        </member>
+        <member name="M:Intersect.Compression.AssetPacker.findAsset(System.String)">
+            <summary>
+            Find the location of an item in our asset packs.
+            </summary>
+            <param name="fileName">The asset file to locate.</param>
+            <returns>Returns a <see cref="T:Intersect.Compression.AssetPacker.PackageIndexEntry"/> containing relevant information regarding the asset's location in our asset packages.</returns>
+        </member>
+        <member name="M:Intersect.Compression.AssetPacker.Dispose">
+            <summary>
+            Disposes of all cached data in the cache.
+            </summary>
+        </member>
+        <member name="M:Intersect.Compression.AssetPacker.PackageAssets(System.String,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Packages up assets according to our settings.
+            </summary>
+            <param name="inputDir">The directory to search for assets to package up in.</param>
+            <param name="inputFilter">The filter to use when searching for assets to pack up.</param>
+            <param name="outputDir">The directory to place output assets packs and index files.</param>
+            <param name="indexName">The filename for the index file.</param>
+            <param name="packPrefix">The file prefix for each asset pack.</param>
+            <param name="packExt">The file extension for each asset pack.</param>
+            <param name="batchSize">The maximum size in Megabytes of combined files to pack up in each asset pack.</param>
+        </member>
+        <member name="P:Intersect.Console.InputEncoding">
+            <summary>Gets or sets the encoding the console uses to read input. </summary>
+            <returns>The encoding used to read console input.</returns>
+            <exception cref="T:System.ArgumentNullException">The property value in a set operation is <see langword="null" />.</exception>
+            <exception cref="T:System.IO.IOException">An error occurred during the execution of this operation.</exception>
+            <exception cref="T:System.Security.SecurityException">Your application does not have permission to perform this operation.</exception>
+        </member>
+        <member name="P:Intersect.Console.OutputEncoding">
+            <summary>Gets or sets the encoding the console uses to write output. </summary>
+            <returns>The encoding used to write console output.</returns>
+            <exception cref="T:System.ArgumentNullException">The property value in a set operation is <see langword="null" />.</exception>
+            <exception cref="T:System.IO.IOException">An error occurred during the execution of this operation.</exception>
+            <exception cref="T:System.Security.SecurityException">Your application does not have permission to perform this operation.</exception>
+        </member>
+        <member name="M:Intersect.Console.Beep">
+            <summary>Plays the sound of a beep through the console speaker.</summary>
+            <exception cref="T:System.Security.HostProtectionException">This method was executed on a server, such as SQL Server, that does not permit access to a user interface.</exception>
+        </member>
+        <member name="M:Intersect.Console.Beep(System.Int32,System.Int32)">
+            <summary>Plays the sound of a beep of a specified frequency and duration through the console speaker.</summary>
+            <param name="frequency">The frequency of the beep, ranging from 37 to 32767 hertz.</param>
+            <param name="duration">The duration of the beep measured in milliseconds.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="frequency" /> is less than 37 or more than 32767 hertz.-or-
+            <paramref name="duration" /> is less than or equal to zero.</exception>
+            <exception cref="T:System.Security.HostProtectionException">This method was executed on a server, such as SQL Server, that does not permit access to the console.</exception>
+        </member>
+        <member name="P:Intersect.Console.KeyAvailable">
+            <summary>Gets a value indicating whether a key press is available in the input stream.</summary>
+            <returns>
+            <see langword="true" /> if a key press is available; otherwise, <see langword="false" />.</returns>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+            <exception cref="T:System.InvalidOperationException">Standard input is redirected to a file instead of the keyboard. </exception>
+        </member>
+        <member name="P:Intersect.Console.NumberLock">
+            <summary>Gets a value indicating whether the NUM LOCK keyboard toggle is turned on or turned off.</summary>
+            <returns>
+            <see langword="true" /> if NUM LOCK is turned on; <see langword="false" /> if NUM LOCK is turned off.</returns>
+        </member>
+        <member name="P:Intersect.Console.CapsLock">
+            <summary>Gets a value indicating whether the CAPS LOCK keyboard toggle is turned on or turned off.</summary>
+            <returns>
+            <see langword="true" /> if CAPS LOCK is turned on; <see langword="false" /> if CAPS LOCK is turned off.</returns>
+        </member>
+        <member name="P:Intersect.Console.TreatControlCAsInput">
+            <summary>Gets or sets a value indicating whether the combination of the <see cref="F:System.ConsoleModifiers.Control" /> modifier key and <see cref="F:System.ConsoleKey.C" /> console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.</summary>
+            <returns>
+            <see langword="true" /> if Ctrl+C is treated as ordinary input; otherwise, <see langword="false" />.</returns>
+            <exception cref="T:System.IO.IOException">Unable to get or set the input mode of the console input buffer. </exception>
+        </member>
+        <member name="E:Intersect.Console.CancelKeyPress">
+            <summary>Occurs when the <see cref="F:System.ConsoleModifiers.Control" /> modifier key (Ctrl) and either the <see cref="F:System.ConsoleKey.C" /> console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).</summary>
+        </member>
+        <member name="M:Intersect.Console.Read">
+            <summary>Reads the next character from the standard input stream.</summary>
+            <returns>The next character from the input stream, or negative one (-1) if there are currently no more characters to be read.</returns>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.ReadLine">
+            <summary>Reads the next line of characters from the standard input stream.</summary>
+            <returns>The next line of characters from the input stream, or <see langword="null" /> if no more lines are available.</returns>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+            <exception cref="T:System.OutOfMemoryException">There is insufficient memory to allocate a buffer for the returned string. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">The number of characters in the next line of characters is greater than <see cref="F:System.Int32.MaxValue" />.</exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine">
+            <summary>Writes the current line terminator to the standard output stream.</summary>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.String,System.Object[])">
+            <summary>Writes the text representation of the specified array of objects, followed by the current line terminator, to the standard output stream using the specified format information.</summary>
+            <param name="format">A composite format string (see Remarks).</param>
+            <param name="arg">An array of objects to write using <paramref name="format" />. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="format" /> or <paramref name="arg" /> is <see langword="null" />. </exception>
+            <exception cref="T:System.FormatException">The format specification in <paramref name="format" /> is invalid. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Char[])">
+            <summary>Writes the specified array of Unicode characters, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="buffer">A Unicode character array. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Char[],System.Int32,System.Int32)">
+            <summary>Writes the specified subarray of Unicode characters, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="buffer">An array of Unicode characters. </param>
+            <param name="index">The starting position in <paramref name="buffer" />. </param>
+            <param name="count">The number of characters to write. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is <see langword="null" />. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="index" /> or <paramref name="count" /> is less than zero. </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="index" /> plus <paramref name="count" /> specify a position that is not within <paramref name="buffer" />. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Boolean)">
+            <summary>Writes the text representation of the specified Boolean value, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Char)">
+            <summary>Writes the specified Unicode character, followed by the current line terminator, value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Decimal)">
+            <summary>Writes the text representation of the specified <see cref="T:System.Decimal" /> value, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Double)">
+            <summary>Writes the text representation of the specified double-precision floating-point value, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Single)">
+            <summary>Writes the text representation of the specified single-precision floating-point value, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Int32)">
+            <summary>Writes the text representation of the specified 32-bit signed integer value, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.UInt32)">
+            <summary>Writes the text representation of the specified 32-bit unsigned integer value, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Int64)">
+            <summary>Writes the text representation of the specified 64-bit signed integer value, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.UInt64)">
+            <summary>Writes the text representation of the specified 64-bit unsigned integer value, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Object)">
+            <summary>Writes the text representation of the specified object, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.String)">
+            <summary>Writes the specified string value, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.String,System.Object[])">
+            <summary>Writes the text representation of the specified array of objects to the standard output stream using the specified format information.</summary>
+            <param name="format">A composite format string (see Remarks).</param>
+            <param name="arg">An array of objects to write using <paramref name="format" />. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="format" /> or <paramref name="arg" /> is <see langword="null" />. </exception>
+            <exception cref="T:System.FormatException">The format specification in <paramref name="format" /> is invalid. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Char[])">
+            <summary>Writes the specified array of Unicode characters to the standard output stream.</summary>
+            <param name="buffer">A Unicode character array. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Char[],System.Int32,System.Int32)">
+            <summary>Writes the specified subarray of Unicode characters to the standard output stream.</summary>
+            <param name="buffer">An array of Unicode characters. </param>
+            <param name="index">The starting position in <paramref name="buffer" />. </param>
+            <param name="count">The number of characters to write. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is <see langword="null" />. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="index" /> or <paramref name="count" /> is less than zero. </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="index" /> plus <paramref name="count" /> specify a position that is not within <paramref name="buffer" />. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Boolean)">
+            <summary>Writes the text representation of the specified Boolean value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Char)">
+            <summary>Writes the specified Unicode character value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Double)">
+            <summary>Writes the text representation of the specified double-precision floating-point value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Decimal)">
+            <summary>Writes the text representation of the specified <see cref="T:System.Decimal" /> value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Single)">
+            <summary>Writes the text representation of the specified single-precision floating-point value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Int32)">
+            <summary>Writes the text representation of the specified 32-bit signed integer value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.UInt32)">
+            <summary>Writes the text representation of the specified 32-bit unsigned integer value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Int64)">
+            <summary>Writes the text representation of the specified 64-bit signed integer value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.UInt64)">
+            <summary>Writes the text representation of the specified 64-bit unsigned integer value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Object)">
+            <summary>Writes the text representation of the specified object to the standard output stream.</summary>
+            <param name="value">The value to write, or <see langword="null" />. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.String)">
+            <summary>Writes the specified string value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.OpenStandardError">
+            <summary>Acquires the standard error stream.</summary>
+            <returns>The standard error stream.</returns>
+        </member>
+        <member name="M:Intersect.Console.OpenStandardError(System.Int32)">
+            <summary>Acquires the standard error stream, which is set to a specified buffer size.</summary>
+            <param name="bufferSize">The internal stream buffer size. </param>
+            <returns>The standard error stream.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is less than or equal to zero. </exception>
+        </member>
+        <member name="M:Intersect.Console.OpenStandardInput">
+            <summary>Acquires the standard input stream.</summary>
+            <returns>The standard input stream.</returns>
+        </member>
+        <member name="M:Intersect.Console.OpenStandardInput(System.Int32)">
+            <summary>Acquires the standard input stream, which is set to a specified buffer size.</summary>
+            <param name="bufferSize">The internal stream buffer size. </param>
+            <returns>The standard input stream.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is less than or equal to zero. </exception>
+        </member>
+        <member name="M:Intersect.Console.OpenStandardOutput">
+            <summary>Acquires the standard output stream.</summary>
+            <returns>The standard output stream.</returns>
+        </member>
+        <member name="M:Intersect.Console.OpenStandardOutput(System.Int32)">
+            <summary>Acquires the standard output stream, which is set to a specified buffer size.</summary>
+            <param name="bufferSize">The internal stream buffer size. </param>
+            <returns>The standard output stream.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is less than or equal to zero. </exception>
+        </member>
+        <member name="P:Intersect.Console.IsInputRedirected">
+            <summary>Gets a value that indicates whether input has been redirected from the standard input stream.</summary>
+            <returns>
+            <see langword="true" /> if input is redirected; otherwise, <see langword="false" />.</returns>
+        </member>
+        <member name="P:Intersect.Console.IsOutputRedirected">
+            <summary>Gets a value that indicates whether output has been redirected from the standard output stream.</summary>
+            <returns>
+            <see langword="true" /> if output is redirected; otherwise, <see langword="false" />.</returns>
+        </member>
+        <member name="P:Intersect.Console.IsErrorRedirected">
+            <summary>Gets a value that indicates whether the error output stream has been redirected from the standard error stream.</summary>
+            <returns>
+            <see langword="true" /> if error output is redirected; otherwise, <see langword="false" />.</returns>
+        </member>
+        <member name="P:Intersect.Console.In">
+            <summary>Gets the standard input stream.</summary>
+            <returns>A <see cref="T:System.IO.TextReader" /> that represents the standard input stream.</returns>
+        </member>
+        <member name="P:Intersect.Console.Out">
+            <summary>Gets the standard output stream.</summary>
+            <returns>A <see cref="T:System.IO.TextWriter" /> that represents the standard output stream.</returns>
+        </member>
+        <member name="P:Intersect.Console.Error">
+            <summary>Gets the standard error output stream.</summary>
+            <returns>A <see cref="T:System.IO.TextWriter" /> that represents the standard error output stream.</returns>
+        </member>
+        <member name="M:Intersect.Console.SetIn(System.IO.TextReader)">
+            <summary>Sets the <see cref="P:System.Console.In" /> property to the specified <see cref="T:System.IO.TextReader" /> object.</summary>
+            <param name="newIn">A stream that is the new standard input. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="newIn" /> is <see langword="null" />. </exception>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission. </exception>
+        </member>
+        <member name="M:Intersect.Console.SetOut(System.IO.TextWriter)">
+            <summary>Sets the <see cref="P:System.Console.Out" /> property to the specified <see cref="T:System.IO.TextWriter" /> object.</summary>
+            <param name="newOut">A stream that is the new standard output. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="newOut" /> is <see langword="null" />. </exception>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission. </exception>
+        </member>
+        <member name="M:Intersect.Console.SetError(System.IO.TextWriter)">
+            <summary>Sets the <see cref="P:System.Console.Error" /> property to the specified <see cref="T:System.IO.TextWriter" /> object.</summary>
+            <param name="newError">A stream that is the new standard error output. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="newError" /> is <see langword="null" />. </exception>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission. </exception>
+        </member>
+        <member name="T:Intersect.Core.ApplicationContext`2">
+            <summary>
+            Partial implementation of <see cref="T:Intersect.Core.IApplicationContext"/>.
+            Implementation of additional members in <see cref="T:Intersect.Core.IApplicationContext`1"/>.
+            </summary>
+            <typeparam name="TContext">the context subtype</typeparam>
+            <typeparam name="TStartupOptions">the specialized startup options type</typeparam>
+        </member>
+        <member name="M:Intersect.Core.ApplicationContext`2.#ctor(System.Reflection.Assembly,System.String,`1,Microsoft.Extensions.Logging.ILogger,Intersect.Plugins.Interfaces.IPacketHelper)">
+            <summary>
+            Initializes general pieces of the <see cref="T:Intersect.Core.ApplicationContext`2"/>.
+            </summary>
+            <param name="fallbackName"></param>
+            <param name="startupOptions">the <typeparamref name="TStartupOptions"/> the application was started with</param>
+            <param name="logger">the application-level <see cref="P:Intersect.Core.ApplicationContext`2.Logger"/></param>
+            <param name="packetHelper"></param>
+            <param name="entryAssembly"></param>
+        </member>
+        <member name="P:Intersect.Core.ApplicationContext`2.StartupOptions">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Core.ApplicationContext`2.Logger">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Core.ApplicationContext`2.PacketHelper">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Core.ApplicationContext`2.VersionName">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Core.ApplicationContext`2.UsesMainThread">
+            <summary>
+            If this is overridden to true, <see cref="M:Intersect.Core.ApplicationContext`2.PostStartup" /> must be manually invoked from within <see cref="M:Intersect.Core.ApplicationContext`2.InternalStart" />.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.ApplicationContext`2.IsDisposing">
+            <summary>
+            If the application is currently disposing.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.ApplicationContext`2.IsShutdownRequested">
+            <summary>
+            If the application shutdown has been requested.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.ApplicationContext`2.IsDisposed">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Core.ApplicationContext`2.IsStarted">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Core.ApplicationContext`2.IsRunning">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Core.ApplicationContext`2.Services">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Core.ApplicationContext`2.GetService``1">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Core.ApplicationContext`2.GetExpectedService``1">
+            <summary>
+            Gets an <see cref="T:Intersect.Core.IApplicationService"/> that is expected to have been registered.
+            </summary>
+            <typeparam name="TApplicationService">the service type</typeparam>
+            <returns>the expected <typeparamref name="TApplicationService"/> instance</returns>
+            <exception cref="T:System.AccessViolationException">if there is no registered <typeparamref name="TApplicationService"/></exception>
+        </member>
+        <member name="M:Intersect.Core.ApplicationContext`2.GetAssemblies">
+            <summary>
+            Gets all of the interesting assemblies (e.g. core and application).
+            </summary>
+            <returns>interesting assemblies</returns>
+        </member>
+        <member name="M:Intersect.Core.ApplicationContext`2.DiscoverServices">
+            <summary>
+            Discovers, creates, and registers services.
+            </summary>
+        </member>
+        <member name="M:Intersect.Core.ApplicationContext`2.BootstrapServices">
+            <summary>
+            Run the bootstrap lifecycle method on all enabled services.
+            </summary>
+        </member>
+        <member name="M:Intersect.Core.ApplicationContext`2.StartServices">
+            <summary>
+            Run the startup lifecycle method on all enabled services.
+            </summary>
+        </member>
+        <member name="M:Intersect.Core.ApplicationContext`2.StopServices(System.Boolean)">
+            <summary>
+            Run the shutdown lifecycle method on all enabled services.
+            </summary>
+            <param name="force">if the service should be forced to stop no matter its status</param>
+        </member>
+        <member name="M:Intersect.Core.ApplicationContext`2.Start(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Core.ApplicationContext`2.StartWithActionQueue">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Core.ApplicationContext`2.InternalStart">
+            <summary>
+            Handles startup for functionality specific to an individual application.
+            </summary>
+        </member>
+        <member name="M:Intersect.Core.ApplicationContext`2.RequestShutdown(System.Boolean)">
+            <summary>
+            Request shutdown of the application.
+            </summary>
+            <param name="join">optionally join the current thread, default false</param>
+        </member>
+        <member name="M:Intersect.Core.ApplicationContext`2.AttachHandlers">
+            <summary>
+            Attach handlers for the <see cref="T:System.AppDomain"/> and <see cref="T:System.Threading.Tasks.TaskScheduler"/> that are of interest.
+            </summary>
+        </member>
+        <member name="M:Intersect.Core.ApplicationContext`2.DetachHandlers">
+            <summary>
+            Detach handlers for the <see cref="T:System.AppDomain"/> and <see cref="T:System.Threading.Tasks.TaskScheduler"/> that are of interest.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.ApplicationContext`2.HasErrors">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Core.ApplicationContext`2.NotifyNonTerminatingExceptionOccurred">
+            <summary>
+            Notify the context that a non-terminating exception occurred that it should handle.
+            </summary>
+        </member>
+        <member name="M:Intersect.Core.ApplicationContext`2.HandleUnhandledException(System.Object,System.UnhandledExceptionEventArgs)">
+            <summary>
+            Handle unhandled exception events.
+            </summary>
+            <param name="sender">the exception sender</param>
+            <param name="unhandledExceptionEvent">the event arguments</param>
+            <exception cref="T:System.ArgumentNullException">if <see cref="P:System.UnhandledExceptionEventArgs.ExceptionObject"/> isn't actually an <see cref="T:System.Exception"/></exception>
+        </member>
+        <member name="P:Intersect.Core.ApplicationContext`2.Instance">
+            <summary>
+            TODO: Finish refactoring code so this is no longer necessary.
+            </summary>
+        </member>
+        <member name="M:Intersect.Core.ApplicationContext`2.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Core.ApplicationContext`2.Dispose(System.Boolean)">
+            <summary>
+            Dispose of internal resources.
+            </summary>
+            <param name="disposing">if we are actively disposing</param>
+        </member>
+        <member name="T:Intersect.Core.ApplicationService`2">
+            <summary>
+            Partially implements <see cref="T:Intersect.Core.IApplicationService"/>.
+            </summary>
+            <typeparam name="TServiceInterface">the service interface type</typeparam>
+            <typeparam name="TServiceImplementation">the service implementation type</typeparam>
+        </member>
+        <member name="M:Intersect.Core.ApplicationService`2.#ctor">
+            <summary>
+            Initializes <see cref="T:Intersect.Core.ApplicationService`2"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.ApplicationService`2.IsEnabled">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Core.ApplicationService`2.IsRunning">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Core.ApplicationService`2.Name">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Core.ApplicationService`2.ServiceType">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Core.ApplicationService`2.Bootstrap(Intersect.Core.IApplicationContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Core.ApplicationService`2.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Core.ApplicationService`2.Dispose(System.Boolean)">
+            <summary>
+            Internal subclass Dispose() implementation method.
+            </summary>
+        </member>
+        <member name="M:Intersect.Core.ApplicationService`2.Start(Intersect.Core.IApplicationContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Core.ApplicationService`2.Stop(Intersect.Core.IApplicationContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Core.ApplicationService`2.TaskStart(Intersect.Core.IApplicationContext)">
+            <summary>
+            Internal startup handler declaration.
+            </summary>
+            <param name="applicationContext">the application context the service is being started in</param>
+        </member>
+        <member name="M:Intersect.Core.ApplicationService`2.TaskStop(Intersect.Core.IApplicationContext)">
+            <summary>
+            Internal shutdown handler declaration.
+            </summary>
+            <param name="applicationContext">the application context the service is being shutdown in</param>
+        </member>
+        <member name="T:Intersect.Core.ApplicationService`3">
+            <summary>
+            Partially implements <see cref="T:Intersect.Core.IApplicationService"/>.
+            </summary>
+            <typeparam name="TApplicationContext">the application context type</typeparam>
+            <typeparam name="TServiceInterface">the service interface type</typeparam>
+            <typeparam name="TServiceImplementation">the service implementation type</typeparam>
+        </member>
+        <member name="M:Intersect.Core.ApplicationService`3.TaskStart(Intersect.Core.IApplicationContext)">
+            <exception cref="T:System.ArgumentNullException">throws an exception if <paramref name="applicationContext"/> is not an instance of <typeparamref name="TApplicationContext"/></exception>
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Core.ApplicationService`3.TaskStop(Intersect.Core.IApplicationContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Core.ApplicationService`3.TaskStart(`0)">
+            <summary>
+            Specialized internal startup handler declaration.
+            </summary>
+            <param name="applicationContext">the application context the service is being started in</param>
+        </member>
+        <member name="M:Intersect.Core.ApplicationService`3.TaskStop(`0)">
+            <summary>
+            Specialized internal shutdown handler declaration.
+            </summary>
+            <param name="applicationContext">the application context the service is being shutdown in</param>
+        </member>
+        <member name="T:Intersect.Core.IThreadableApplicationService">
+            <summary>
+            Declares the API surface for application services that have their own thread.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.IThreadableApplicationService.Thread">
+            <summary>
+            The thread for this service.
+            </summary>
+        </member>
+        <member name="T:Intersect.Core.ServiceLifecycleFailureException">
+            <summary>
+            Represents the container exception that occurs when services fail during a lifecycle method.
+            </summary>
+        </member>
+        <member name="M:Intersect.Core.ServiceLifecycleFailureException.#ctor(Intersect.Core.ServiceLifecycleStage,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of <see cref="T:Intersect.Core.ServiceLifecycleFailureException"/> with a stage, name and inner exception.
+            </summary>
+            <param name="serviceLifecycleStage">the stage in which the service failed</param>
+            <param name="serviceName">the name of the service throwing the exception</param>
+            <param name="innerException">the cause of the failure</param>
+        </member>
+        <member name="P:Intersect.Core.ServiceLifecycleFailureException.ServiceLifecycleStage">
+            <summary>
+            The stage in which the service failed.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.ServiceLifecycleFailureException.ServiceName">
+            <summary>
+            The name of the service throwing the exception.
+            </summary>
+        </member>
+        <member name="M:Intersect.Core.ServiceLifecycleFailureException.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:Intersect.Core.ServiceLifecycleFailureException"/>.
+            </summary>
+        </member>
+        <member name="M:Intersect.Core.ServiceLifecycleFailureException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:Intersect.Core.ServiceLifecycleFailureException"/> with a descriptive message.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Intersect.Core.ServiceLifecycleFailureException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of <see cref="T:Intersect.Core.ServiceLifecycleFailureException"/> with a descriptive message and inner exception.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+            <param name="innerException">The exception that is the cause of the current exception. For this type of exception this should not be used.</param>
+        </member>
+        <member name="M:Intersect.Core.ServiceLifecycleFailureException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of <see cref="T:Intersect.Core.ServiceLifecycleFailureException"/> with serialized data.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="M:Intersect.Core.ServiceLifecycleFailureException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Core.ServiceLifecycleStage">
+            <summary>
+            Enumeration of the different lifecycle stages for services.
+            </summary>
+        </member>
+        <member name="F:Intersect.Core.ServiceLifecycleStage.Bootstrap">
+            <summary>
+            The stage that runs after basic initialization of the application.
+            </summary>
+        </member>
+        <member name="F:Intersect.Core.ServiceLifecycleStage.Startup">
+            <summary>
+            The application initialization stage.
+            </summary>
+        </member>
+        <member name="F:Intersect.Core.ServiceLifecycleStage.Shutdown">
+            <summary>
+            The application finalization stage.
+            </summary>
+        </member>
+        <member name="F:Intersect.Core.ServiceLifecycleStage.Unknown">
+            <summary>
+            If the lifecycle stage is unknown.
+            </summary>
+        </member>
+        <member name="T:Intersect.Enums.ChatboxTab">
+            <summary>
+            Defines the chat tabs available within the engine, and is used to determine which one is currently in view.
+            </summary>
+        </member>
+        <member name="T:Intersect.Factories.FactoryRegistry`1">
+            <summary>
+            Utility partial class that stores instances of <see cref="T:Intersect.Factories.IFactory`1"/>.
+            </summary>
+            <typeparam name="TValue">the type of created instances</typeparam>
+        </member>
+        <member name="P:Intersect.Factories.FactoryRegistry`1.Factory">
+            <summary>
+            The current <see cref="T:Intersect.Factories.IFactory`1"/> instance, null if one hasn't been registered.
+            </summary>
+        </member>
+        <member name="M:Intersect.Factories.FactoryRegistry`1.Create(System.Object[])">
+            <summary>
+            Creates an instance of <typeparamref name="TValue"/> with the provided arguments.
+            </summary>
+            <param name="args">the optional creation arguments</param>
+            <returns>an instance of <typeparamref name="TValue"/></returns>
+            <see cref="M:Intersect.Factories.IFactory`1.Create(System.Object[])"/>
+            <exception cref="T:System.ArgumentNullException">thrown if there is no registered <see cref="T:Intersect.Factories.IFactory`1"/></exception>
+        </member>
+        <member name="M:Intersect.Factories.FactoryRegistry`1.TryCreate(`0@,System.Object[])">
+            <summary>
+            Safely attempts to create an instance of <typeparamref name="TValue"/> without throwing an exception.
+            </summary>
+            <param name="value">the return parameter</param>
+            <param name="args">the creation arguments</param>
+            <returns>if the instance was created</returns>
+            <see cref="M:Intersect.Factories.FactoryRegistry`1.Create(System.Object[])"/>
+        </member>
+        <member name="M:Intersect.Factories.FactoryRegistry`1.RegisterFactory(Intersect.Factories.IFactory{`0},System.Boolean)">
+            <summary>
+            Registers an <see cref="T:Intersect.Factories.IFactory`1"/> as the current instance.
+            </summary>
+            <param name="factory">the <see cref="T:Intersect.Factories.IFactory`1"/> instance to register</param>
+            <param name="overrideExisting">if the current instance should be overwritten if it exists (default false)</param>
+            <returns>true if registration was successful, false if a factory was already registered and <paramref name="overrideExisting"/> is false</returns>
+        </member>
+        <member name="T:Intersect.Factories.IFactory`1">
+            <summary>
+            Defines the interface for a factory class.
+            </summary>
+            <typeparam name="TValue">type of the created instances</typeparam>
+        </member>
+        <member name="M:Intersect.Factories.IFactory`1.Create(System.Object[])">
+            <summary>
+            Creates a not-null instance of <typeparamref name="TValue"/> given the input <paramref name="args"/>.
+            </summary>
+            <param name="args">the optional arguments used in creating a <typeparamref name="TValue"/></param>
+            <returns>a not-null <typeparamref name="TValue"/></returns>
+        </member>
+        <member name="M:Intersect.Network.CerasPacket.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Network.CerasPacket.Data">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Network.CerasPacket.Sanitize">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Plugins.Contexts.PluginBootstrapContext">
+            <summary>
+            Common <see cref="T:Intersect.Plugins.IPluginBootstrapContext"/> implementation.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.Contexts.PluginBootstrapContext.CreateFactory(System.Type,System.String[],CommandLine.Parser,Intersect.Plugins.Interfaces.IPacketHelper)">
+            <summary>
+            Creates a <see cref="T:Intersect.Factories.IFactory`1"/> for <see cref="T:Intersect.Plugins.IPluginBootstrapContext"/>.
+            </summary>
+            <param name="hostPluginContextType">The <see cref="T:System.Type"/> of the plugin context that will be created by the plugin host.</param>
+            <param name="args">the startup arguments that were parsed</param>
+            <param name="parser">the <see cref="T:CommandLine.Parser"/> used to parse <paramref name="args"/></param>
+            <param name="packetHelper"></param>
+            <returns>a <see cref="T:Intersect.Factories.IFactory`1"/> instance</returns>
+        </member>
+        <member name="T:Intersect.Plugins.Contexts.PluginBootstrapContext.Factory">
+            <summary>
+            Factory implementation for <see cref="T:Intersect.Plugins.IPluginBootstrapContext"/>.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.Contexts.PluginBootstrapContext.Factory.#ctor(System.Type,System.String[],CommandLine.Parser,Intersect.Plugins.Interfaces.IPacketHelper)">
+            <summary>
+            Initializes a <see cref="T:Intersect.Plugins.Contexts.PluginBootstrapContext.Factory"/> for <see cref="T:Intersect.Plugins.IPluginBootstrapContext"/>.
+            </summary>
+            <param name="hostPluginContextType">The <see cref="T:System.Type"/> of the plugin context that will be created by the plugin host.</param>
+            <param name="args">the startup arguments that were parsed</param>
+            <param name="parser">the <see cref="T:CommandLine.Parser"/> used to parse <paramref name="args"/></param>
+            <param name="packetHelper"></param>
+        </member>
+        <member name="M:Intersect.Plugins.Contexts.PluginBootstrapContext.Factory.Create(System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.Contexts.PluginBootstrapContext.CommandLine">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.Contexts.PluginBootstrapContext.Packet">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.Contexts.PluginBootstrapContext.Assembly">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.Contexts.PluginBootstrapContext.Configuration">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.Contexts.PluginBootstrapContext.EmbeddedResources">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.Contexts.PluginBootstrapContext.Logging">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.Contexts.PluginBootstrapContext.Manifest">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Contexts.PluginBootstrapContext.GetTypedConfiguration``1">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Plugins.Contexts.PluginContext`2">
+            <summary>
+            Common implementation class for typed plugin contexts.
+            </summary>
+            <typeparam name="TPluginContext"><see cref="T:Intersect.Plugins.IPluginContext"/> extension type</typeparam>
+            <typeparam name="TLifecycleHelper"><see cref="T:Intersect.Plugins.Interfaces.ILifecycleHelper"/> extension type used by <typeparamref name="TPluginContext"/></typeparam>
+        </member>
+        <member name="P:Intersect.Plugins.Contexts.PluginContext`2.Assembly">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.Contexts.PluginContext`2.Configuration">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.Contexts.PluginContext`2.EmbeddedResources">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.Contexts.PluginContext`2.Lifecycle">
+            <inheritdoc cref="P:Intersect.Plugins.IPluginContext.Lifecycle" />
+        </member>
+        <member name="P:Intersect.Plugins.Contexts.PluginContext`2.Logging">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.Contexts.PluginContext`2.Manifest">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Contexts.PluginContext`2.#ctor(Intersect.Plugins.Plugin)">
+            <summary>
+            Instantiates a <see cref="T:Intersect.Plugins.Contexts.PluginContext`2"/>.
+            </summary>
+            <param name="plugin">the <see cref="P:Intersect.Plugins.Contexts.PluginContext`2.Plugin"/> this context will be used for</param>
+        </member>
+        <member name="M:Intersect.Plugins.Contexts.PluginContext`2.GetTypedConfiguration``1">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Plugins.Helpers.CommandLineHelper">
+            <inheritdoc cref="T:Intersect.Plugins.Interfaces.ICommandLineHelper" />
+        </member>
+        <member name="M:Intersect.Plugins.Helpers.CommandLineHelper.ParseArguments``1">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Plugins.Helpers.ContextHelper`1">
+            <summary>
+            Partial implementation class for helpers that require a known <see cref="T:Intersect.Plugins.IPluginContext"/>.
+            </summary>
+            <typeparam name="TContext">the type of <see cref="T:Intersect.Plugins.IPluginContext"/> needed</typeparam>
+        </member>
+        <member name="P:Intersect.Plugins.Helpers.ContextHelper`1.Context">
+            <summary>
+            Reference to the current <see cref="T:Intersect.Plugins.IPluginContext"/>.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.Helpers.ContextHelper`1.#ctor(`0)">
+            <summary>
+            Partially instantiates a <see cref="T:Intersect.Plugins.Helpers.ContextHelper`1"/>.
+            </summary>
+            <param name="context">the required <typeparamref name="TContext"/></param>
+        </member>
+        <member name="T:Intersect.Plugins.Helpers.EmbeddedResourceHelper">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Helpers.EmbeddedResourceHelper.Exists(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Helpers.EmbeddedResourceHelper.GetInfo(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Helpers.EmbeddedResourceHelper.Read(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Helpers.EmbeddedResourceHelper.Resolve(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Helpers.EmbeddedResourceHelper.TryGetInfo(System.String,System.Reflection.ManifestResourceInfo@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Helpers.EmbeddedResourceHelper.TryRead(System.String,System.IO.Stream@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Helpers.EmbeddedResourceHelper.TryResolve(System.String,System.String@)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Plugins.Helpers.LoggingHelper">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.Helpers.LoggingHelper.Application">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Helpers.LoggingHelper.CreateLogger(Intersect.Plugins.Interfaces.CreateLoggerOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Helpers.LoggingHelper.CreateLogger``1(Intersect.Plugins.Interfaces.CreateLoggerOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Plugins.Helpers.PacketHelper">
+            <summary>
+            Implementation for <see cref="T:Intersect.Plugins.Interfaces.IPacketHelper"/>.
+            </summary>
+        </member>
+        <member name="T:Intersect.Plugins.Loaders.ManifestLoader">
+            <summary>
+            Utility class for loading manifests from <see cref="T:System.Reflection.Assembly"/>s.
+            </summary>
+        </member>
+        <member name="T:Intersect.Plugins.Loaders.ManifestLoader.ManifestLoaderDelegate">
+            <summary>
+            Delegate signature for manifest loading functions.
+            </summary>
+            <param name="assembly">the <see cref="T:System.Reflection.Assembly"/> to pull the manifest from</param>
+            <returns>an instance of <see cref="T:Intersect.Plugins.Interfaces.IManifestHelper"/> or null if not found or an error occurred</returns>
+        </member>
+        <member name="F:Intersect.Plugins.Loaders.ManifestLoader.ManifestLoaderDelegates">
+            <summary>
+            Currently registered manifest loading functions.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.Loaders.ManifestLoader.FindManifest(System.Reflection.Assembly)">
+            <summary>
+            Locates manifests in the assembly with priority order declared by <see cref="F:Intersect.Plugins.Loaders.ManifestLoader.ManifestLoaderDelegates"/>.
+            </summary>
+            <param name="assembly">the <see cref="T:System.Reflection.Assembly"/> to pull the manifest from</param>
+            <returns>an instance of <see cref="T:Intersect.Plugins.Interfaces.IManifestHelper"/> or null if not found or an error occurred</returns>
+        </member>
+        <member name="M:Intersect.Plugins.Loaders.ManifestLoader.LoadJsonManifestFrom(System.Reflection.Assembly)">
+            <summary>
+            Loads a manifest from the <c>manifest.json</c> file embedded in the root of the assembly.
+            </summary>
+            <param name="assembly">the <see cref="T:System.Reflection.Assembly"/> to pull the manifest from</param>
+            <returns>an instance of <see cref="T:Intersect.Plugins.Interfaces.IManifestHelper"/> or null if not found or an error occurred</returns>
+        </member>
+        <member name="M:Intersect.Plugins.Loaders.ManifestLoader.LoadVirtualManifestFrom(System.Reflection.Assembly)">
+            <summary>
+            Loads a manifest from an assembly that is defined as an explicit class.
+            </summary>
+            <param name="assembly">the <see cref="T:System.Reflection.Assembly"/> to pull the manifest from</param>
+            <returns>an instance of <see cref="T:Intersect.Plugins.Interfaces.IManifestHelper"/> or null if not found or an error occurred</returns>
+        </member>
+        <member name="T:Intersect.Plugins.Loaders.MissingPluginEntryException">
+            <summary>
+            Exception class used for when a <see cref="T:Intersect.Plugins.IPluginEntry"/> cannot be found in a plugin <see cref="T:System.Reflection.Assembly"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Loaders.MissingPluginEntryException.AssemblyName">
+            <summary>
+            The name of the <see cref="T:System.Reflection.Assembly"/> that is missing the plugin entry type.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.Loaders.MissingPluginEntryException.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:Intersect.Plugins.Loaders.MissingPluginEntryException"/>.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.Loaders.MissingPluginEntryException.#ctor(System.Reflection.Assembly)">
+            <summary>
+            Initializes a new instance of <see cref="T:Intersect.Plugins.Loaders.MissingPluginEntryException"/> for the specified <see cref="T:System.Reflection.Assembly"/>.
+            </summary>
+            <param name="assembly">the <see cref="T:System.Reflection.Assembly"/> for the exception instance</param>
+        </member>
+        <member name="M:Intersect.Plugins.Loaders.MissingPluginEntryException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:Intersect.Plugins.Loaders.MissingPluginEntryException"/> for the specified <see cref="T:System.Reflection.Assembly"/> name.
+            </summary>
+            <param name="assemblyName">the name of the <see cref="T:System.Reflection.Assembly"/> for the exception instance</param>
+        </member>
+        <member name="M:Intersect.Plugins.Loaders.MissingPluginEntryException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:Intersect.Plugins.Loaders.MissingPluginEntryException"/> for the specified <see cref="T:System.Reflection.Assembly"/> name and message.
+            </summary>
+            <param name="assemblyName">the name of the <see cref="T:System.Reflection.Assembly"/> for the exception instance</param>
+            <param name="message">the message for the exception instance</param>
+        </member>
+        <member name="M:Intersect.Plugins.Loaders.MissingPluginEntryException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of <see cref="T:Intersect.Plugins.Loaders.MissingPluginEntryException"/> with the specified message and inner <see cref="T:System.Exception"/>.
+            </summary>
+            <param name="message">the message for the exception instance</param>
+            <param name="innerException">the <see cref="T:System.Exception"/> that caused this one</param>
+        </member>
+        <member name="M:Intersect.Plugins.Loaders.MissingPluginEntryException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of <see cref="T:Intersect.Plugins.Loaders.MissingPluginEntryException"/> during deserialization.
+            </summary>
+            <param name="serializationInfo">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+            <param name="streamingContext">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="M:Intersect.Plugins.Loaders.MissingPluginEntryException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Plugins.Loaders.PluginLoader">
+            <summary>
+            Utility class used for finding, loading, and configuring application plugins.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.Loaders.PluginLoader.LoadFrom(Intersect.Core.IApplicationContext,System.String)">
+            <summary>
+            Load a <see cref="T:Intersect.Plugins.Plugin"/> from the specified <see cref="T:System.Reflection.Assembly"/> path.
+            </summary>
+            <param name="applicationContext">the <see cref="T:Intersect.Core.IApplicationContext"/> in which to load the plugin</param>
+            <param name="assemblyPath">the path to the <see cref="T:System.Reflection.Assembly"/> to load the <see cref="T:Intersect.Plugins.Plugin"/> from</param>
+            <returns>a <see cref="T:Intersect.Plugins.Plugin"/> or null if one cannot be found</returns>
+        </member>
+        <member name="M:Intersect.Plugins.Loaders.PluginLoader.LoadFrom(Intersect.Core.IApplicationContext,System.Reflection.Assembly)">
+            <summary>
+            Load a <see cref="T:Intersect.Plugins.Plugin"/> from the specified <see cref="T:System.Reflection.Assembly"/>.
+            </summary>
+            <param name="applicationContext">the <see cref="T:Intersect.Core.IApplicationContext"/> in which to load the plugin</param>
+            <param name="assembly">the <see cref="T:System.Reflection.Assembly"/> to load the <see cref="T:Intersect.Plugins.Plugin"/> from</param>
+            <returns>a <see cref="T:Intersect.Plugins.Plugin"/> or null if one cannot be found</returns>
+        </member>
+        <member name="M:Intersect.Plugins.Loaders.PluginLoader.LoadConfigurations(Intersect.Core.IApplicationContext,System.Collections.Generic.IEnumerable{Intersect.Plugins.Plugin})">
+            <summary>
+            Loads configuration for the provided <see cref="T:Intersect.Plugins.Plugin"/>s.
+            </summary>
+            <param name="applicationContext">the <see cref="T:Intersect.Core.IApplicationContext"/> in which to load plugin configurations</param>
+            <param name="plugins">the <see cref="T:Intersect.Plugins.Plugin"/>s to load configuration for</param>
+        </member>
+        <member name="M:Intersect.Plugins.Loaders.PluginLoader.LoadConfiguration(Intersect.Core.IApplicationContext,Intersect.Plugins.Plugin)">
+            <summary>
+            Loads configuration for the provided <see cref="T:Intersect.Plugins.Plugin"/>.
+            </summary>
+            <param name="applicationContext">the <see cref="T:Intersect.Core.IApplicationContext"/> in which to load plugin configuration</param>
+            <param name="plugin">the <see cref="T:Intersect.Plugins.Plugin"/> to load configuration for</param>
+            <returns>the <see cref="T:Intersect.Plugins.PluginConfiguration"/> that was loaded (or defaults set) for <paramref name="plugin"/></returns>
+        </member>
+        <member name="M:Intersect.Plugins.Loaders.PluginLoader.DiscoverPlugins(Intersect.Core.IApplicationContext,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Discover plugins for the current <see cref="T:Intersect.Core.IApplicationContext"/> in the specified directories.
+            Note: Yes, the <see cref="P:Intersect.Core.IApplicationContext.StartupOptions"/> exists with <see cref="P:Intersect.Core.ICommandLineOptions.PluginDirectories"/>,
+                but <paramref name="pluginDirectories"/> exists here because <see cref="T:Intersect.Plugins.PluginService"/> adds a "built-in" directory that is
+                scanned regardless of the command line options.
+            </summary>
+            <param name="applicationContext">the <see cref="T:Intersect.Core.IApplicationContext"/> to discover plugins for</param>
+            <param name="pluginDirectories">the directories to scan for plugins in</param>
+            <returns><see cref="T:System.Collections.Generic.IDictionary`2"/> of plugins, keyed by <see cref="P:Intersect.Plugins.Plugin.Key"/></returns>
+        </member>
+        <member name="M:Intersect.Plugins.Loaders.PluginLoader.DiscoverPlugins(Intersect.Core.IApplicationContext,System.String)">
+            <summary>
+            Discovers plugins in a specific <paramref name="pluginDirectory"/>.
+            </summary>
+            <param name="applicationContext">the <see cref="T:Intersect.Core.IApplicationContext"/> to discover plugins for</param>
+            <param name="pluginDirectory">the directory to scan for plugins in</param>
+            <returns><see cref="T:System.Collections.Generic.IEnumerable`1"/> of plugins</returns>
+        </member>
+        <member name="M:Intersect.Plugins.Loaders.PluginLoader.IsPluginEntryType(System.Type)">
+            <summary>
+            The plugin entry type is defined as follows:
+            - Is completely defined (not abstract, not generic, not an interface)
+            - Implements <see cref="T:Intersect.Plugins.IPluginEntry"/> (or <see cref="T:Intersect.Plugins.IPluginEntry`1"/>, a sub-interface)
+            - Has a default constructor (optional parameters are not a default constructor!)
+            </summary>
+            <param name="type">the <see cref="T:System.Type"/> to check</param>
+            <returns>if <paramref name="type"/> is a valid plugin entry type</returns>
+        </member>
+        <member name="T:Intersect.Plugins.Plugin">
+            <summary>
+            Representation of a loaded plugin descriptor.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.Plugin.Create(Intersect.Core.IApplicationContext,Intersect.Plugins.Interfaces.IManifestHelper,Intersect.Plugins.PluginReference)">
+            <summary>
+            Create a <see cref="T:Intersect.Plugins.Plugin"/> instance for the given context, manifest and reference.
+            </summary>
+            <param name="applicationContext">the <see cref="T:Intersect.Core.IApplicationContext"/> the plugin is running in</param>
+            <param name="manifest">the <see cref="T:Intersect.Plugins.Interfaces.IManifestHelper"/> that describes this plugin</param>
+            <param name="reference">the <see cref="T:Intersect.Plugins.PluginReference"/> with pre-searched reflection information</param>
+            <returns></returns>
+        </member>
+        <member name="P:Intersect.Plugins.Plugin.Manifest">
+            <summary>
+            The <see cref="T:Intersect.Plugins.Interfaces.IManifestHelper"/> that describes this <see cref="T:Intersect.Plugins.Plugin"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Plugin.Logging">
+            <summary>
+            The <see cref="T:Intersect.Plugins.Interfaces.ILoggingHelper"/> for this <see cref="T:Intersect.Plugins.Plugin"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Plugin.Configuration">
+            <summary>
+            The <see cref="T:Intersect.Plugins.PluginConfiguration"/> for this <see cref="T:Intersect.Plugins.Plugin"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Plugin.Reference">
+            <summary>
+            The <see cref="T:Intersect.Plugins.PluginReference"/> to reflection information for this plugin.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Plugin.IsEnabled">
+            <inheritdoc cref="P:Intersect.Plugins.PluginConfiguration.IsEnabled" />
+        </member>
+        <member name="P:Intersect.Plugins.Plugin.Intersect#Plugins#IPlugin#IsEnabled">
+            <inheritdoc cref="P:Intersect.Plugins.PluginConfiguration.IsEnabled" />
+        </member>
+        <member name="P:Intersect.Plugins.Plugin.Key">
+            <inheritdoc cref="P:Intersect.Plugins.Interfaces.IManifestHelper.Key" />
+        </member>
+        <member name="M:Intersect.Plugins.Plugin.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Plugins.PluginHelper">
+            <summary>
+            Convenience abstract class that defines commonly used properties for certain plugin helpers.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.PluginHelper.Logger">
+            <summary>
+            The <see cref="P:Intersect.Plugins.PluginHelper.Logger"/> for this helper to use.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.PluginHelper.#ctor(Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Initializes this <see cref="T:Intersect.Plugins.PluginHelper"/>.
+            </summary>
+            <param name="logger">The <see cref="P:Intersect.Plugins.PluginHelper.Logger"/> for this helper to use.</param>
+        </member>
+        <member name="T:Intersect.Plugins.PluginInstance">
+            <summary>
+            Representation of an instance of a <see cref="T:Intersect.Plugins.Plugin"/>.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.PluginInstance.Create(Intersect.Plugins.Plugin)">
+            <summary>
+            Create a <see cref="T:Intersect.Plugins.PluginInstance"/> for the given <see cref="T:Intersect.Plugins.Plugin"/>.
+            </summary>
+            <param name="plugin">The plugin descriptor to create an instance for.</param>
+            <returns>A <see cref="T:Intersect.Plugins.PluginInstance"/> for <paramref name="plugin"/>.</returns>
+        </member>
+        <member name="P:Intersect.Plugins.PluginInstance.Entry">
+            <summary>
+            The entry point instance.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.PluginInstance.BootstrapContext">
+            <summary>
+            The context used for bootstrap lifecycle actions.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.PluginInstance.Context">
+            <summary>
+            The context used for non-bootstrap lifecycle actions.
+            </summary>
+        </member>
+        <member name="T:Intersect.Plugins.PluginService">
+            <summary>
+            Implementation of <see cref="T:Intersect.Plugins.IPluginService"/>.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.PluginService.#ctor">
+            <summary>
+            Initializes the <see cref="T:Intersect.Plugins.PluginService"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.PluginService.Plugins">
+            <summary>
+            Map of all loaded <see cref="T:Intersect.Plugins.Plugin"/>s by their name.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.PluginService.Instances">
+            <summary>
+            Map of all <see cref="T:Intersect.Plugins.PluginInstance"/>s by their describing <see cref="T:Intersect.Plugins.Plugin"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.PluginService.Loader">
+            <summary>
+            Reference to the <see cref="T:Intersect.Plugins.Loaders.PluginLoader"/> used for discovering and loading <see cref="T:Intersect.Plugins.Plugin"/>s and their configuration.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.PluginService.IsEnabled">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.PluginService.Bootstrap(Intersect.Core.IApplicationContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.PluginService.TaskStart(Intersect.Core.IApplicationContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.PluginService.TaskStop(Intersect.Core.IApplicationContext)">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.PluginService.Item(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.PluginService.PluginDirectories">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.PluginService.IsPluginEnabled(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.PluginService.EnablePlugin(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.PluginService.DisablePlugin(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Properties.DeveloperStrings">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Intersect.Properties.DeveloperStrings.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Intersect.Properties.DeveloperStrings.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Intersect.Properties.DeveloperStrings.ApplicationContextExited">
+            <summary>
+              Looks up a localized string similar to Application context exited..
+            </summary>
+        </member>
+        <member name="P:Intersect.Properties.DeveloperStrings.ServiceLifecycleFailureExceptionUnknknownServiceName">
+            <summary>
+              Looks up a localized string similar to UnknownService.
+            </summary>
+        </member>
+        <member name="T:Intersect.Properties.ExceptionMessages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Intersect.Properties.ExceptionMessages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Intersect.Properties.ExceptionMessages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Intersect.Properties.ExceptionMessages.FoundPluginEntryTypeMissingDefaultConstructor">
+            <summary>
+              Looks up a localized string similar to Plugin entry type found in the assembly does not have a generic constructor..
+            </summary>
+        </member>
+        <member name="P:Intersect.Properties.ExceptionMessages.MissingPluginAssembly">
+            <summary>
+              Looks up a localized string similar to No plugin assembly was found for the provided path..
+            </summary>
+        </member>
+        <member name="P:Intersect.Properties.ExceptionMessages.MissingPluginEntryExceptionAssemblyName">
+            <summary>
+              Looks up a localized string similar to Unable to find a plugin entry type in:.
+            </summary>
+        </member>
+        <member name="P:Intersect.Properties.ExceptionMessages.MissingPluginEntryExceptionDefault">
+            <summary>
+              Looks up a localized string similar to Unable to find a plugin entry type in the assembly..
+            </summary>
+        </member>
+        <member name="P:Intersect.Properties.ExceptionMessages.PluginBootstrapContextMissingPluginArgument">
+            <summary>
+              Looks up a localized string similar to PluginBootstrap factory needs at lease one non-null argument of type &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:Intersect.Properties.ExceptionMessages.SwallowingExceptionFrom">
+            <summary>
+              Looks up a localized string similar to Swallowing unexpected exception from {0}..
+            </summary>
+        </member>
+        <member name="P:Intersect.Properties.ExceptionMessages.SwallowingExceptionFromWithQualifiedName">
+            <summary>
+              Looks up a localized string similar to Swallowing unexpected exception from {0}.{1}..
+            </summary>
+        </member>
+        <member name="T:Intersect.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Intersect.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Intersect.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:Intersect.Reflection.AssemblyExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Reflection.Assembly"/>.
+            </summary>
+        </member>
+        <member name="M:Intersect.Reflection.AssemblyExtensions.CreateInstanceOf``1(System.Reflection.Assembly,System.Object[])">
+            <inheritdoc cref="M:Intersect.Reflection.AssemblyExtensions.CreateInstanceOf``1(System.Reflection.Assembly,System.Func{System.Type,System.Boolean},System.Object[])"/>
+        </member>
+        <member name="M:Intersect.Reflection.AssemblyExtensions.CreateInstanceOf``1(System.Reflection.Assembly,System.Func{System.Type,System.Boolean},System.Object[])">
+            <summary>
+            Creates an instance of <typeparamref name="TParentType"/> given <paramref name="args"/>.
+            </summary>
+            <typeparam name="TParentType">the type to search for subtypes and create an instance of</typeparam>
+            <param name="assembly">the <see cref="T:System.Reflection.Assembly"/> to search for subtypes in</param>
+            <param name="predicate">a function to filter subtypes with</param>
+            <param name="args">the arguments to create the instance with</param>
+            <returns>an instance of <typeparamref name="TParentType"/></returns>
+            <exception cref="T:System.InvalidOperationException">if no matching subtypes are found, or instance creation fails</exception>
+        </member>
+        <member name="F:Intersect.Security.ApiVisibility.Public">
+            <summary>
+            Anyone has access.
+            </summary>
+        </member>
+        <member name="F:Intersect.Security.ApiVisibility.Restricted">
+            <summary>
+            Privileged users have access.
+            </summary>
+        </member>
+        <member name="F:Intersect.Security.ApiVisibility.Private">
+            <summary>
+            Data owners have access.
+            </summary>
+        </member>
+        <member name="F:Intersect.Security.ApiVisibility.Hidden">
+            <summary>
+            No users have access.
+            </summary>
+        </member>
+        <member name="T:Intersect.SuppressionJustifications">
+            <summary>
+            Collection of commonly used justifications for suppressing code analysis warnings.
+            </summary>
+        </member>
+        <member name="F:Intersect.SuppressionJustifications.NotNullJetBrains">
+            <summary>
+            Analyzer doesn't respect JetBrains NotNullAttribute which already asserts non-nullability.
+            </summary>
+        </member>
+        <member name="T:Intersect.Threading.Threaded`1">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Threading.Threaded`1.#ctor(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Threading.Threaded`1.ThreadStart(System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Utilities.GuidUtils.CreateNamed(System.Guid,System.String)">
+            <inheritdoc cref="M:Intersect.Utilities.GuidUtils.CreateNamed(System.Guid,System.Byte[])" />
+        </member>
+        <member name="M:Intersect.Utilities.GuidUtils.CreateNamed(System.Guid,System.Byte[])">
+            <summary>
+            Version 5 UUID implementation of RFC 4122 §4.3.
+            </summary>
+            <param name="namespaceId">the UUID of the namespace</param>
+            <param name="name">the name to generate the UUID for</param>
+            <returns>a Version 5 UUID generated from the provided namespace UUID and text name</returns>
+        </member>
+        <member name="M:Intersect.Utilities.Randomization.Next">
+            <summary>Returns a non-negative random integer.</summary>
+            <returns>A 32-bit signed integer that is greater than or equal to 0 and less than <see cref="F:System.Int32.MaxValue" />.</returns>
+        </member>
+        <member name="M:Intersect.Utilities.Randomization.Next(System.Int32,System.Int32)">
+            <summary>Returns a random integer that is within a specified range.</summary>
+            <param name="minValue">The inclusive lower bound of the random number returned.</param>
+            <param name="maxValue">The exclusive upper bound of the random number returned. <paramref name="maxValue" /> must be greater than or equal to <paramref name="minValue" />.</param>
+            <returns>A 32-bit signed integer greater than or equal to <paramref name="minValue" /> and less than <paramref name="maxValue" />; that is, the range of return values includes <paramref name="minValue" /> but not <paramref name="maxValue" />. If <paramref name="minValue" /> equals <paramref name="maxValue" />, <paramref name="minValue" /> is returned.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="minValue" /> is greater than <paramref name="maxValue" />.</exception>
+        </member>
+        <member name="M:Intersect.Utilities.Randomization.Next(System.Int32)">
+            <summary>Returns a non-negative random integer that is less than the specified maximum.</summary>
+            <param name="maxValue">The exclusive upper bound of the random number to be generated. <paramref name="maxValue" /> must be greater than or equal to 0.</param>
+            <returns>A 32-bit signed integer that is greater than or equal to 0, and less than <paramref name="maxValue" />; that is, the range of return values ordinarily includes 0 but not <paramref name="maxValue" />. However, if <paramref name="maxValue" /> equals 0, <paramref name="maxValue" /> is returned.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="maxValue" /> is less than 0.</exception>
+        </member>
+        <member name="M:Intersect.Utilities.Randomization.NextBytes(System.Byte[])">
+            <summary>Fills the elements of a specified array of bytes with random numbers.</summary>
+            <param name="buffer">An array of bytes to contain random numbers.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is <see langword="null" />.</exception>
+        </member>
+        <member name="M:Intersect.Utilities.Randomization.NextDirection">
+            <summary>Generates a random Direction using a synchronized random number generator.</summary>
+            <returns>A Direction between Direction.None (inclusive) and the maximum available Direction (exclusive).</returns>
+        </member>
+        <member name="M:Intersect.Utilities.Randomization.NextDouble">
+            <summary>Returns a random floating-point number that is greater than or equal to 0.0, and less than 1.0.</summary>
+            <returns>A double-precision floating point number that is greater than or equal to 0.0, and less than 1.0.</returns>
+        </member>
+        <member name="M:Intersect.Utilities.ValueUtils.ComputeHashCode(System.Object[])">
+            <summary>
+            Computes the aggregate hash code for <paramref name="values"/>.
+            </summary>
+            <param name="values">the set of values</param>
+            <returns>the aggregate hash code</returns>
+        </member>
+        <member name="M:Intersect.Utilities.ValueUtils.ComputeHashCode``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Computes the aggregate hash code for <paramref name="values"/>.
+            </summary>
+            <typeparam name="TValue">the value type</typeparam>
+            <param name="values">the enumerable set of values</param>
+            <returns>the aggregate hash code</returns>
+        </member>
+        <member name="M:Intersect.Utilities.ValueUtils.Compare(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.StringComparison)">
+            <summary>
+            Compares two <see cref="T:System.Collections.Generic.IEnumerable`1"/> if <see cref="T:System.String"/>.
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <param name="stringComparison">the <see cref="T:System.StringComparison"/> mode to use</param>
+            <returns>the comparison between the two <see cref="T:System.String"/> enumerables</returns>
+        </member>
+    </members>
+</doc>

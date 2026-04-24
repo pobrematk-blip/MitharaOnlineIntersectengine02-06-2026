@@ -1,0 +1,325 @@
+/* _content/AscensionGameDev.Intersect.Server/Web/Pages/Account/Login.cshtml.rz.scp.css */
+article[b-3tiz9hx0kn] {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+form > section[b-3tiz9hx0kn] {
+	display: flex;
+	flex-direction: column;
+	max-width: calc(max(37.5rem, 50vw));
+	min-width: 37.5rem;
+}
+/* _content/AscensionGameDev.Intersect.Server/Web/Pages/Developer/Assets.cshtml.rz.scp.css */
+tab-set[b-zrojl7ptxo] {
+	width: calc(100% - 2em);
+}
+
+tab-content > *[b-zrojl7ptxo] {
+	margin: 1em 0;
+}
+
+tab-content > *:first-child[b-zrojl7ptxo] {
+	margin-top: 0;
+}
+
+tab-content > *:last-child[b-zrojl7ptxo] {
+	margin-bottom: 0;
+}
+/* _content/AscensionGameDev.Intersect.Server/Web/Pages/Developer/Assets/_TabSet.cshtml.rz.scp.css */
+/* _content/AscensionGameDev.Intersect.Server/Web/Pages/Developer/Index.cshtml.rz.scp.css */
+/* _content/AscensionGameDev.Intersect.Server/Web/Pages/Developer/ServerSettings/Index.cshtml.rz.scp.css */
+[b-v2iq3rci1z] form {
+	width: 100%;
+}
+
+[b-v2iq3rci1z] form tab-content.selected,
+[b-v2iq3rci1z] span.field > fieldset {
+	display: grid;
+	grid-gap: 0.5em;
+	grid-template-columns: minmax(min-content, 20em) minmax(min-content, 20em);
+	grid-auto-rows: min-content;
+}
+/* _content/AscensionGameDev.Intersect.Server/Web/Pages/Shared/Players/_PlayerCard.cshtml.rz.scp.css */
+article.player[b-5lurvd0838] {
+	background-color: var(--theme-bg-accent);
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	min-width: 50em;
+}
+
+article.player>*[b-5lurvd0838] {
+	padding: 1em;
+}
+
+article.player>.rank[b-5lurvd0838] {
+	align-items: center;
+	background-color: var(--theme-bg-accent-hover);
+	display: flex;
+	flex-direction: column;
+	font-size: 1.25em;
+	font-weight: 600;
+	justify-content: center;
+}
+
+article.player>.rank>span[b-5lurvd0838] {
+	justify-content: center;
+}
+
+article.player>:not(.rank)[b-5lurvd0838] {
+	flex: 1;
+}
+
+article.player h3[b-5lurvd0838] {
+	margin: 0 0 0.5em 0;
+}
+
+article.player .row>:not(.avatar-container)[b-5lurvd0838] {
+	flex: 1;
+	padding: 0 1em;
+}
+
+article.card .row[b-5lurvd0838] {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+article.card .column[b-5lurvd0838] {
+	display: flex;
+	flex-direction: column;
+}
+
+img.avatar[b-5lurvd0838] {
+	background-color: var(--theme-bg-accent-hover);
+	image-rendering: pixelated;
+}
+
+img.avatar[b-5lurvd0838], svg[b-5lurvd0838] {
+	border: 0.125em solid var(--theme-text);
+	height: 8em;
+	max-height: 8em;
+	max-width: 8em;
+	width: 8em;
+}
+
+img.avatar.hidden[b-5lurvd0838] {
+	display: none;
+}
+
+img.avatar+svg[b-5lurvd0838] {
+	display: none;
+}
+
+img.avatar.hidden+svg[b-5lurvd0838] {
+	border-color: transparent;
+	display: initial;
+	fill: currentColor;
+}
+
+svg>use[b-5lurvd0838] {
+	height: 100%;
+	width: 100%;
+}
+/* _content/AscensionGameDev.Intersect.Server/Web/Pages/Shared/Players/_PlayerList.cshtml.rz.scp.css */
+article.player[b-gy993i0qdq] {
+	background-color: var(--theme-bg-accent);
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	min-width: 50em;
+}
+
+article.player>*[b-gy993i0qdq] {
+	padding: 1em;
+}
+
+article.player>.rank[b-gy993i0qdq] {
+	align-items: center;
+	background-color: var(--theme-bg-accent-hover);
+	display: flex;
+	flex-direction: column;
+	font-size: 1.25em;
+	font-weight: 600;
+	justify-content: center;
+}
+
+article.player>:not(.rank)[b-gy993i0qdq] {
+	flex: 1;
+}
+
+article.player h3[b-gy993i0qdq] {
+	margin: 0 0 0.5em 0;
+}
+
+article.player .row>:not(.avatar-container)[b-gy993i0qdq] {
+	flex: 1;
+	padding: 0 1em;
+}
+
+article.card .row[b-gy993i0qdq] {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+article.card .column[b-gy993i0qdq] {
+	display: flex;
+	flex-direction: column;
+}
+
+img.avatar[b-gy993i0qdq] {
+	background-color: var(--theme-bg-accent-hover);
+	border: 0.125em solid var(--theme-text);
+}
+
+img.avatar[b-gy993i0qdq], svg[b-gy993i0qdq] {
+	height: 8em;
+	max-height: 8em;
+	max-width: 8em;
+	width: 8em;
+}
+
+img.avatar.hidden[b-gy993i0qdq] {
+	display: none;
+}
+
+img.avatar+svg[b-gy993i0qdq] {
+	display: none;
+}
+
+img.avatar.hidden+svg[b-gy993i0qdq] {
+	border-color: transparent;
+	display: initial;
+	fill: currentColor;
+}
+
+svg>use[b-gy993i0qdq] {
+	height: 100%;
+	width: 100%;
+}
+/* _content/AscensionGameDev.Intersect.Server/Web/Pages/Shared/_Layout.cshtml.rz.scp.css */
+header[b-7nxebhinty], footer[b-7nxebhinty] {
+	background-color: var(--theme-bg-accent);
+	display: flex;
+	flex-direction: row;
+}
+
+header[b-7nxebhinty] {
+	justify-content: space-between;
+	padding: 0 1rem;
+	position: sticky;
+	top: 0;
+}
+
+footer[b-7nxebhinty] {
+	justify-content: center;
+	padding: 0.5rem 1rem;
+}
+
+footer > :not(:last-child)[b-7nxebhinty] {
+	margin-right: 1rem;
+}
+
+header > *[b-7nxebhinty] {
+	margin: 0;
+	padding: 0.5rem 1rem;
+}
+
+header nav > ul[b-7nxebhinty] {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	margin: 0;
+}
+
+header nav > ul > li[b-7nxebhinty] {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+header nav > ul > li:not(:last-child)[b-7nxebhinty] {
+	margin-right: 1em;
+}
+
+main[b-7nxebhinty] {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	align-items: center;
+}
+
+[b-7nxebhinty] > article {
+	max-width: calc(min(100vw, max(80vw, 100em)));
+	padding: 1em;
+}
+
+[b-7nxebhinty] > article > p:first-child {
+	margin-block-start: 0;
+}
+
+[b-7nxebhinty] > article > p:last-child {
+	margin-block-end: 0;
+}
+
+
+[b-7nxebhinty] > article.page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+/* _content/AscensionGameDev.Intersect.Server/Web/Pages/Shared/_LoginPartial.cshtml.rz.scp.css */
+img.avatar[b-z7w757uwe5] {
+	--size: 2em;
+
+	background-color: var(--theme-bg-accent-hover);
+	border: 0.125em solid var(--theme-text);
+	height: var(--size);
+	max-height: var(--size);
+	max-width: var(--size);
+	width: var(--size);
+}
+
+img.avatar[b-z7w757uwe5], svg[b-z7w757uwe5] {
+    border-radius: 4.5em;
+}
+
+img.avatar.hidden[b-z7w757uwe5] {
+	display: none;
+}
+
+img.avatar+svg[b-z7w757uwe5] {
+	--size: 2.25em;
+
+	display: none;
+	height: var(--size);
+	max-height: var(--size);
+	max-width: var(--size);
+	width: var(--size);
+}
+
+img.avatar.hidden+svg[b-z7w757uwe5] {
+	border-color: transparent;
+	display: initial;
+	fill: currentColor;
+}
+
+svg>use[b-z7w757uwe5] {
+	height: 100%;
+	width: 100%;
+}
+
+div[b-z7w757uwe5], div>*[b-z7w757uwe5] {
+	align-items: center;
+	display: flex;
+}
+
+div>*:not(:nth-child(1 of :not(.hidden)))[b-z7w757uwe5], div>*>*:not(:nth-child(1 of :not(.hidden)))[b-z7w757uwe5] {
+	margin-left: 0.5em;
+}
+/* _content/AscensionGameDev.Intersect.Server/Web/Pages/Shared/_Toast.cshtml.rz.scp.css */
+/* _content/AscensionGameDev.Intersect.Server/Web/Pages/User/UserProfile.cshtml.rz.scp.css */

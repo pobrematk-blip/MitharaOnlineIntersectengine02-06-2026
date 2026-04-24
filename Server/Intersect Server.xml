@@ -1,0 +1,776 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intersect Server</name>
+    </assembly>
+    <members>
+        <member name="P:Intersect.Server.Core.ConsoleService.IsEnabled">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Core.ConsoleService.TaskStart(Intersect.Server.Core.IServerContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Core.ConsoleService.TaskStop(Intersect.Server.Core.IServerContext)">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Server.Core.IFullServerContext.ApiService">
+            <summary>
+            The server's REST API provider service.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Core.IFullServerContext.ConsoleService">
+            <summary>
+            The server's console processing service.
+            </summary>
+        </member>
+        <member name="T:Intersect.Server.Database.GameData.MySqlGameContext">
+            <summary>
+            MySQL/MariaDB-specific implementation of <see cref="T:Intersect.Server.Database.GameData.GameContext"/>
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Database.GameData.MySqlGameContext.#ctor(Intersect.Server.Database.DatabaseContextOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Database.Logging.MySqlLoggingContext">
+            <summary>
+            MySQL/MariaDB-specific implementation of <see cref="T:Intersect.Server.Database.Logging.LoggingContext"/>
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Database.Logging.MySqlLoggingContext.#ctor(Intersect.Server.Database.DatabaseContextOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Database.PlayerData.MySqlPlayerContext">
+            <summary>
+            MySQL/MariaDB-specific implementation of <see cref="T:Intersect.Server.Database.PlayerData.PlayerContext"/>
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Database.PlayerData.MySqlPlayerContext.#ctor(Intersect.Server.Database.DatabaseContextOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.Net7Upgrade">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.Net7Upgrade.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.Net7Upgrade.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.Net7Upgrade.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.StatRangeMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.StatRangeMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.StatRangeMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.StatRangeMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.ItemEventTriggerMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.ItemEventTriggerMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.ItemEventTriggerMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.ItemEventTriggerMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.LongValueType">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.LongValueType.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.LongValueType.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.LongValueType.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.HomingProjectile">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.HomingProjectile.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.HomingProjectile.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.HomingProjectile.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.ParallelEvents">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.ParallelEvents.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.ParallelEvents.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.ParallelEvents.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.FixVariables">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.FixVariables.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.FixVariables.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.FixVariables.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.RenameVariableDescriptorTypes">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameVariableDescriptorTypes.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameVariableDescriptorTypes.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameVariableDescriptorTypes.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.RenameAnimationDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameAnimationDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameAnimationDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameAnimationDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.RenameClassDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameClassDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameClassDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameClassDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.RenameCraftingDescriptors">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameCraftingDescriptors.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameCraftingDescriptors.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameCraftingDescriptors.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.RenameEventDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameEventDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameEventDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameEventDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.RenameItemDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameItemDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameItemDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameItemDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.RenameNPCDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameNPCDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameNPCDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameNPCDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.RenameProjectileDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameProjectileDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameProjectileDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameProjectileDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.RenameQuestDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameQuestDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameQuestDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameQuestDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.RenameResourceDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameResourceDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameResourceDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameResourceDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.RenameShopDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameShopDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameShopDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameShopDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.RenameSpellDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameSpellDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameSpellDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameSpellDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.RenameTilesetDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameTilesetDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameTilesetDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameTilesetDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.RenameDaylightCycleDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameDaylightCycleDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameDaylightCycleDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameDaylightCycleDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.RenameLightDescriptor">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameLightDescriptor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameLightDescriptor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.RenameLightDescriptor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.ChangeGameObjectNamespaces">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.ChangeGameObjectNamespaces.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.ChangeGameObjectNamespaces.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.ChangeGameObjectNamespaces.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Game.ResourceStates">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.ResourceStates.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.ResourceStates.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Game.ResourceStates.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Logging.Net7Upgrade">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Logging.Net7Upgrade.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Logging.Net7Upgrade.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Logging.Net7Upgrade.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Logging.UpdateRequestLogLevelType">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Logging.UpdateRequestLogLevelType.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Logging.UpdateRequestLogLevelType.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Logging.UpdateRequestLogLevelType.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Player.Net7Upgrade">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Player.Net7Upgrade.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Player.Net7Upgrade.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Player.Net7Upgrade.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Player.UpdatingQuestHotbarSwitchIdsToAutoGenerate">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Player.UpdatingQuestHotbarSwitchIdsToAutoGenerate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Player.UpdatingQuestHotbarSwitchIdsToAutoGenerate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Player.UpdatingQuestHotbarSwitchIdsToAutoGenerate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Player.UserVariables_AddStandaloneIdPK">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Player.UserVariables_AddStandaloneIdPK.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Player.UserVariables_AddStandaloneIdPK.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Player.UserVariables_AddStandaloneIdPK.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Player.MySqlGuildForeignKey">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Player.MySqlGuildForeignKey.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Player.MySqlGuildForeignKey.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Player.MySqlGuildForeignKey.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Player.GuildCorrections">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Player.GuildCorrections.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Player.GuildCorrections.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Player.GuildCorrections.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Migrations.MySql.Player.OfflineGuildInvites">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Player.OfflineGuildInvites.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Player.OfflineGuildInvites.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Migrations.MySql.Player.OfflineGuildInvites.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="F:Intersect.Server.Networking.LiteNetLib.ServerNetwork.Pool">
+            <summary>
+                This is our smart thread pool which we use to handle packet processing and packet sending. Min/Max Number of
+                Threads and Idle Timeouts are set via server config.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Notifications.Notification.CompilePatternHtmlTag">
+            <remarks>
+            Pattern:<br/>
+            <code>\\&lt;[\\s\\n\\r]*html[^\\&gt;]*&gt;</code><br/>
+            Options:<br/>
+            <code>RegexOptions.IgnoreCase | RegexOptions.Multiline | RegexOptions.Compiled</code><br/>
+            Explanation:<br/>
+            <code>
+            ○ Match '&lt;'.<br/>
+            ○ Match a character in the set [\n\r\s] atomically any number of times.<br/>
+            ○ Match a character in the set [Hh].<br/>
+            ○ Match a character in the set [Tt].<br/>
+            ○ Match a character in the set [Mm].<br/>
+            ○ Match a character in the set [Ll].<br/>
+            ○ Match a character other than '&gt;' atomically any number of times.<br/>
+            ○ Match '&gt;'.<br/>
+            </code>
+            </remarks>
+        </member>
+        <member name="M:Intersect.Server.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Host builder method for Entity Framework Design Tools to use when generating migrations.
+            </summary>
+        </member>
+        <member name="T:Intersect.Server.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:Intersect.Server.Web.Configuration.ApiConfiguration">
+            <summary>
+            Configuration options for <see cref="T:Intersect.Server.Web.RestApi.RestApi" />.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Configuration.TokenGenerationOptions.AccessTokenLifetime">
+            <summary>
+            Lifetime (in minutes) of access tokens (default is 5 minutes).
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Configuration.TokenGenerationOptions.RefreshTokenLifetime">
+            <summary>
+            Lifetime (in minutes) of refresh tokens (default is 10080 minutes or 7 days).
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Web.Controllers.Api.OAuthController.GrantTypeConverter.TitleCaseCharacterPattern">
+            <remarks>
+            Pattern:<br/>
+            <code>[A-Z]</code><br/>
+            Explanation:<br/>
+            <code>
+            ○ Match a character in the set [A-Z].<br/>
+            </code>
+            </remarks>
+        </member>
+        <member name="M:Intersect.Server.Web.Controllers.Api.OAuthController.GrantTypeConverter.SnakeCaseCharacterPattern">
+            <remarks>
+            Pattern:<br/>
+            <code>(?:^|_)[a-z]</code><br/>
+            Explanation:<br/>
+            <code>
+            ○ Match with 2 alternative expressions.<br/>
+                ○ Match if at the beginning of the string.<br/>
+                ○ Match '_'.<br/>
+            ○ Match a character in the set [a-z].<br/>
+            </code>
+            </remarks>
+        </member>
+        <member name="M:Intersect.Server.Web.Middleware.AuthenticationDebugMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.AspNetCore.Authentication.IAuthenticationSchemeProvider)">
+            <summary>
+            Initializes a new instance of <see cref="T:Microsoft.AspNetCore.Authentication.AuthenticationMiddleware"/>.
+            </summary>
+            <param name="next">The next item in the middleware pipeline.</param>
+            <param name="schemes">The <see cref="T:Microsoft.AspNetCore.Authentication.IAuthenticationSchemeProvider"/>.</param>
+        </member>
+        <member name="P:Intersect.Server.Web.Middleware.AuthenticationDebugMiddleware.Schemes">
+            <summary>
+            Gets or sets the <see cref="T:Microsoft.AspNetCore.Authentication.IAuthenticationSchemeProvider"/>.
+            </summary>
+        </member>
+        <member name="T:Intersect.Server.Web.Pages.Developer.AssetManagerResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.AssetManager">
+            <summary>
+              Looks up a localized string similar to Asset Manager.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.Browse">
+            <summary>
+              Looks up a localized string similar to Browse.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.ButtonCancel">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.ButtonSubmit">
+            <summary>
+              Looks up a localized string similar to Upload.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.ColumnActions">
+            <summary>
+              Looks up a localized string similar to Actions.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.ColumnChecksum">
+            <summary>
+              Looks up a localized string similar to Checksum.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.ColumnName">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.ColumnPath">
+            <summary>
+              Looks up a localized string similar to Path.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.ColumnSelect">
+            <summary>
+              Looks up a localized string similar to Selection.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.ColumnSize">
+            <summary>
+              Looks up a localized string similar to Size.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.ColumnType">
+            <summary>
+              Looks up a localized string similar to Type.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.DeleteXPrompt">
+            <summary>
+              Looks up a localized string similar to Are you sure you would like to delete {0}?.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.DropFilesHere">
+            <summary>
+              Looks up a localized string similar to Drop files here.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.ErrorXNoLongerExists">
+            <summary>
+              Looks up a localized string similar to {0} no longer exists.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.Folder">
+            <summary>
+              Looks up a localized string similar to Folder.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.Manifests">
+            <summary>
+              Looks up a localized string similar to Manifests.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.MoveResultXtoY">
+            <summary>
+              Looks up a localized string similar to {0} was successfully moved to {1}.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.Refresh">
+            <summary>
+              Looks up a localized string similar to Refresh.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.RenameXPrompt">
+            <summary>
+              Looks up a localized string similar to What would you like to rename {0} to?.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.AssetManagerResources.UploadFiles">
+            <summary>
+              Looks up a localized string similar to Upload Files.
+            </summary>
+        </member>
+        <member name="T:Intersect.Server.Web.Pages.Developer.DeveloperWebResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.DeveloperWebResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.DeveloperWebResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.DeveloperWebResources.DeveloperPortal">
+            <summary>
+              Looks up a localized string similar to Developer Portal.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.Pages.Developer.DeveloperWebResources.NoEnabledDeveloperFeatures">
+            <summary>
+              Looks up a localized string similar to There are no developer features currently enabled..
+            </summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.CompilePatternHtmlTag_0">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the CompilePatternHtmlTag method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.CompilePatternHtmlTag_0.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.CompilePatternHtmlTag_0.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.CompilePatternHtmlTag_0.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.CompilePatternHtmlTag_0.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.CompilePatternHtmlTag_0.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.CompilePatternHtmlTag_0.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.CompilePatternHtmlTag_0.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.CompilePatternHtmlTag_0.RunnerFactory.Runner.TryMatchAtCurrentPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Determine whether <paramref name="inputSpan"/> at base.runtextpos is a match for the regular expression.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if the regular expression matches at the current position; otherwise, false.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.TitleCaseCharacterPattern_1">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the TitleCaseCharacterPattern method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.TitleCaseCharacterPattern_1.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.TitleCaseCharacterPattern_1.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.TitleCaseCharacterPattern_1.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.TitleCaseCharacterPattern_1.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.TitleCaseCharacterPattern_1.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.TitleCaseCharacterPattern_1.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.TitleCaseCharacterPattern_1.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.SnakeCaseCharacterPattern_2">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the SnakeCaseCharacterPattern method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.SnakeCaseCharacterPattern_2.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.SnakeCaseCharacterPattern_2.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.SnakeCaseCharacterPattern_2.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.SnakeCaseCharacterPattern_2.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.SnakeCaseCharacterPattern_2.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.SnakeCaseCharacterPattern_2.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.SnakeCaseCharacterPattern_2.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.SnakeCaseCharacterPattern_2.RunnerFactory.Runner.TryMatchAtCurrentPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Determine whether <paramref name="inputSpan"/> at base.runtextpos is a match for the regular expression.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if the regular expression matches at the current position; otherwise, false.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.Utilities">
+            <summary>Helper methods used by generated <see cref="T:System.Text.RegularExpressions.Regex"/>-derived implementations.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout">
+            <summary>Default timeout value set in <see cref="T:System.AppContext"/>, or <see cref="F:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout"/> if none was set.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_hasTimeout">
+            <summary>Whether <see cref="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout"/> is non-infinite.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_ascii_80FEFFFF07">
+            <summary>Supports searching for characters in or not in "_abcdefghijklmnopqrstuvwxyz".</summary>
+        </member>
+    </members>
+</doc>

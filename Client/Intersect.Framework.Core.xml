@@ -1,0 +1,2958 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intersect.Framework.Core</name>
+    </assembly>
+    <members>
+        <member name="P:Intersect.Framework.Core.GameObjects.Animations.AnimationDescriptor.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Conditions.Condition.ElseEnabled">
+            <summary>
+            Configures whether or not this condition does or does not have an else branch.
+            </summary>
+        </member>
+        <member name="T:Intersect.Framework.Core.GameObjects.Conditions.ConditionMetadata.HasFreeInventorySlots">
+            <summary>
+            Defines the condition class used when checking for a player's free inventory slots.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Conditions.ConditionMetadata.HasFreeInventorySlots.Type">
+            <summary>
+            Defines the type of condition.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Conditions.ConditionMetadata.HasFreeInventorySlots.Quantity">
+            <summary>
+            Defines the amount of inventory slots that need to be free to clear this condition.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Conditions.ConditionMetadata.HasFreeInventorySlots.UseVariable">
+            <summary>
+            Defines whether this event command will use a variable for processing or not.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Conditions.ConditionMetadata.HasFreeInventorySlots.VariableType">
+            <summary>
+            Defines whether the variable used is a Player or Global variable.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Conditions.ConditionMetadata.HasFreeInventorySlots.VariableId">
+            <summary>
+            The Variable Id to use.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Conditions.ConditionMetadata.HasItemCondition.UseVariable">
+            <summary>
+            Defines whether this event command will use a variable for processing or not.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Conditions.ConditionMetadata.HasItemCondition.VariableType">
+            <summary>
+            Defines whether the variable used is a Player or Global variable.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Conditions.ConditionMetadata.HasItemCondition.VariableId">
+            <summary>
+            The Variable Id to use.
+            </summary>
+        </member>
+        <member name="T:Intersect.Framework.Core.GameObjects.Conditions.ConditionMetadata.InGuildWithRank">
+            <summary>
+            Defines the condition class used when checking whether a player is in a guild with at least a specified rank
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Conditions.ConditionMetadata.InGuildWithRank.Type">
+            <summary>
+            Defines the type of condition
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Conditions.ConditionMetadata.InGuildWithRank.Rank">
+            <summary>
+            The guild rank the condition checks for as a minimum
+            </summary>
+        </member>
+        <member name="T:Intersect.Framework.Core.GameObjects.Conditions.ConditionMetadata.MapZoneTypeIs">
+            <summary>
+            Defines the condition class used when checking whether a player is on a specific map zone type.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Conditions.ConditionMetadata.MapZoneTypeIs.Type">
+            <summary>
+            Defines the type of condition.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Conditions.ConditionMetadata.MapZoneTypeIs.ZoneType">
+            <summary>
+            Defines the map Zone Type to compare to.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Crafting.CraftingRecipeDescriptor.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Crafting.CraftingTableDescriptor.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.Commands.ChangeItemsCommand.ItemHandling">
+            <summary>
+            Defines how the server is supposed to handle changing the items of this request.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.Commands.ChangeItemsCommand.UseVariable">
+            <summary>
+            Defines whether this event command will use a variable for processing or not.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.Commands.ChangeItemsCommand.VariableType">
+            <summary>
+            Defines whether the variable used is a Player or Global variable.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.Commands.ChangeItemsCommand.VariableId">
+            <summary>
+            The Variable Id to use.
+            </summary>
+        </member>
+        <member name="T:Intersect.Framework.Core.GameObjects.Events.Commands.ChangePlayerColorCommand">
+            <summary>
+            Defines the Event command partial class for the Change Player Color command.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.Commands.ChangePlayerColorCommand.Type">
+            <summary>
+            The <see cref="T:Intersect.Framework.Core.GameObjects.Events.EventCommandType"/> of this command.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.Commands.ChangePlayerColorCommand.Color">
+            <summary>
+            The <see cref="P:Intersect.Framework.Core.GameObjects.Events.Commands.ChangePlayerColorCommand.Color"/> to apply to the player.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.Commands.GiveExperienceCommand.UseVariable">
+            <summary>
+            Defines whether this event command will use a variable for processing or not.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.Commands.GiveExperienceCommand.VariableType">
+            <summary>
+            Defines whether the variable used is a Player or Global variable.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.Commands.GiveExperienceCommand.VariableId">
+            <summary>
+            The Variable Id to use.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.Commands.GiveExperienceCommand.EnableLosingLevels">
+            <summary>
+            If true, when a player have their experience reduced, they will be able to level down.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.Commands.OpenCraftingTableCommand.JournalMode">
+            <summary>
+            Does not allow crafting, but displays crafts and their requirements.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.Commands.ShowPictureCommand.File">
+            <summary>
+            Picture filename to show.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.Commands.ShowPictureCommand.Size">
+            <summary>
+            How the picture is rendered on the screen.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.Commands.ShowPictureCommand.Clickable">
+            <summary>
+            If true the picture will close upon being clicked
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.Commands.ShowPictureCommand.HideTime">
+            <summary>
+            If not 0 the picture will go away after shown for the time below
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.Commands.ShowPictureCommand.WaitUntilClosed">
+            <summary>
+            If true this event won't continue with commands until this picture is closed.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.Commands.WarpCommand.ChangeInstance">
+            <summary>
+            Whether or not the warp event will change a player's map instance settings
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.Commands.WarpCommand.InstanceType">
+            <summary>
+            The <see cref="T:Intersect.Framework.Core.GameObjects.Maps.MapInstanceType"/> we are going to be warping to
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.EventDescriptor.CanRunInParallel">
+            <summary>
+            Option used to run events even when another is already running
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Events.EventDescriptor.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.CanDrop">
+            <summary>
+            Defines whether or not this item can be dropped by a player.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.DropChanceOnDeath">
+            <summary>
+            Defines the percentage chance an item will drop upon player Death.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.CanTrade">
+            <summary>
+            Defines whether or not this item can be traded by a player to another player.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.CanSell">
+            <summary>
+            Defines whether or not this item can be sold by a player to a shop.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.CanBank">
+            <summary>
+            Defines whether or not this item can be banked by a player.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.CanGuildBank">
+            <summary>
+            Defines whether or not this item can be guild banked by a player.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.CanBag">
+            <summary>
+            Defines whether or not this item can be placed in a bag by a player.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.CooldownGroup">
+            <summary>
+            Defines which cooldown group this item belongs to.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.IgnoreGlobalCooldown">
+            <summary>
+            Configures whether this should not trigger and be triggered by the global cooldown.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.IgnoreCooldownReduction">
+            <summary>
+            Configured whether the cooldown of this item should be reduced by the players cooldown reduction
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.JsonColor">
+            <summary>
+            The database compatible version of <see cref="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.Color"/>
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.Color">
+            <summary>
+            Defines the ARGB color settings for this Item.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.MaxInventoryStack">
+            <summary>
+            Defines how high the item can stack in a player's inventory before starting a new stack.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.MaxBankStack">
+            <summary>
+            Defines how high the item can stack in a player/guild's bank before starting a new stack.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.BlockChance">
+            <summary>
+            Defines the player's chance of successfully defending a hit.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.BlockAmount">
+            <summary>
+            Sets the damage absorption percentage when successfully defending a hit.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.BlockAbsorption">
+            <summary>
+            Sets the amount of damage absorption to increase the defender's health
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.DespawnTime">
+            <summary>
+            Time in which this item will remain on a map before despawning. Set to 0 to use server configured default value.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.Folder">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor.GetCooldownGroup(System.String)">
+            <summary>
+            Gets an array of all items sharing the provided cooldown group.
+            </summary>
+            <param name="cooldownGroup">The cooldown group to search for.</param>
+            <returns>Returns an array of <see cref="T:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor"/> containing all items with the supplied cooldown group.</returns>
+        </member>
+        <member name="T:Intersect.Framework.Core.GameObjects.Items.ItemHandling">
+            <summary>
+            Contains the definitions to be used on how to handle giving or taking away items to and from players.
+            </summary>
+        </member>
+        <member name="F:Intersect.Framework.Core.GameObjects.Items.ItemHandling.Normal">
+            <summary>
+            Give and take away items like normal, no special rules.
+            </summary>
+        </member>
+        <member name="F:Intersect.Framework.Core.GameObjects.Items.ItemHandling.Overflow">
+            <summary>
+            Allow the inventory to overflow, dropping items on the map when the inventory reaches capacity.
+            NOTE: Does not apply to taking away items!
+            </summary>
+        </member>
+        <member name="F:Intersect.Framework.Core.GameObjects.Items.ItemHandling.UpTo">
+            <summary>
+            Give or Take as many items as possible until the user either runs out of items or space.
+            NOTE: Requires at least one change to be successful!
+            </summary>
+        </member>
+        <member name="M:Intersect.Framework.Core.GameObjects.Lighting.LightDescriptor.GetHashCode">
+            <summary>
+            Only checks for matching colors, intensity, and expand values... so we know if we can group lights and render them with the same shader values to boost performance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Framework.Core.GameObjects.Lighting.LightDescriptor.Equals(System.Object)">
+            <summary>
+            Only checks for matching colors, intensity, and expand values... so we know if we can group lights and render them with the same shader values to boost performance.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Intersect.Framework.Core.GameObjects.Maps.GameBorderStyle.Seamless">
+            <summary>
+            No transitions between adjacent maps but the camera is locked to map boundaries if the map has adjacent maps.
+            </summary>
+        </member>
+        <member name="F:Intersect.Framework.Core.GameObjects.Maps.GameBorderStyle.Seamed">
+            <summary>
+            Camera is clamped to the boundaries of the current map, which causes a transition when moving to adjacent maps.
+            </summary>
+            <remarks>
+            This only applies if the effective resolution (zoom shrinks this) is below the pixel dimensions of the map.
+            </remarks>
+        </member>
+        <member name="F:Intersect.Framework.Core.GameObjects.Maps.GameBorderStyle.SeamlessUnbounded">
+            <summary>
+            No transitions between adjacent maps, and the camera is not locked to map boundaries ("black" borders).
+            </summary>
+        </member>
+        <member name="T:Intersect.Framework.Core.GameObjects.Maps.MapInstanceType">
+            <summary>
+            Used to determine warping logic across the different types of map instance a developer may request the creation of
+            </summary>
+        </member>
+        <member name="F:Intersect.Framework.Core.GameObjects.Maps.MapInstanceType.Overworld">
+            <summary>
+            The overworld instance - the instance that is commonly shared amongst players, and where players are placed in default situations
+            </summary>
+        </member>
+        <member name="F:Intersect.Framework.Core.GameObjects.Maps.MapInstanceType.Personal">
+            <summary>
+            The type used whenever you want a player to be alone on their own map instance
+            </summary>
+        </member>
+        <member name="F:Intersect.Framework.Core.GameObjects.Maps.MapInstanceType.Guild">
+            <summary>
+            An instance that is shared amongst members of a guild
+            </summary>
+        </member>
+        <member name="F:Intersect.Framework.Core.GameObjects.Maps.MapInstanceType.Shared">
+            <summary>
+            The instance that is shared amongst members of a party
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.NPCs.NPCDescriptor.IndividualizedLoot">
+            <summary>
+            If true this npc will drop individual loot for all of those who helped slay it.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.NPCs.NPCDescriptor.JsonColor">
+            <summary>
+            The database compatible version of <see cref="P:Intersect.Framework.Core.GameObjects.NPCs.NPCDescriptor.Color"/>
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.NPCs.NPCDescriptor.Color">
+            <summary>
+            Defines the ARGB color settings for this Npc.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.NPCs.NPCDescriptor.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Pets.PetDescriptor.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.PlayerClass.ClassDescriptor.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Resources.ResourceDescriptor.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Variables.IVariableDescriptor.DataType">
+            <summary>
+            The data type of the variable.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Variables.IVariableDescriptor.TextId">
+            <summary>
+            Identifier used for event chat variables to display the value of this variable/switch.
+            </summary>
+            <seealso href="https://www.ascensiongamedev.com/topic/749-event-text-variables/" />
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Variables.VariableDescriptor`1.DataType">
+            <inheritdoc cref="P:Intersect.Framework.Core.GameObjects.Variables.IVariableDescriptor.DataType" />
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Variables.VariableDescriptor`1.Folder">
+            <inheritdoc cref="P:Intersect.Models.IFolderable.Folder"/>
+        </member>
+        <member name="P:Intersect.Framework.Core.GameObjects.Variables.VariableDescriptor`1.TextId">
+            <inheritdoc cref="P:Intersect.Framework.Core.GameObjects.Variables.IVariableDescriptor.TextId" />
+        </member>
+        <member name="M:Intersect.Framework.Core.GameObjects.Variables.VariableDescriptor`1.GetNamesByType(Intersect.Enums.VariableDataType)">
+            <summary>
+            Retrieve an array of variable names of the supplied data type.
+            </summary>
+            <param name="dataType">The data type to retrieve names of.</param>
+            <returns>Returns an array of names.</returns>
+        </member>
+        <member name="M:Intersect.Framework.Core.GameObjects.Variables.VariableDescriptor`1.ListIndex(System.Guid,Intersect.Enums.VariableDataType)">
+            <summary>
+            Retrieve the list index of an ID within a specific data type list.
+            </summary>
+            <param name="id">The ID to look up.</param>
+            <param name="dataType">The data type to search up.</param>
+            <returns>Returns the list Index of the provided ID.</returns>
+        </member>
+        <member name="M:Intersect.Framework.Core.GameObjects.Variables.VariableDescriptor`1.IdFromList(System.Int32,Intersect.Enums.VariableDataType)">
+            <summary>
+            Retrieve the ID associated with a list index of a specific data type.
+            </summary>
+            <param name="listIndex">The list index to retrieve.</param>
+            <param name="dataType">The data type to search up.</param>
+            <returns>Returns the ID of the provided index.</returns>
+        </member>
+        <member name="T:Intersect.Framework.Core.Timing">
+            <summary>
+            Utility class for timing.
+            </summary>
+        </member>
+        <member name="M:Intersect.Framework.Core.Timing.#ctor">
+            <summary>
+            Initializes a <see cref="T:Intersect.Framework.Core.Timing"/> instance.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.Timing.Global">
+            <summary>
+            The global <see cref="T:Intersect.Framework.Core.Timing"/> instance.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.Timing.Ticks">
+            <summary>
+            Ticks since the instance started adjusted by <see cref="P:Intersect.Framework.Core.Timing.TicksOffset"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.Timing.TicksOffset">
+            <summary>
+            The offset from the master instance in ticks.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.Timing.TicksUtc">
+            <summary>
+            Real-world unix time in ticks.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.Timing.Milliseconds">
+            <summary>
+            Gets the total elapsed time in milliseconds since this instance was created.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.Timing.MillisecondsOffset">
+            <summary>
+            The offset from UTC in milliseconds.
+            </summary>
+        </member>
+        <member name="P:Intersect.Framework.Core.Timing.MillisecondsUtc">
+            <summary>
+            Gets the real-world unix time in milliseconds.
+            </summary>
+        </member>
+        <member name="M:Intersect.Framework.Core.Timing.Synchronize(System.Int64,System.Int64)">
+             <summary>
+             Synchronizes this <see cref="T:Intersect.Framework.Core.Timing"/> instance with another based on the other's current time.
+            
+             Sets <see cref="P:Intersect.Framework.Core.Timing.TicksOffset"/>.
+             </summary>
+             <param name="remoteUtc">the current remote time</param>
+             <param name="remoteOffset">the offset from the remote</param>
+        </member>
+        <member name="T:Intersect.Enums.ChatMessageType">
+            <summary>
+            Defines all different types for chat messages so we can filter them on the client for display purposes.
+            </summary>
+        </member>
+        <member name="T:Intersect.Enums.DisplayDirection">
+            <summary>
+            Defines the direction from which bars are filled up.
+            </summary>
+        </member>
+        <member name="F:Intersect.Enums.DisplayDirection.StartToEnd">
+            <summary>
+            <para>The bar will be filled from:</para> start (left: empty life) to end (right: full life).
+            </summary>
+        </member>
+        <member name="F:Intersect.Enums.DisplayDirection.EndToStart">
+            <summary>
+            <para>The bar will be filled from:</para> end (right: empty life) to start (left: full life).
+            </summary>
+        </member>
+        <member name="F:Intersect.Enums.DisplayDirection.TopToBottom">
+            <summary>
+            <para>The bar will be filled from:</para> top (empty life) to bottom (full life).
+            </summary>
+        </member>
+        <member name="F:Intersect.Enums.DisplayDirection.BottomToTop">
+            <summary>
+            <para>The bar will be filled from:</para> bottom (empty life) to top (full life).
+            </summary>
+        </member>
+        <member name="T:Intersect.Enums.DisplayMode">
+            <summary> Used for switching the display mode of fullscreen textures. </summary>
+        </member>
+        <member name="F:Intersect.Enums.DisplayMode.Default">
+            <summary> Default display mode of fullscreen textures. </summary>
+        </member>
+        <member name="F:Intersect.Enums.DisplayMode.Center">
+            <summary> Positions the texture in the center of the game window. </summary>
+        </member>
+        <member name="F:Intersect.Enums.DisplayMode.Stretch">
+            <summary> Stretches the texture to the game window size. </summary>
+        </member>
+        <member name="F:Intersect.Enums.DisplayMode.FitHeight">
+            <summary> Fits the texture to the game window height. </summary>
+        </member>
+        <member name="F:Intersect.Enums.DisplayMode.FitWidth">
+            <summary> Fits the texture to the game window width. </summary>
+        </member>
+        <member name="F:Intersect.Enums.DisplayMode.Fit">
+            <summary> Fits the texture to the game window by using the DrawFullScreenTextureFitMaximum method. </summary>
+        </member>
+        <member name="F:Intersect.Enums.DisplayMode.Cover">
+            <summary> Fits the texture to the game window by using the DrawFullScreenTextureFitMinimum method. </summary>
+        </member>
+        <member name="T:Intersect.Compression.GzipCompression">
+            <summary>
+            Contains several wrapper methods used to generalize code in areas of the engine related to compressing and decompressing files and data.
+            </summary>
+        </member>
+        <member name="M:Intersect.Compression.GzipCompression.CreateProvider">
+            <summary>
+            Initialize our Cryptographic Provider and make it usable.
+            </summary>
+        </member>
+        <member name="M:Intersect.Compression.GzipCompression.ReadDecompressedString(System.String)">
+            <summary>
+            Read a decompressed unencrypted string from a specified file.
+            </summary>
+            <param name="fileName">The file to decompress.</param>
+            <returns>Returns the decompressed file's content as a string.</returns>
+        </member>
+        <member name="M:Intersect.Compression.GzipCompression.CreateDecompressedFileStream(System.String)">
+            <summary>
+            Read a decompressed unencrypted stream from a specified file.
+            </summary>
+            <param name="fileName">The file to decompress.</param>
+            <returns>Returns a decompressed <see cref="T:System.Security.Cryptography.CryptoStream"/> of the file's content.</returns>
+        </member>
+        <member name="M:Intersect.Compression.GzipCompression.CreateDecompressedFileStream(System.IO.Stream)">
+            <summary>
+            Read decompressed unencrypted data from an existing <see cref="T:System.IO.Stream"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to write data from.</param>
+            <returns>Returns a decompressed <see cref="T:System.Security.Cryptography.CryptoStream"/> of the stream's content.</returns>
+        </member>
+        <member name="M:Intersect.Compression.GzipCompression.WriteCompressedString(System.String,System.String)">
+            <summary>
+            Writes the given string to a compressed encrypted file.
+            </summary>
+            <param name="fileName">The file to write the string to.</param>
+            <param name="data">The string to compress and write to the file.</param>
+        </member>
+        <member name="M:Intersect.Compression.GzipCompression.CreateCompressedFileStream(System.String)">
+            <summary>
+            Creates a compressed encrypted FileStream to write data to.
+            </summary>
+            <param name="fileName">The file to write the data to.</param>
+            <returns>Returns a <see cref="T:System.Security.Cryptography.CryptoStream"/> to write data to, saving compressed data to a file.</returns>
+        </member>
+        <member name="P:Intersect.Compression.IAssetPacker.PackageLocation">
+            <summary>
+            The location given at the creation of this object defining where we can find our asset packs.
+            </summary>
+        </member>
+        <member name="P:Intersect.Compression.IAssetPacker.CachedPackages">
+            <summary>
+            A list of all packages currently being cached.
+            </summary>
+        </member>
+        <member name="P:Intersect.Compression.IAssetPacker.FileList">
+            <summary>
+            A list of all files contained within the asset packs.
+            </summary>
+        </member>
+        <member name="M:Intersect.Compression.IAssetPacker.GetAsset(System.String)">
+            <summary>
+            Retrieve an asset from the asset packages.
+            </summary>
+            <param name="fileName">The asset to retrieve.</param>
+            <returns>Returns a <see cref="T:System.IO.MemoryStream"/> containing the requested file.</returns>
+        </member>
+        <member name="M:Intersect.Compression.IAssetPacker.Contains(System.String)">
+            <summary>
+            Checks whether or not an asset is contained within the loaded index file. This check is case insensitive!
+            </summary>
+            <param name="fileName">The file to look for.</param>
+            <returns>Returns whether or not the file was found in the loaded Asset Packs.</returns>
+        </member>
+        <member name="M:Intersect.Compression.IAssetPacker.UpdateCache">
+            <summary>
+            Updates our cache timers and disposes of items no longer within the caching time limit.
+            </summary>
+        </member>
+        <member name="T:Intersect.Configuration.ClientConfiguration">
+            <inheritdoc />
+            <summary>
+            Client configuration options
+            </summary>
+        </member>
+        <member name="M:Intersect.Configuration.ClientConfiguration.Load(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Configuration.ClientConfiguration.Save(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.Host">
+            <summary>
+            Hostname of the server to connect to
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.Port">
+            <summary>
+            Port of the server to connect to
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.GameFont">
+            <summary>
+            The font family to use on misc non-ui rendering
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.EntityNameFont">
+            <summary>
+            The font family to use on entity names
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.ChatBubbleFont">
+            <summary>
+            The font family to use on chat bubbles
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.ActionMsgFont">
+            <summary>
+            The font family to use on action messages
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.UIFont">
+            <summary>
+            The font family to use on unstyled windows such as the debug menu/admin window
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.ChatLines">
+            <summary>
+            Number of lines to save for chat scrollback
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.MenuMusic">
+            <summary>
+            Menu music file name
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.MenuBackground">
+            <summary>
+            Sets the main menu's background texture, if the the index of the list is bigger than 1,
+            the background will be animated by sequentially drawing the texture files from the list.
+            Static background Example: { "background.png" },
+            Animated background Example: { "background_0.png", "background_1.png", "background_2.png" },
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.MenuBackgroundDisplayMode">
+            <summary>
+            Sets the display mode of the main menu's background.
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.MenuBackgroundFrameInterval">
+            <summary>
+            Sets the frames interval (milliseconds) of the main menu's animated background.
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.IntroImages">
+            <summary>
+            A list from which introductory images are drawn when the game client is launched.
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.UpdateUrl">
+            <summary>
+            The address for the update manifest file generated by the editor.
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.MouseCursor">
+            <summary>
+            Sets a custom mouse cursor.
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.MusicFadeTimer">
+            <summary>
+            Determines the time it takes to fade-in or fade-out a song when no other instructions are given.
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.FadeDurationMs">
+            <summary>
+            The default duration of fades. Controls duration of non-event fades like on login/logout
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.EnableContextMenus">
+            <summary>
+            Configures whether or not the context menus are enabled upon right-clicking certain elements.
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.EnableZebraStripedRows">
+            <summary>
+            Configures whether the highlighted even rows of list elements should be marked differently or not.
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.UiSkin">
+            <summary>
+            Configures the name of the skin or skin texture (must end in .png) to use.
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.EntityBarDirections">
+            <summary>
+            Configures the rendering direction of entity bars, vitals in their order, then experience
+            </summary>
+        </member>
+        <member name="T:Intersect.Configuration.IConfigurable`1">
+            <summary>
+            Base interface for configurable objects
+            </summary>
+            <typeparam name="TConfiguration">Configuration type</typeparam>
+        </member>
+        <member name="P:Intersect.Configuration.IConfigurable`1.Configuration">
+            <summary>
+            The configuration instance for this object
+            </summary>
+        </member>
+        <member name="T:Intersect.Configuration.IConfiguration`1">
+            <summary>
+            Base interface for configuration structures
+            </summary>
+            <typeparam name="TConfiguration">Configuration type</typeparam>
+        </member>
+        <member name="M:Intersect.Configuration.IConfiguration`1.Load(System.String,System.Boolean)">
+            <summary>
+            Loads configuration into this instance from the specified file.
+            </summary>
+            <param name="filePath">the file to load from</param>
+            <param name="failQuietly">do not throw an exception if an error is encountered, default false</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Configuration.IConfiguration`1.Save(System.String,System.Boolean)">
+            <summary>
+            Persists configuration from this instance into the specified file.
+            </summary>
+            <param name="filePath">the file to save to</param>
+            <param name="failQuietly">do not throw an exception if an error is encountered, default false</param>
+            <returns></returns>
+        </member>
+        <member name="F:Intersect.Config.BankOptions.DefaultMaxSlots">
+            <summary>
+            The intersect default maximum bank slot value a guild OR player could ever have
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.BankOptions.MaxSlots">
+            <summary>
+            The max amount of bank slots possible, player, guild, or otherwise.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ChatOptions.MaxChatLength">
+            <summary>
+            The maximum length of a chat message in characters.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ChatOptions.MinIntervalBetweenChats">
+            <summary>
+            The minimum amount of time (in milliseconds) between sending chat messages.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ChatOptions.ShowAnnouncementBanners">
+            <summary>
+            Is the client allowed to show in-game banners for announcements made?
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ChatOptions.AnnouncementDisplayDuration">
+            <summary>
+            The time (in milliseconds) the announcement banners should display, if enabled.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.CombatOptions.MovementCancelsCast">
+            <summary>
+            If enabled this allows spell casts to stop/be canceled if the player tries to move around (WASD)
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.CombatOptions.MatchGroupCooldowns">
+            <summary>
+            Configures whether cooldowns within cooldown groups should match.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.CombatOptions.MatchGroupCooldownHighest">
+            <summary>
+            Only used when <seealso cref="P:Intersect.Config.CombatOptions.MatchGroupCooldowns"/> is enabled!
+            Configures whether cooldowns are being matched to the highest cooldown within a cooldown group when true, or are matched to the current item or spell being used when false.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.CombatOptions.LinkSpellAndItemCooldowns">
+            <summary>
+            Only used when <seealso cref="P:Intersect.Config.CombatOptions.MatchGroupCooldowns"/> is enabled!
+            Configures whether cooldown groups between items and spells are shared.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.CombatOptions.EnableGlobalCooldowns">
+            <summary>
+            Configures whether or not using a spell or item should trigger a global cooldown.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.CombatOptions.GlobalCooldownDuration">
+            <summary>
+            Configures the duration (in milliseconds) which the global cooldown lasts after each ability.
+            Only used when <seealso cref="P:Intersect.Config.CombatOptions.EnableGlobalCooldowns"/> is enabled!
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.CombatOptions.MaxPlayerAutoTargetRadius">
+            <summary>
+            Configures the maximum distance a target is allowed to be from the player when auto targetting.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.CombatOptions.RegenVitalsInCombat">
+            <summary>
+            If enabled this allows regenerate vitals in combat
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.CombatOptions.EnableTurnAroundWhileCasting">
+            <summary>
+            If enabled, this allows entities to turn around while casting
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.CombatOptions.EnableTargetWindow">
+            <summary>
+            If enabled, the target window will be shown to players whenever they target an entity
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.CombatOptions.EnableAutoSelfCastFriendlySpellsWhenTargetingHostile">
+            <summary>
+            If enabled, this makes it so a player casting a friendly spell on a hostile target instead casts the spell upon themselves
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.CombatOptions.EnableAllPlayersFriendlyInSafeZone">
+            <summary>
+            If enabled, this allows players to cast friendly spells on players who aren't in their guild or party
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.DatabaseOptions.Server">
+            <summary>
+            The database hostname, assumed to be <c>localhost</c> if not specified.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.DatabaseOptions.Username">
+            <summary>
+            The username to connect to the database with, assumed to be <c>root</c> if not specified.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.FloodThresholdOptions.MaxPacketSize">
+            <summary>
+            The largest a single packet should be before it's considered flooding.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.FloodThresholdOptions.MaxPacketPerSec">
+            <summary>
+            The maximum number of packets we should receive from a cient before we consider them to be flooding.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.FloodThresholdOptions.KickAvgPacketPerSec">
+            <summary>
+            The number of packets received per second on average that we will accept before kicking the client for flooding.
+            </summary>
+        </member>
+        <member name="T:Intersect.Config.Guilds.GuildOptions">
+            <summary>
+            Contains all options pertaining to guilds
+            </summary>
+        </member>
+        <member name="F:Intersect.Config.Guilds.GuildOptions.DefaultBankSlots">
+            <summary>
+            The intersect default value for guild bank slots
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.Guilds.GuildOptions.AllowGuildMemberPvp">
+            <summary>
+            If guild members are allowed to attack each other.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.Guilds.GuildOptions.ShowGuildNameTagsOverMembers">
+            <summary>
+            Configured whether the guild name should be rendered above player sprites as a tag
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.Guilds.GuildOptions.GuildUpdateInterval">
+            <summary>
+            How often to send guild updates to members, these updates are alongside updates whenever people log in or out
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.Guilds.GuildOptions.DeleteStaleGuildsAfterDays">
+            <summary>
+            If set to a value > 0 then upon server boot any guilds with only 1 member that hasn't played in this number of days will be deleted
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.Guilds.GuildOptions.InitialBankSlots">
+            <summary>
+            Default number of storage slots in guild banks
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.Guilds.GuildOptions.Ranks">
+            <summary>
+            Array of guild ranks that are available in this game
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.Guilds.GuildPermissions.Invite">
+            <summary>
+            Defines whether or not this guild member can invite new members
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.Guilds.GuildPermissions.Kick">
+            <summary>
+            Defines whether or not this guild member can kick members (under their rank of course)
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.Guilds.GuildPermissions.Promote">
+            <summary>
+            Defines whether or not this guild member can promote other guilds members to ranks below this one
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.Guilds.GuildPermissions.Demote">
+            <summary>
+            Defined whether or not this guild member can demote other members who are below this rank
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.Guilds.GuildPermissions.BankRetrieve">
+            <summary>
+            Determines whether or not guild members of this rank can withdraw items from the guild bank
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.Guilds.GuildPermissions.BankDeposit">
+            <summary>
+            Determines whether or not guild members of this rank can deposit items into the guild bank
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.Guilds.GuildPermissions.BankMove">
+            <summary>
+            Determines whether or not guild members of this rank can move items around within the guild bank
+            </summary>
+        </member>
+        <member name="T:Intersect.Config.Guilds.GuildRank">
+            <summary>
+            Name and options for individual guild ranks
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.Guilds.GuildRank.Title">
+            <summary>
+            Name of this rank
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.Guilds.GuildRank.Limit">
+            <summary>
+            Maximum number of guild members with this title
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.Guilds.GuildRank.Permissions">
+            <summary>
+            Permissions that this rank holds for the guild and the actions they can take
+            </summary>
+        </member>
+        <member name="F:Intersect.Config.InstancingOptions.DefaultInstanceLives">
+            <summary>
+             Intersect default for instance lives
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.InstancingOptions.SharedInstanceRespawnInInstance">
+            <summary>
+            Whether dying in a shared instance "respawns" you at the instance entrance. Useful for dungeon implementations
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.InstancingOptions.RejoinableSharedInstances">
+            <summary>
+            Whether a player that leaves a shared instance can come back in to that instance after leaving.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.InstancingOptions.MaxSharedInstanceLives">
+            <summary>
+            How many lives a party has in a shared instance, if enabled
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.InstancingOptions.BootAllFromInstanceWhenOutOfLives">
+            <summary>
+            Whether all party members get booted out of an instance on lives reaching -1
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.InstancingOptions.LoseExpOnInstanceDeath">
+            <summary>
+            Whether you lose experience on death in a shared instance
+            </summary>
+        </member>
+        <member name="T:Intersect.Config.ItemOptions">
+            <summary>
+            Configuration options for items.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ItemOptions.RarityTiers">
+            <summary>
+            The available rarity tiers.
+            </summary>
+            <remarks>This is not intended to be a localized string, please see Strings for localization.</remarks>
+        </member>
+        <member name="P:Intersect.Config.LoggingOptions.Chat">
+            <summary>
+            Determines whether chat logs should be written into the logging database
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.LoggingOptions.GuildActivity">
+            <summary>
+            Logs guild activity (creations, disbands, joins, leaves, kicks, promotions, transfers, etc
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.LoggingOptions.Trade">
+            <summary>
+            Determines whether trades should be written into the logging database
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.LoggingOptions.UserActivity">
+            <summary>
+            Determines if general user activity (logins, logouts, character creations/deletions, etc) should be written into the logging database
+            </summary>
+        </member>
+        <member name="T:Intersect.Config.LootOptions">
+            <summary>
+            Contains configurable options pertaining to the way loot (item) drops are handled by the engine.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.LootOptions.ItemDespawnTime">
+            <summary>
+            Defines how long (in ms) loot will be available for picking up on the map.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.LootOptions.ItemOwnershipTime">
+            <summary>
+            Defines how long (in ms) an item drop will be ''owned'' by a player and their party.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.LootOptions.ShowUnownedItems">
+            <summary>
+            Defines whether players can see items they do not ''own'' on the map.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.LootOptions.ConsolidateMapDrops">
+            <summary>
+            Defines whether spawning items on the map from anything but the map attribute should consolidate it into one item.
+            When false, will drop multiple items with a quantity of 1, rather than a single item with a higher quantity for non-stackable items.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.LootOptions.EnableLootWindow">
+            <summary>
+            Configures whether the loot window feature of the client is allowed to be active.
+            Note, there's no such setting on the client so enabling it here enables it there.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.LootOptions.MaximumLootWindowItems">
+            <summary>
+            Configures the maximum amount of items to be displayed on the client's Loot Window.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.LootOptions.MaximumLootWindowDistance">
+            <summary>
+            Configures the maximum amount of tiles around you to search for loot with the Loot Window.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.LootOptions.IndividualizedLootAutoIncludePartyMembers">
+            <summary>
+            When killing an NPC which spawns individualized loot for all of its attackers, include loot for all their party members, even if they didn't participate (deal damage) to the npc
+            </summary>
+        </member>
+        <member name="T:Intersect.Config.MapOptions">
+            <summary>
+             Options for the game map.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.MapOptions.DisableExpLossInArenaMaps">
+            <summary>
+            If experience can be lost in arena type maps.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.MapOptions.DisablePlayerDropsInArenaMaps">
+            <summary>
+            If items can be dropped in arena type maps.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.MapOptions.EnableCrossingDiagonalBlocks">
+            <summary>
+            If two block attributes placed diagonally block diagonal movement.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.MapOptions.EnableDiagonalMovement">
+            <summary>
+            Indicates whether diagonal movement is enabled for entities within the map.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.MapOptions.GameBorderStyle">
+            <summary>
+            The style of the game's border.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.MapOptions.ItemAttributeRespawnTime">
+            <summary>
+            The time, in milliseconds, until item attributes respawn on the map.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.MapOptions.Layers">
+            <summary>
+            The options for the map's layers.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.MapOptions.MapHeight">
+            <summary>
+            The height of the map in tiles.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.MapOptions.MapItemHeight">
+            <summary>
+            The width of map items.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.MapOptions.MapItemWidth">
+            <summary>
+            The height of map items.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.MapOptions.MapWidth">
+            <summary>
+            The width of the map in tiles.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.MapOptions.MovementDirections">
+            <summary>
+            The number of movement directions available in the game for entities within the map.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.MapOptions.TileHeight">
+            <summary>
+            The height of each tile in pixels.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.MapOptions.TileWidth">
+            <summary>
+            The width of each tile in pixels.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.MapOptions.TimeUntilMapCleanup">
+            <summary>
+            The time, in milliseconds, until the map is cleaned up.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.MapOptions.ZDimensionVisible">
+            <summary>
+            Indicates whether the Z-dimension is visible in the map.
+            </summary>
+        </member>
+        <member name="M:Intersect.Config.MapOptions.Validate">
+            <summary>
+            Validates the properties of the map options object.
+            </summary>
+        </member>
+        <member name="T:Intersect.Config.MetricsOptions">
+            <summary>
+            Contains configurable options pertaining to stat/metrics collecting
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.MetricsOptions.Enable">
+            <summary>
+            Track game performance metrics
+            </summary>
+        </member>
+        <member name="T:Intersect.Config.NpcOptions">
+            <summary>
+            Contains configurable options pertaining to the way Npcs are handled by the engine.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.NpcOptions.AllowResetRadius">
+            <summary>
+            If NPCs are allowed to reset after moving out of a specified radius when starting to fight another entity.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.NpcOptions.ResetRadius">
+            <summary>
+            Configures the radius in which an NPC is allowed to move after starting to fight another entity.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.NpcOptions.AllowNewResetLocationBeforeFinish">
+            <summary>
+            If the NPC is allowed to gain a new reset center point while it is still busy moving to its original reset point.
+            NOTE: Can be used to allow the NPCs to be dragged very far away, as it constantly resets the center of its radius!!!
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.NpcOptions.ResetVitalsAndStatuses">
+            <summary>
+            If the NPC should completely restore its vitals and statusses once it starts resetting.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.NpcOptions.ContinuouslyResetVitalsAndStatuses">
+            <summary>
+            If the NPCs health should continue to reset to full and clear statuses while working its way to the reset location
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.NpcOptions.AllowEngagingWhileResetting">
+            <summary>
+            If true, a NPC can be attacked while they are resetting. Their new attacker will become a target if they are within the reset radius
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.NpcOptions.ShowLevelByName">
+            <summary>
+            If the level of an NPC is shown next to their name.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.NpcOptions.IntangibleDuringReset">
+            <summary>
+            If true, NPCs that are resetting will walk through players
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.NpcOptions.ResetIfCombatTimerExceeded">
+            <summary>
+            If true, NPCs will go to reset state if their combat timer is exceeded
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PacketOptions.BatchPlayerMovementPackets">
+            <summary>
+            If this value is true, player movements will be sent in the batch with npc/event movement when maps update instead of in realtime which will reduce workload on the network pool at the expense of being slightly delayed
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PacketOptions.BatchActionMessagePackets">
+            <summary>
+            If this value is true, action messages will be sent in a batch maps update instead of in realtime which will reduce workload on the network pool at the expense of being slightly delayed
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PacketOptions.BatchAnimationPackets">
+            <summary>
+            If this value is true, animation packetswill be sent in a batch maps update instead of in realtime which will reduce workload on the network pool at the expense of being slightly delayed
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PacketSecurityOptions.MinimumPing">
+            <summary>
+            Assumed minimum ping a client will have when communicating with the server.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PacketSecurityOptions.ErrorMarginFactor">
+            <summary>
+            This factor is multiplied by the client ping in order to determine the acceptable error margin in packet timing.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PacketSecurityOptions.NaturalLowerMargin">
+            <summary>
+            Lower bounds of adjusted packet times with pings taken into account for packets to be considered natural.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PacketSecurityOptions.NaturalUpperMargin">
+            <summary>
+            Upper bounds of adjusted packet times with pings taken into account for packets to be considered natural.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PacketSecurityOptions.AllowedSpikePackets">
+            <summary>
+            Number of consecutive unnatural packets that are accepted in short intervals before being dropped.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PacketSecurityOptions.BaseDesyncForegiveness">
+            <summary>
+            The base amount of time in ms that we will forgive the client for being desyned
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PacketSecurityOptions.DesyncForgivenessFactor">
+            <summary>
+            A factor in whch we will allow the client time to shift from the servers before dropping packets with configured error margins taken into account.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PacketSecurityOptions.DesyncForgivenessInterval">
+            <summary>
+            A value measured in milliseconds in which a packet that is out of sync will be forgiven (no matter how out of sync) and timing will sent to the client.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PacketSecurityOptions.EditorThresholds">
+            <summary>
+            Packet flooding detection thresholds for the game editor. (No Restrictions.)
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PacketSecurityOptions.PlayerThresholds">
+            <summary>
+            Packet flooding detection thresholds for general players. Pretty strict.
+            Might need to be adjusted if there is a lot of high paced actions/movement/combat in your game.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PacketSecurityOptions.ModAdminThresholds">
+            <summary>
+            Packet flooding detection thresholds for mods/admins. Hopefully you trust these guys.
+            Limits need to be higher than general players since they can warp quickly around the world with shift click.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PacketSecurityOptions.DefaultThresholds">
+            <summary>
+            Packet flooding detection threshholds for all users who are not yet logged in.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PartyOptions.MaximumMembers">
+            <summary>
+            Defines the maximum amount of members a party can have.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PartyOptions.BonusExperiencePercentPerMember">
+            <summary>
+            It will determine if you will have an XP bonus for each member, Eg 10, will give 10% more to the monster's total XP, then split equally to all members.
+            A monster that would give 100 XP, now gives 120, getting 60 for each member, when 2 in the party.
+            </summary>
+        </member>
+        <member name="T:Intersect.Config.PlayerOptions">
+            <summary>
+            Contains configurable options pertaining to the way Players are handled by the engine.
+            </summary>
+        </member>
+        <member name="F:Intersect.Config.PlayerOptions.DefaultInitialBankSlots">
+            <summary>
+            Default value for initial amount of player's bank slots.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.AllowCombatMovement">
+            <summary>
+            Unlinks the timers for combat and movement to facilitate complex combat (e.g. kiting)
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.AutoTurnToTargetDelay">
+            <summary>
+            Sets the delay (milliseconds) for the feature 'Auto-turn to target'.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.AutoTurnToTargetIgnoresEntitiesBehind">
+            <summary>
+            When enabled, 'Auto-turn to target' ignores entities behind players.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.EnableAutoTurnToTarget">
+            <summary>
+            Enables the client feature 'Auto-turn to target'.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.EnableFriendLoginNotifications">
+            <summary>
+            Enables or disables friend login notifications when a user joins the game.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.ExpLossFromCurrentExp">
+            <summary>
+            If true, it will remove the associated exp, otherwise you will lose the exp based on the exp required to level up.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.ExpLossOnDeathPercent">
+            <summary>
+            A percentage between 0 and 100 which determines the experience that players will lose when they die.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.HotbarSlotCount">
+            <summary>
+            Number of hotbar slots a player has.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.InitialBankslots">
+            <summary>
+            Number of bank slots a player has.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.ItemDropChance">
+            <summary>
+            A percentage between 0 and 100 which determines the chance in which they will lose any given item in their inventory when killed.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.MaxCharacters">
+            <summary>
+            Number of characters an account may create.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.MaxInventory">
+            <summary>
+            Number of inventory slots a player has.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.MaxLevel">
+            <summary>
+            Max level a player can achieve.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.MaxSpells">
+            <summary>
+            Number of spell slots a player has.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.MaxStat">
+            <summary>
+            The highest value a single stat can be for a player.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.RequestTimeout">
+            <summary>
+            How long a player must wait before sending a trade/party/friend.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.ShowLevelByName">
+            <summary>
+            If the level of a player is shown next to their name.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.SkipCharacterSelect">
+            <summary>
+            If the game client skips the character select window upon login or going back
+            to characters when the max number of characters allowed per account is one.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.TradeRange">
+            <summary>
+            Distance (in tiles) between players in which a trade offer can be sent and accepted.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.PlayerStoreSprite">
+            <summary>
+            Default player store sprite
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.PlayerOptions.AutomaticRespawnTime">
+            <summary>
+            Time in milliseconds until the player automatic respawn
+            </summary>
+        </member>
+        <member name="T:Intersect.Config.ProcessingOptions">
+            <summary>
+            Thread count and timing options for game processing.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.CpsLock">
+            <summary>
+            If the server logic thread sleeps after each loop iteration by default.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.MinLogicThreads">
+            <summary>
+            Minimum of threads that will be created process map logic, npc/event updates, hots/dots/status effects, projectiles and more.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.MaxLogicThreads">
+            <summary>
+            Maximum number threads that will be created to handle map logic, npc/event updates, hots/dots/status effects, projectiles while the server is under load.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.LogicThreadIdleTimeout">
+            <summary>
+            This is how long (in ms) a logic thread in our logic pool should be idle before it is considered unneeded and therefore disposed.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.MinNetworkThreads">
+            <summary>
+            Minimum number of threads that will be used for packet processing which we don't want to slow down our game loop.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.MaxNetworkThreads">
+            <summary>
+            Maximum number of threads that will be used for packet processing which we don't want to slow down our game loop.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.NetworkThreadIdleTimeout">
+            <summary>
+            This is how long (in ms) a network thread in our network pool should be idle before it is considered unneeded and therefore disposed.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.MinDatabaseThreads">
+            <summary>
+            Minimum number of threads that will be used for database interactions like player or variable saving
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.MaxDatabaseThreads">
+            <summary>
+            Maximum number of threads that will be used for database interactions like player or variable saving
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.DatabaseThreadIdleTimeout">
+            <summary>
+            This is how long (in ms) a database thread should be idle before it is considered unneeded and therefore disposed.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.DatabaseSaveServerVariablesInterval">
+            <summary>
+            How often should the server save changes to server variable values?
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.MinSystemThreadpoolWorkerThreads">
+            <summary>
+            Minimum number of worker threads that will be used in the system managed threadpool (-1 for default)
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.MaxSystemThreadpoolWorkerThreads">
+            <summary>
+            Maximum number of worker threads that will be used in the system managed threadpool (-1 for default)
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.MinSystemThreadpoolIOThreads">
+            <summary>
+            Minimum number of worker threads that will be used for io the system managed threadpool (-1 for default)
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.MaxSystemThreadpoolIOThreads">
+            <summary>
+            Maximum number of worker threads that will be used for io the system managed threadpool (-1 for default)
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.MapUpdateInterval">
+            <summary>
+            This controls how often maps/npcs should be updated in ms.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.ProjectileUpdateInterval">
+            <summary>
+            This controls how often projectiles should updated in ms. (It is recommended to keep this the same value as the MapUpdateInterval so they are all updated at the same time)
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.PlayerSaveInterval">
+            <summary>
+            How long to delay between player saves (default 2 min)
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.CommonEventAutorunStartInterval">
+            <summary>
+            How often should the server try to execute autorun common events for a player? This can get expensive if you have a lot of autorun common events with lots of complex conditions.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.ProcessingOptions.StaleCooldownRemovalTimer">
+            <summary>
+            How often should the server check for stale cooldowns on players to remove them from their respective collections.
+            </summary>
+        </member>
+        <member name="T:Intersect.Config.QuestOptions">
+            <summary>
+            Contains configurable options pertaining quests and the layout of the quest log
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.QuestOptions.Categories">
+            <summary>
+            Quest categories in which to separate quests into on the quest log
+            </summary>
+        </member>
+        <member name="T:Intersect.Config.SpriteOptions">
+            <summary>
+            Contains configurable options pertaining to the way sprites are rendered within the engine
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.SpriteOptions.AttackFrames">
+            <summary>
+            Defines the number of frames there will be in attacking sprite sheets.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.SpriteOptions.CastFrames">
+            <summary>
+            Defines the number of frames there will be in casting sprite sheets.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.SpriteOptions.IdleFrames">
+            <summary>
+            Defines the number of frames there will be in idling sprite sheets.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.SpriteOptions.IdleFrameDuration">
+            <summary>
+            Defines the duration (in milliseconds) for transitioning between consecutive idling frames.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.SpriteOptions.IdleStartDelay">
+            <summary>
+            Defines how long (in milliseconds) a player must idle before the idling sprite starts to render.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.SpriteOptions.NormalFrames">
+            <summary>
+            Defines the number of frames there will be in normal (walking) sprite sheets.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.SpriteOptions.NormalAttackFrame">
+            <summary>
+            Defines a single frame from the normal sprite sheet to show for attacking when there is no designated sheet for attack.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.SpriteOptions.NormalBlockFrame">
+            <summary>
+            Defines a single frame from the normal sprite sheet to show when blocking.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.SpriteOptions.NormalCastFrame">
+            <summary>
+            Defines a single frame from the normal sprite sheet to show for casting when there is no designated sheet for cast.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.SpriteOptions.NormalDashFrame">
+            <summary>
+            Defines a single frame from the normal sprite sheet to show when dashing or sliding.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.SpriteOptions.MovingFrameDuration">
+            <summary>
+            Defines the duration (in milliseconds) for transitioning between consecutive walking frames.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.SpriteOptions.ShootFrames">
+            <summary>
+            Defines the number of frames there will be in shooting sprite sheets.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.SpriteOptions.WeaponFrames">
+            <summary>
+            Defines the number of frames there will be in weapon attacking sprite sheets.
+            </summary>
+        </member>
+        <member name="P:Intersect.Config.SpriteOptions.Directions">
+            <summary>
+            The number of rows in the sprite sheet that correspond to the number of directions supported in the game.
+            Currently, Intersect only supports 4 rows of frames for directions.
+            </summary>
+        </member>
+        <member name="P:Intersect.Options.MaximumLoggedInUsers">
+            <summary>
+            Defines the maximum amount of logged-in users our server is allowed to handle.
+            </summary>
+        </member>
+        <member name="P:Intersect.Options.Passability">
+            <summary>
+            Passability configuration by map zone
+            </summary>
+        </member>
+        <member name="T:Intersect.Core.IApplicationContext">
+            <summary>
+            Declares the API surface for applications.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.IApplicationContext.HasErrors">
+            <summary>
+            If the application has encountered unhandled/unobserved exceptions during its lifespan.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.IApplicationContext.IsDebug">
+            <summary>
+            If the application is a debug build.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.IApplicationContext.IsDeveloper">
+            <summary>
+            If the application is being run in developer mode.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.IApplicationContext.IsDisposed">
+            <summary>
+            If the application has been disposed.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.IApplicationContext.IsStarted">
+            <summary>
+            If the application has been started.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.IApplicationContext.IsRunning">
+            <summary>
+            If the application is running.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.IApplicationContext.Name">
+            <summary>
+            The name of the application.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.IApplicationContext.StartupOptions">
+            <summary>
+            The options the application was started with.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.IApplicationContext.Logger">
+            <summary>
+            The application-specific logger.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.IApplicationContext.PacketHelper">
+            <summary>
+            The network helper for the application.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.IApplicationContext.Services">
+            <summary>
+            The <see cref="T:Intersect.Core.IApplicationService"/>s currently registered.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.IApplicationContext.Version">
+            <summary>
+            The version string used in protocol communication.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.IApplicationContext.VersionName">
+            <summary>
+            The human-friendly version string.
+            </summary>
+        </member>
+        <member name="M:Intersect.Core.IApplicationContext.GetService``1">
+            <summary>
+            Gets a service of type <typeparamref name="TApplicationService"/> if one has been registered.
+            </summary>
+            <typeparam name="TApplicationService">the service type to look for</typeparam>
+            <returns>an instance of <typeparamref name="TApplicationService"/> if found, otherwise <c>default(<typeparamref name="TApplicationService"/>)</c></returns>
+        </member>
+        <member name="M:Intersect.Core.IApplicationContext.Start(System.Boolean)">
+            <summary>
+            Start the application, optionally locking the current thread until shutdown (default true).
+            </summary>
+            <param name="lockUntilShutdown">if the current thread should be locked until shutdown</param>
+        </member>
+        <member name="M:Intersect.Core.IApplicationContext.StartWithActionQueue">
+            <summary>
+            Start the application with a <see cref="T:Intersect.Threading.ILockingActionQueue"/>.
+            </summary>
+            <returns>the <see cref="T:Intersect.Threading.ILockingActionQueue"/> instance being used</returns>
+        </member>
+        <member name="T:Intersect.Core.IApplicationContext`1">
+            <summary>
+            Declares the API surface for applications with specialized startup options types.
+            </summary>
+            <typeparam name="TStartupOptions">specialized startup options type</typeparam>
+        </member>
+        <member name="P:Intersect.Core.IApplicationContext`1.StartupOptions">
+            <summary>
+            The specialized options the application was started with.
+            </summary>
+        </member>
+        <member name="T:Intersect.Core.IApplicationService">
+            <summary>
+            Declares the API surface for application services.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.IApplicationService.ServiceType">
+            <summary>
+            The actual type of the service, should be an interface type.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.IApplicationService.Name">
+            <summary>
+            The name of the service, should be the name of the implementation type.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.IApplicationService.IsEnabled">
+            <summary>
+            If the service is currently enabled.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.IApplicationService.IsRunning">
+            <summary>
+            If the service is currently running.
+            </summary>
+        </member>
+        <member name="M:Intersect.Core.IApplicationService.Bootstrap(Intersect.Core.IApplicationContext)">
+            <summary>
+            Bootstrapping lifecycle method for application services.
+            </summary>
+            <param name="applicationContext">the current application context</param>
+            <returns>if bootstrapping was successful</returns>
+        </member>
+        <member name="M:Intersect.Core.IApplicationService.Start(Intersect.Core.IApplicationContext)">
+            <summary>
+            Startup lifecycle method for application services.
+            </summary>
+            <param name="applicationContext">the current application context</param>
+            <returns>if startup was successful</returns>
+        </member>
+        <member name="M:Intersect.Core.IApplicationService.Stop(Intersect.Core.IApplicationContext)">
+            <summary>
+            Shutdown lifecycle method for application services.
+            </summary>
+            <param name="applicationContext">the current application context</param>
+            <returns>if shutdown was successful</returns>
+        </member>
+        <member name="T:Intersect.Core.ICommandLineOptions">
+            <summary>
+            Declares the common basic command line options for all applications.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.ICommandLineOptions.WorkingDirectory">
+            <summary>
+            The override working directory.
+            </summary>
+        </member>
+        <member name="P:Intersect.Core.ICommandLineOptions.PluginDirectories">
+            <summary>
+            Additional plugin directories besides <c>/working/directory/plugins</c>.
+            </summary>
+        </member>
+        <member name="P:Intersect.GameObjects.ProjectileDescriptor.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.GameObjects.QuestDescriptor.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.GameObjects.QuestDescriptor.DoNotShowUnlessRequirementsMet">
+            <summary>
+            Hides this quest from the quest log if it has not been started and cannot be started due to the requiremetns/conditions
+            </summary>
+        </member>
+        <member name="P:Intersect.GameObjects.QuestDescriptor.UnstartedCategory">
+            <summary>
+            Quest category in the quest log when this quest hasn't been started yet
+            </summary>
+        </member>
+        <member name="P:Intersect.GameObjects.QuestDescriptor.InProgressCategory">
+            <summary>
+            Quest category in the quest log when this quest is in progress
+            </summary>
+        </member>
+        <member name="P:Intersect.GameObjects.QuestDescriptor.CompletedCategory">
+            <summary>
+            Quest category in the quest log when this quest has been completed
+            </summary>
+        </member>
+        <member name="P:Intersect.GameObjects.QuestDescriptor.OrderValue">
+            <summary>
+            Order priority of this quest within the quest log
+            </summary>
+        </member>
+        <member name="T:Intersect.GameObjects.Ranges.ItemRange">
+            <summary>
+            ItemRange exists to generalize rollable stats on an item
+            </summary>
+        </member>
+        <member name="P:Intersect.GameObjects.ShopDescriptor.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.GameObjects.SpellDescriptor.CooldownGroup">
+            <summary>
+            Defines which cooldown group this spell belongs to.
+            </summary>
+        </member>
+        <member name="P:Intersect.GameObjects.SpellDescriptor.IgnoreGlobalCooldown">
+            <summary>
+            Configures whether this should not trigger and be triggered by the global cooldown.
+            </summary>
+        </member>
+        <member name="P:Intersect.GameObjects.SpellDescriptor.IgnoreCooldownReduction">
+            <summary>
+            Configured whether the cooldown of this spell should be reduced by the players cooldown reduction
+            </summary>
+        </member>
+        <member name="P:Intersect.GameObjects.SpellDescriptor.Folder">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.GameObjects.SpellDescriptor.GetCooldownGroup(System.String)">
+            <summary>
+            Gets an array of all items sharing the provided cooldown group.
+            </summary>
+            <param name="cooldownGroup">The cooldown group to search for.</param>
+            <returns>Returns an array of <see cref="T:Intersect.Framework.Core.GameObjects.Items.ItemDescriptor"/> containing all items with the supplied cooldown group.</returns>
+        </member>
+        <member name="M:Intersect.IO.Files.FileSystemHelper.EnsureDirectoryExists(System.String)">
+            <summary>
+            Checks to see if the directory exists, and creates it otherwise.
+            </summary>
+            <param name="directoryPath">the directory path to check</param>
+            <returns>
+            <code>false</code> if the path is a file or creation fails
+            <code>true</code> if the path is a directory or creation succeeded
+            </returns>
+        </member>
+        <member name="P:Intersect.Models.IFolderable.Folder">
+            <summary>
+            Used to group editor items together into folders with the same name
+            </summary>
+        </member>
+        <member name="T:Intersect.Extensions.StringExtensions">
+            <summary>
+            Extensions for <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:Intersect.Extensions.StringExtensions.Format(System.String,System.Object[])">
+            <summary>
+            Formats the string in the current culture with the provided arguments.
+            </summary>
+            <param name="format">the format string</param>
+            <param name="args">the format arguments</param>
+            <returns>a formatted string</returns>
+            <seealso cref="M:System.String.Format(System.IFormatProvider,System.String,System.Object[])"/>
+        </member>
+        <member name="M:Intersect.Extensions.StringExtensions.Format(System.String,System.IFormatProvider,System.Object[])">
+            <summary>
+            Formats the string with the provided <see cref="T:System.IFormatProvider"/> and arguments.
+            </summary>
+            <param name="format">the format string</param>
+            <param name="formatProvider">the format provider to use to format the provided string and arguments</param>
+            <param name="args">the format arguments</param>
+            <returns>a formatted string</returns>
+            <seealso cref="M:System.String.Format(System.IFormatProvider,System.String,System.Object[])"/>
+        </member>
+        <member name="M:Intersect.Network.Ceras.#ctor(System.Collections.Generic.Dictionary{System.String,System.Type})">
+            <summary>
+            Creates Ceras with instructions on how to serialize type names. This is used for migrating legacy classes to newer versions during server migrations.
+            </summary>
+            <param name="nameTypeMap"></param>
+        </member>
+        <member name="M:Intersect.Network.IntersectPacket.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Network.IntersectPacket.Data">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Network.IntersectPacket.Sanitize">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Network.LegacyCeras.#ctor">
+            <summary>
+            Creates a Ceras instance with legacy config (no version tolerance) in order for the server to use for database upgrades to the new serialized formats.
+            </summary>
+        </member>
+        <member name="M:Intersect.Network.LegacyCeras.#ctor(System.Collections.Generic.Dictionary{System.String,System.Type})">
+            <summary>
+            Creates a Ceras instant wtih legacy config (no version tolerance) in order for the server to use for database upgrades to new serialized formats.
+            The dictionary parameters allow us to override what classes Ceras initializes by mapping old types to new ones.
+            </summary>
+        </member>
+        <member name="M:Intersect.Network.PacketHandlerRegistry.DiscoverMethods(System.Reflection.Assembly,System.Boolean)">
+             <summary>
+             Discovers all <see langword="static"/> methods in a given assembly that are valid packet handlers, by default requiring a <see cref="T:Intersect.Network.PacketHandlerAttribute"/>.
+            
+             Note: Changing <paramref name="requireAttribute"/> to <see langword="false"/> is very computationally expensive.
+             </summary>
+             <param name="assembly">the <see cref="T:System.Reflection.Assembly"/> to scan</param>
+             <param name="requireAttribute">if <see cref="T:Intersect.Network.PacketHandlerAttribute"/> needs to be specified (default <see langword="true"/>, <see langword="false"/> is slow)</param>
+             <returns>an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of valid <see cref="T:System.Reflection.MethodInfo"/>s</returns>
+        </member>
+        <member name="M:Intersect.Network.PacketHandlerRegistry.DiscoverMethods(System.Type,System.Reflection.BindingFlags,System.Boolean)">
+             <summary>
+             Discovers all <see langword="static"/> methods in a given type that are valid packet handlers, by default requiring a <see cref="T:Intersect.Network.PacketHandlerAttribute"/>.
+            
+             Note: Changing <paramref name="requireAttribute"/> to <see langword="false"/> is very computationally expensive.
+             </summary>
+             <param name="type">the <see cref="T:System.Type"/> to scan</param>
+             <param name="extraBindingFlags">extra <see cref="T:System.Reflection.BindingFlags"/> (besides <see cref="F:System.Reflection.BindingFlags.Public"/>) to filter the methods by</param>
+             <param name="requireAttribute">if <see cref="T:Intersect.Network.PacketHandlerAttribute"/> needs to be specified (default <see langword="true"/>, <see langword="false"/> is slow)</param>
+             <returns>an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of valid <see cref="T:System.Reflection.MethodInfo"/>s</returns>
+        </member>
+        <member name="M:Intersect.Network.PacketHandlerRegistry.DiscoverTypes(System.Reflection.Assembly,System.Boolean)">
+             <summary>
+             Discovers all <see cref="T:System.Type"/>s in a given assembly that are valid packet handlers, by default requiring a <see cref="T:Intersect.Network.PacketHandlerAttribute"/>.
+            
+             Note: Changing <paramref name="requireAttribute"/> to <see langword="false"/> is very computationally expensive.
+             </summary>
+             <param name="assembly">the <see cref="T:System.Reflection.Assembly"/> to scan</param>
+             <param name="requireAttribute">if <see cref="T:Intersect.Network.PacketHandlerAttribute"/> needs to be specified (default <see langword="true"/>, <see langword="false"/> is slow)</param>
+             <returns>an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of valid <see cref="T:System.Type"/>s</returns>
+        </member>
+        <member name="M:Intersect.Network.PacketHandlerRegistry.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Network.Packets.Client.GuildInviteAcceptPacket.#ctor">
+            <summary>
+            Parameterless Constructor for MessagePack
+            </summary>
+        </member>
+        <member name="M:Intersect.Network.Packets.Client.GuildInviteDeclinePacket.#ctor">
+            <summary>
+            Parameterless Constructor for MessagePack
+            </summary>
+        </member>
+        <member name="M:Intersect.Network.Packets.Client.GuildLeavePacket.#ctor">
+            <summary>
+            Parameterless Constructor for MessagePack
+            </summary>
+        </member>
+        <member name="M:Intersect.Network.Packets.Client.RequestGuildPacket.#ctor">
+            <summary>
+            Parameterless Constructor for MessagePack
+            </summary>
+        </member>
+        <member name="M:Intersect.Network.Packets.Client.UpdateGuildMemberPacket.#ctor">
+            <summary>
+            Parameterless Constructor for MessagePack
+            </summary>
+        </member>
+        <member name="T:Intersect.Network.Packets.Server.AnnouncementPacket">
+            <summary>
+            Defines the layout for an AnnouncementPacket.
+            </summary>
+        </member>
+        <member name="P:Intersect.Network.Packets.Server.AnnouncementPacket.Message">
+            <summary>
+            The announcement message to send.
+            </summary>
+        </member>
+        <member name="P:Intersect.Network.Packets.Server.AnnouncementPacket.Duration">
+            <summary>
+            The time (in milliseconds) for the announcement to display.
+            </summary>
+        </member>
+        <member name="M:Intersect.Network.Packets.Server.AnnouncementPacket.#ctor(System.String,System.Int64)">
+            <summary>
+            Creates a new instance of the <see cref="T:Intersect.Network.Packets.Server.AnnouncementPacket"/> class.
+            </summary>
+            <param name="message">The message to send to the client.</param>
+            <param name="duration">The duration for this message to appear for on the client.</param>
+        </member>
+        <member name="M:Intersect.Network.Packets.Server.GuildInvitePacket.#ctor">
+            <summary>
+            Parameterless Constructor for MessagePack
+            </summary>
+        </member>
+        <member name="T:Intersect.Network.Packets.Server.GuildPacket">
+            <summary>
+            The definition of the GuildPacket sent to a player containing the online and offline members of their guilds.
+            </summary>
+        </member>
+        <member name="M:Intersect.Network.Packets.Server.GuildPacket.#ctor">
+            <summary>
+            Parameterless Constructor for MessagePack
+            </summary>
+        </member>
+        <member name="M:Intersect.Network.Packets.Server.GuildPacket.#ctor(Intersect.Network.Packets.Server.GuildMember[])">
+            <summary>
+            Create a new instance of this class and define its contents.
+            </summary>
+            <param name="members">An array containing all guild members and metadata.</param>
+        </member>
+        <member name="M:Intersect.Network.Packets.Server.GuildMember.#ctor">
+            <summary>
+            Parameterless constructor for messagepack
+            </summary>
+        </member>
+        <member name="F:Intersect.Network.TransmissionMode.All">
+            <summary>
+                Guarantees that all packets will be transmitted successfully
+                and will be received and processed in the order they are sent.
+            </summary>
+        </member>
+        <member name="F:Intersect.Network.TransmissionMode.Latest">
+            <summary>
+                Guarantees that all packets will be transmitted successfully
+                but any packets of the same type will be ignored if they
+                arrive after a newer packet of their type.
+            </summary>
+        </member>
+        <member name="F:Intersect.Network.TransmissionMode.Any">
+            <summary>
+                Makes no guarantees about anything.
+            </summary>
+        </member>
+        <member name="T:Intersect.Plugins.Interfaces.CreateLoggerOptions">
+            <summary>
+            Configuration options for creating <see cref="T:Microsoft.Extensions.Logging.Logger`1"/>s.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Interfaces.CreateLoggerOptions.Console">
+            <summary>
+            The minimum <see cref="T:Microsoft.Extensions.Logging.LogLevel"/> for console output, set to <see cref="F:Microsoft.Extensions.Logging.LogLevel.None"/> to disable.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Interfaces.CreateLoggerOptions.File">
+            <summary>
+            The minimum <see cref="T:Microsoft.Extensions.Logging.LogLevel"/> for file output, set to <see cref="F:Microsoft.Extensions.Logging.LogLevel.None"/> to disable.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Interfaces.CreateLoggerOptions.Name">
+            <summary>
+            The name of the created <see cref="T:Microsoft.Extensions.Logging.Logger`1"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Interfaces.CreateLoggerOptions.ContextName">
+            <summary>
+            The context name of the logger. This takes priority over <see cref="P:Intersect.Plugins.Interfaces.CreateLoggerOptions.ContextType"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Interfaces.CreateLoggerOptions.ContextType">
+            <summary>
+            The context type of the logger. This will be ignored if <see cref="P:Intersect.Plugins.Interfaces.CreateLoggerOptions.ContextName"/> is set.
+            </summary>
+        </member>
+        <member name="T:Intersect.Plugins.Interfaces.ICommandLineHelper">
+            <summary>
+            Defines the API for accessing command line arguments.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.Interfaces.ICommandLineHelper.ParseArguments``1">
+            <summary>
+            Parses the command line arguments used to start the application into an instance of the provided type.
+            </summary>
+            <typeparam name="TArguments">a custom arguments type</typeparam>
+            <returns>an instance of <typeparamref name="TArguments"/> if valid</returns>
+        </member>
+        <member name="T:Intersect.Plugins.Interfaces.IEmbeddedResourceHelper">
+            <summary>
+            Defines the API for accessing embedded resources.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.Interfaces.IEmbeddedResourceHelper.Exists(System.String)">
+            <summary>
+            Checks if a resource with the given name exists.
+            </summary>
+            <param name="resourceName">the name of the resource to check for</param>
+            <returns>if <paramref name="resourceName"/> exists</returns>
+        </member>
+        <member name="M:Intersect.Plugins.Interfaces.IEmbeddedResourceHelper.GetInfo(System.String)">
+            <summary>
+            Gets the information for the requested resource using inexact name matching as described by <see cref="M:Intersect.Plugins.Interfaces.IEmbeddedResourceHelper.Resolve(System.String)"/>.
+            </summary>
+            <param name="resourceName">the resource name to look for</param>
+            <returns>the <see cref="T:System.Reflection.ManifestResourceInfo"/> of the specified resource</returns>
+            <exception cref="T:System.InvalidOperationException">if <see cref="M:Intersect.Plugins.Interfaces.IEmbeddedResourceHelper.Resolve(System.String)"/> does not throw an error but the resource cannot be found</exception>
+            <see cref="M:Intersect.Plugins.Interfaces.IEmbeddedResourceHelper.Resolve(System.String)"/>
+        </member>
+        <member name="M:Intersect.Plugins.Interfaces.IEmbeddedResourceHelper.Read(System.String)">
+            <summary>
+            Opens a read stream for <paramref name="resourceName"/>.
+            </summary>
+            <param name="resourceName">the name of the resource to open for reading</param>
+            <returns>the read stream for <paramref name="resourceName"/></returns>
+            <see cref="M:Intersect.Plugins.Interfaces.IEmbeddedResourceHelper.Resolve(System.String)"/>
+        </member>
+        <member name="M:Intersect.Plugins.Interfaces.IEmbeddedResourceHelper.Resolve(System.String)">
+             <summary>
+             Resolves <paramref name="resourceName"/> to a fully-qualified resource name.
+            
+             <paramref name="resourceName"/> is used as "ends-with" matching
+               criteria, where the shortest fully-qualified resource name found
+               is returned as the resolved resource name.
+             </summary>
+             <param name="resourceName">the name of the resource to resolve</param>
+             <returns>a fully-qualified resource name if any are found</returns>
+             <exception cref="T:System.ArgumentNullException">if <see cref="M:System.String.IsNullOrWhiteSpace(System.String)"/> returns true for <paramref name="resourceName"/></exception>
+             <exception cref="T:System.IO.FileNotFoundException">if there are *no* resources that end with <paramref name="resourceName"/></exception>
+        </member>
+        <member name="M:Intersect.Plugins.Interfaces.IEmbeddedResourceHelper.TryGetInfo(System.String,System.Reflection.ManifestResourceInfo@)">
+            <summary>
+            Attempts to get the <see cref="T:System.Reflection.ManifestResourceInfo"/> of the resource
+              identified by <paramref name="resourceName"/>, returning true if
+              successful and false otherwise, without throwing exceptions.
+            </summary>
+            <param name="resourceName">the name of the resource</param>
+            <param name="resourceInfo">the output variable for the resource info</param>
+            <returns>if the <see cref="T:System.Reflection.ManifestResourceInfo"/> was fetched successfully</returns>
+            <see cref="M:Intersect.Plugins.Interfaces.IEmbeddedResourceHelper.GetInfo(System.String)"/>
+        </member>
+        <member name="M:Intersect.Plugins.Interfaces.IEmbeddedResourceHelper.TryRead(System.String,System.IO.Stream@)">
+            <summary>
+            Attempts to get the read <see cref="T:System.IO.Stream"/> of the resource
+              identified by <paramref name="resourceName"/>, returning true if
+              successful and false otherwise, without throwing exceptions.
+            </summary>
+            <param name="resourceName">the name of the resource</param>
+            <param name="stream">the output variable for the resource stream</param>
+            <returns>if a read <see cref="T:System.IO.Stream"/> was opened successfully</returns>
+            <see cref="M:Intersect.Plugins.Interfaces.IEmbeddedResourceHelper.Read(System.String)"/>
+        </member>
+        <member name="M:Intersect.Plugins.Interfaces.IEmbeddedResourceHelper.TryResolve(System.String,System.String@)">
+            <summary>
+            Attempts to resolve the fully-qualified version of <paramref name="resourceName"/>,
+              returning true if successful and false otherwise, without throwing exceptions.
+            </summary>
+            <param name="resourceName">the name of the resource to look for</param>
+            <param name="manifestResourceName">the fully qualified resource name</param>
+            <returns>if a resource was found that matches <paramref name="resourceName"/></returns>
+            <see cref="M:Intersect.Plugins.Interfaces.IEmbeddedResourceHelper.Resolve(System.String)"/>
+        </member>
+        <member name="T:Intersect.Plugins.Interfaces.ILifecycleHelper">
+            <summary>
+            Defines the API for accessing lifecycle information and events.
+            </summary>
+        </member>
+        <member name="T:Intersect.Plugins.Interfaces.ILoggingHelper">
+            <summary>
+            Defines the API for accessing the logging system.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Interfaces.ILoggingHelper.Application">
+            <summary>
+            The <see cref="T:Microsoft.Extensions.Logging.Logger`1"/> instance for the entire application.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Interfaces.ILoggingHelper.Plugin">
+            <summary>
+            The <see cref="T:Microsoft.Extensions.Logging.Logger`1"/> instance for the active plugin.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.Interfaces.ILoggingHelper.CreateLogger(Intersect.Plugins.Interfaces.CreateLoggerOptions)">
+            <summary>
+            Creates specialized <see cref="T:Microsoft.Extensions.Logging.Logger`1"/>s for the active plugin.
+            </summary>
+            <param name="createLoggerOptions">options to configure the <see cref="T:Microsoft.Extensions.Logging.Logger`1"/></param>
+            <returns>a specialized <see cref="T:Microsoft.Extensions.Logging.Logger`1"/> instance</returns>
+        </member>
+        <member name="M:Intersect.Plugins.Interfaces.ILoggingHelper.CreateLogger``1(Intersect.Plugins.Interfaces.CreateLoggerOptions)">
+            <summary>
+            Creates specialized <see cref="T:Microsoft.Extensions.Logging.Logger`1"/>s for the active plugin.
+            </summary>
+            <param name="createLoggerOptions">options to configure the <see cref="T:Microsoft.Extensions.Logging.Logger`1"/></param>
+            <returns>a specialized <see cref="T:Microsoft.Extensions.Logging.Logger`1"/> instance</returns>
+        </member>
+        <member name="T:Intersect.Plugins.Interfaces.IManifestHelper">
+            <summary>
+            Defines the API for accessing plugin manifest information.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Interfaces.IManifestHelper.Name">
+            <summary>
+            The end-user visible name of the plugin
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Interfaces.IManifestHelper.Key">
+            <summary>
+            The unique key of the plugin (e.g. AscensionGameDev.Intersect.Client.DiscordButton)
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Interfaces.IManifestHelper.Version">
+            <summary>
+            The version of the plugin
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Interfaces.IManifestHelper.Authors">
+            <summary>
+            The <see cref="T:Intersect.Plugins.Manifests.Types.Author"/>(s) of the plugin
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Interfaces.IManifestHelper.Homepage">
+            <summary>
+            The homepage for the plugin
+            </summary>
+        </member>
+        <member name="T:Intersect.Plugins.Interfaces.IPacketHelper">
+            <summary>
+            Defines the API for accessing packet information.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Interfaces.IPacketHelper.TypeRegistry">
+            <summary>
+            Registry of packet types.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Interfaces.IPacketHelper.HandlerRegistry">
+            <summary>
+            Registry of packet handlers.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Interfaces.IPacketHelper.AvailablePacketTypes">
+            <summary>
+            All packet types available to the networking layer.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Interfaces.IPacketHelper.BuiltInPacketTypes">
+            <summary>
+            Native packet types that are not added by plugins.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Interfaces.IPacketHelper.AllPluginPacketTypes">
+            <summary>
+            Packet types that are added by all plugins.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Interfaces.IPacketHelper.CurrentPluginPacketTypes">
+            <summary>
+            Packet types that are added by this plugin.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.Interfaces.IPacketHelper.TryRegisterPacketType``1">
+            <summary>
+            Try to add a packet type to the registry.
+            </summary>
+            <typeparam name="TPacket"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Plugins.Interfaces.IPacketHelper.TryRegisterPacketPreprocessor``2(``0@)">
+             <summary>
+             Try to add a packet preprocessor (multiple allowed) to the packet
+             handler registry for the specified packet type.
+            
+             Preprocessors are meant as boolean filters for whether a packet
+             should or should be handled (pre-hook, handler, post-hook), and
+             should also be where any packet mutation occurs (if a packet
+             needs to be mutated for some reason).
+            
+             Preprocessors run before all handlers and pre-hooks.
+             </summary>
+             <param name="handler"></param>
+             <typeparam name="THandler"></typeparam>
+             <typeparam name="TPacket"></typeparam>
+             <returns></returns>
+        </member>
+        <member name="M:Intersect.Plugins.Interfaces.IPacketHelper.TryRegisterPacketHandler``2(``0@)">
+            <summary>
+            Try to add a packet handler (can only be one per packet) to the
+            packet handler registry for the specified packet type.
+            </summary>
+            <param name="handler"></param>
+            <typeparam name="THandler"></typeparam>
+            <typeparam name="TPacket"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Plugins.Interfaces.IPacketHelper.TryRegisterPacketPreHook``2(``0@)">
+             <summary>
+             Try to add a packet pre-hook (multiple allowed) to the packet
+             handler registry for the specified packet type.
+            
+             Pre-hooks run immediately before handlers.
+             </summary>
+             <param name="handler"></param>
+             <typeparam name="THandler"></typeparam>
+             <typeparam name="TPacket"></typeparam>
+             <returns></returns>
+        </member>
+        <member name="M:Intersect.Plugins.Interfaces.IPacketHelper.TryRegisterPacketPostHook``2(``0@)">
+             <summary>
+             Try to add a packet post-hook (multiple allowed) to the packet
+             handler registry for the specified packet type.
+            
+             Post-hooks run immediately after handlers.
+             </summary>
+             <param name="handler"></param>
+             <typeparam name="THandler"></typeparam>
+             <typeparam name="TPacket"></typeparam>
+             <returns></returns>
+        </member>
+        <member name="P:Intersect.Plugins.IPlugin.Manifest">
+            <summary>
+            The <see cref="T:Intersect.Plugins.Interfaces.IManifestHelper"/> that describes this <see cref="!:Plugin"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.IPlugin.Logging">
+            <summary>
+            The <see cref="T:Intersect.Plugins.Interfaces.ILoggingHelper"/> for this <see cref="!:Plugin"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.IPlugin.Configuration">
+            <summary>
+            The <see cref="T:Intersect.Plugins.PluginConfiguration"/> for this <see cref="!:Plugin"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.IPlugin.IsEnabled">
+            <inheritdoc cref="P:Intersect.Plugins.PluginConfiguration.IsEnabled" />
+        </member>
+        <member name="P:Intersect.Plugins.IPlugin.Key">
+            <inheritdoc cref="P:Intersect.Plugins.Interfaces.IManifestHelper.Key" />
+        </member>
+        <member name="M:Intersect.Plugins.IPlugin.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Plugins.IPluginBaseContext">
+            <summary>
+            Defines the common required elements for a context between <see cref="T:Intersect.Plugins.IPluginContext"/> and <see cref="T:Intersect.Plugins.IPluginBootstrapContext"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.IPluginBaseContext.Assembly">
+            <summary>
+            The <see cref="T:System.Reflection.Assembly"/> of the current plugin.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.IPluginBaseContext.Configuration">
+            <summary>
+            The <see cref="T:Intersect.Plugins.PluginConfiguration"/> of the current plugin.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.IPluginBaseContext.EmbeddedResources">
+            <summary>
+            The <see cref="T:Intersect.Plugins.Interfaces.IEmbeddedResourceHelper"/> for the current plugin.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.IPluginBaseContext.Logging">
+            <summary>
+            The <see cref="T:Intersect.Plugins.Interfaces.ILoggingHelper"/> for the current plugin.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.IPluginBaseContext.Manifest">
+            <summary>
+            The <see cref="T:Intersect.Plugins.Interfaces.IManifestHelper"/> for the current plugin.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.IPluginBaseContext.GetTypedConfiguration``1">
+            <summary>
+            Gets <see cref="P:Intersect.Plugins.IPluginBaseContext.Configuration"/> as a <typeparamref name="TConfiguration"/>.
+            </summary>
+            <typeparam name="TConfiguration">a subtype of <see cref="T:Intersect.Plugins.PluginConfiguration"/></typeparam>
+            <returns><see cref="P:Intersect.Plugins.IPluginBaseContext.Configuration"/> if it is a <typeparamref name="TConfiguration"/> or null otherwise</returns>
+        </member>
+        <member name="T:Intersect.Plugins.IPluginBootstrapContext">
+            <summary>
+            Defines the API of the plugin context during application bootstrapping.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.IPluginBootstrapContext.CommandLine">
+            <summary>
+            The <see cref="T:Intersect.Plugins.Interfaces.ICommandLineHelper"/> of the current plugin.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.IPluginBootstrapContext.HostPluginContextType">
+            <summary>
+            The <see cref="T:System.Type"/> of the plugin context that will be created by the plugin host.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.IPluginBootstrapContext.Packet">
+            <summary>
+            The <see cref="T:Intersect.Plugins.Interfaces.IPacketHelper"/> of the current plugin.
+            </summary>
+        </member>
+        <member name="T:Intersect.Plugins.IPluginContext">
+            <summary>
+            Defines the API of the plugin context during application runtime.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.IPluginContext.Lifecycle">
+            <summary>
+            The <see cref="T:Intersect.Plugins.Interfaces.ILifecycleHelper"/> of the current plugin.
+            </summary>
+        </member>
+        <member name="T:Intersect.Plugins.IPluginContext`1">
+            <summary>
+            Defines the API of the <typeparamref name="TPluginContext"/> during application runtime.
+            </summary>
+            <typeparam name="TPluginContext">a <see cref="T:Intersect.Plugins.IPluginContext"/> subtype</typeparam>
+        </member>
+        <member name="T:Intersect.Plugins.IPluginContext`2">
+            <summary>
+            Defines the API of the <typeparamref name="TPluginContext"/> with a
+            specialized <see cref="T:Intersect.Plugins.Interfaces.ILifecycleHelper"/> during application runtime.
+            </summary>
+            <typeparam name="TPluginContext"><see cref="T:Intersect.Plugins.IPluginContext"/> extension type</typeparam>
+            <typeparam name="TLifecycleHelper"><see cref="T:Intersect.Plugins.Interfaces.ILifecycleHelper"/> extension type used by <typeparamref name="TPluginContext"/></typeparam>
+        </member>
+        <member name="P:Intersect.Plugins.IPluginContext`2.Lifecycle">
+            <summary>
+            The specialized <see cref="T:Intersect.Plugins.Interfaces.ILifecycleHelper"/> of the current plugin.
+            </summary>
+        </member>
+        <member name="T:Intersect.Plugins.IPluginEntry">
+            <summary>
+            Defines the API that plugin entry points must implement
+            in order to be discovered by the plugin loader.
+            </summary>
+            <see cref="!:Loaders.PluginLoader.LoadFrom(Core.IApplicationContext, System.Reflection.Assembly)"/>
+        </member>
+        <member name="M:Intersect.Plugins.IPluginEntry.OnBootstrap(Intersect.Plugins.IPluginBootstrapContext)">
+            <summary>
+            Invoked during application bootstrapping before startup.
+            </summary>
+            <param name="context">the current plugin context</param>
+        </member>
+        <member name="M:Intersect.Plugins.IPluginEntry.OnStart(Intersect.Plugins.IPluginContext)">
+            <summary>
+            Invoked during application startup after basic initialization.
+            </summary>
+            <param name="context">the current plugin context</param>
+        </member>
+        <member name="M:Intersect.Plugins.IPluginEntry.OnStop(Intersect.Plugins.IPluginContext)">
+            <summary>
+            Invoked during application shutdown.
+            </summary>
+            <param name="context">the current plugin context</param>
+        </member>
+        <member name="T:Intersect.Plugins.IPluginEntry`1">
+            <summary>
+            Defines the API that plugin entry points must implement
+            in order to be discovered by the plugin loader with
+            specialized application lifecycle handlers.
+            </summary>
+            <typeparam name="TPluginContext">the specialized <see cref="T:Intersect.Plugins.IPluginContext"/> type</typeparam>
+            <see cref="!:Loaders.PluginLoader.LoadFrom(Core.IApplicationContext, System.Reflection.Assembly)"/>
+        </member>
+        <member name="M:Intersect.Plugins.IPluginEntry`1.OnStart(`0)">
+            <summary>
+            Invoked during application startup after basic initialization.
+            </summary>
+            <param name="context">the current specialized plugin context</param>
+        </member>
+        <member name="M:Intersect.Plugins.IPluginEntry`1.OnStop(`0)">
+            <summary>
+            Invoked during application shutdown.
+            </summary>
+            <param name="context">the current specialized plugin context</param>
+        </member>
+        <member name="T:Intersect.Plugins.IPluginService">
+            <summary>
+            Declares the API surface for the plugin service.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.IPluginService.Item(System.String)">
+            <summary>
+            Indexer for looking up loaded <see cref="!:Plugin"/>s by their key.
+            </summary>
+            <param name="pluginKey">the </param>
+            <returns></returns>
+        </member>
+        <member name="P:Intersect.Plugins.IPluginService.PluginDirectories">
+            <summary>
+            The directories to look for plugins in.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.IPluginService.IsPluginEnabled(System.String)">
+            <summary>
+            Checks if the plugin for the given key is enabled.
+            </summary>
+            <param name="pluginKey">the plugin key string</param>
+            <returns>if the plugin is enabled (false if it is not even registered)</returns>
+        </member>
+        <member name="M:Intersect.Plugins.IPluginService.EnablePlugin(System.String)">
+            <summary>
+            Enable the <see cref="!:Plugin"/> with the given key.
+            </summary>
+            <param name="pluginKey">the plugin key string</param>
+            <returns>true if the plugin exists and is now enabled, false otherwise</returns>
+        </member>
+        <member name="M:Intersect.Plugins.IPluginService.DisablePlugin(System.String)">
+            <summary>
+            Disable the <see cref="!:Plugin"/> with the given key.
+            </summary>
+            <param name="pluginKey">the plugin key string</param>
+            <returns>true if the plugin exists and is now disabled, false otherwise</returns>
+        </member>
+        <member name="T:Intersect.Plugins.Manifests.JsonManifest">
+            <summary>
+            Represents the structure of an embedded JSON manifest.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Manifests.JsonManifest.Name">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.Manifests.JsonManifest.Key">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.Manifests.JsonManifest.Version">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.Manifests.JsonManifest.Authors">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.Manifests.JsonManifest.Homepage">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Plugins.Manifests.Types.Author">
+            <summary>
+                Structure that defines an <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> that can be represented as an <see cref="T:Intersect.Plugins.Manifests.Types.Author" />
+                <see cref="T:System.String" />.
+            </summary>
+        </member>
+        <member name="F:Intersect.Plugins.Manifests.Types.Author.AuthorStringExpression">
+            <summary>
+                Expression that defines what qualifies as an <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> <see cref="T:System.String" />.
+                Can be summarized as <code>Name[ &lt;Email&gt;][ (Homepage)]</code>
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.Manifests.Types.Author.Empty">
+            <summary>
+                The empty <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> created using the default constructor.
+            </summary>
+        </member>
+        <member name="F:Intersect.Plugins.Manifests.Types.Author.Email">
+            <summary>
+                Email address of the <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> (not validated).
+            </summary>
+        </member>
+        <member name="F:Intersect.Plugins.Manifests.Types.Author.Homepage">
+            <summary>
+                Homepage (URL) of the <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> (not validated).
+            </summary>
+        </member>
+        <member name="F:Intersect.Plugins.Manifests.Types.Author.Name">
+            <summary>
+                Name of the <see cref="T:Intersect.Plugins.Manifests.Types.Author" />.
+            </summary>
+        </member>
+        <member name="F:Intersect.Plugins.Manifests.Types.Author._hashCode">
+            <summary>
+                Precomputed hash code.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Author.#ctor(System.String)">
+            <summary>
+                Constructs an <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> from a <see cref="T:System.String" />.
+            </summary>
+            <param name="authorString">an <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> <see cref="T:System.String" /></param>
+            <exception cref="T:System.ArgumentNullException">thrown if <paramref name="authorString" /> is null, empty, or whitespace</exception>
+            <exception cref="T:System.ArgumentException">
+                thrown if <paramref name="authorString" /> does not match the format defined by
+                <see cref="F:Intersect.Plugins.Manifests.Types.Author.AuthorStringExpression" />
+            </exception>
+            <seealso cref="F:Intersect.Plugins.Manifests.Types.Author.AuthorStringExpression" />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Author.#ctor(System.String,System.String,System.String)">
+            <summary>
+                Constructs an <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> from an explicitly defined name, email, and homepage.
+            </summary>
+            <param name="name">the name of the <see cref="T:Intersect.Plugins.Manifests.Types.Author" /></param>
+            <param name="email">the email address of the <see cref="T:Intersect.Plugins.Manifests.Types.Author" /></param>
+            <param name="homepage">the homepage of the <see cref="T:Intersect.Plugins.Manifests.Types.Author" /></param>
+        </member>
+        <member name="P:Intersect.Plugins.Manifests.Types.Author.Parts">
+            <summary>
+                Gets the parts as an enumerable for <see cref="M:Intersect.Plugins.Manifests.Types.Author.CompareTo(Intersect.Plugins.Manifests.Types.Author)" />.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Author.Clone">
+            <inheritdoc cref="M:System.ICloneable.Clone" />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Author.CompareTo(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Author.CompareTo(Intersect.Plugins.Manifests.Types.Author)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Author.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Author.Equals(Intersect.Plugins.Manifests.Types.Author)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Author.Equals(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Author.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Author.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Author.op_Implicit(System.String)~Intersect.Plugins.Manifests.Types.Author">
+            <summary>
+                Converts a <see cref="T:System.String" /> to an <see cref="T:Intersect.Plugins.Manifests.Types.Author" />.
+            </summary>
+            <param name="authorString">an <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> <see cref="T:System.String" /></param>
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Author.op_Implicit(Intersect.Plugins.Manifests.Types.Author)~System.String">
+            <summary>
+                Converts an <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> to a <see cref="T:System.String" />.
+            </summary>
+            <param name="author">an <see cref="T:Intersect.Plugins.Manifests.Types.Author" /></param>
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Author.op_Inequality(Intersect.Plugins.Manifests.Types.Author,Intersect.Plugins.Manifests.Types.Author)">
+            <summary>
+                Checks if two <see cref="T:Intersect.Plugins.Manifests.Types.Author" />s are not equal.
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns>if any of the parts are not equal</returns>
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Author.op_Equality(Intersect.Plugins.Manifests.Types.Author,Intersect.Plugins.Manifests.Types.Author)">
+            <summary>
+                Checks if two <see cref="T:Intersect.Plugins.Manifests.Types.Author" />s are equal.
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns>if all of the parts are equal</returns>
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Author.AuthorStringConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,Intersect.Plugins.Manifests.Types.Author,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Author.AuthorStringConverter.WriteJson(Newtonsoft.Json.JsonWriter,Intersect.Plugins.Manifests.Types.Author,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Plugins.Manifests.Types.Authors">
+            <summary>
+                Immutable container structure for multiple <see cref="T:Intersect.Plugins.Manifests.Types.Author" />s.
+            </summary>
+        </member>
+        <member name="F:Intersect.Plugins.Manifests.Types.Authors.ExceptionComparisonNotSupported">
+            <summary>
+                The exception message that is used when comparison is attempted on invalid types or null.
+            </summary>
+        </member>
+        <member name="F:Intersect.Plugins.Manifests.Types.Authors._authors">
+            <summary>
+                Backing enumerable of authors.
+            </summary>
+        </member>
+        <member name="F:Intersect.Plugins.Manifests.Types.Authors._hashCode">
+            <summary>
+                Precomputed hash code.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.#ctor(Intersect.Plugins.Manifests.Types.Author[])">
+            <summary>
+                Initializes a new instance of the <see cref="T:Intersect.Plugins.Manifests.Types.Authors" /> structure.
+            </summary>
+            <param name="authors">the <see cref="T:Intersect.Plugins.Manifests.Types.Author" />s in this list</param>
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.#ctor(System.Collections.Generic.IEnumerable{Intersect.Plugins.Manifests.Types.Author})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Intersect.Plugins.Manifests.Types.Authors" /> structure.
+            </summary>
+            <param name="authors">the <see cref="T:Intersect.Plugins.Manifests.Types.Author" />s in this list</param>
+        </member>
+        <member name="P:Intersect.Plugins.Manifests.Types.Authors.Count">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Plugins.Manifests.Types.Authors.Item(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.Clone">
+            <inheritdoc cref="M:System.ICloneable.Clone" />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.CompareTo(System.Object,System.Collections.IComparer)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.CompareTo(System.Collections.Generic.IEnumerable{Intersect.Plugins.Manifests.Types.Author})">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.CompareTo(System.Collections.Generic.IEnumerable{System.String})">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.CompareTo(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.Equals(System.Object,System.Collections.IEqualityComparer)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.Equals(System.Collections.Generic.IEnumerable{Intersect.Plugins.Manifests.Types.Author})">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.Equals(System.Collections.Generic.IEnumerable{System.String})">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.Equals(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.GetHashCode(System.Collections.IEqualityComparer)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.Equals``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32,System.Boolean})">
+            <summary>
+                Compares equality against the other <see cref="T:System.Collections.Generic.IEnumerable`1" />.
+            </summary>
+            <typeparam name="TEnumerableValue"></typeparam>
+            <param name="other">another enumerable</param>
+            <param name="comparisonFunc">indexed equality comparison function</param>
+            <returns>equality as determined by <paramref name="comparisonFunc" /></returns>
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.CompareElement(Intersect.Plugins.Manifests.Types.Author,System.Int32)">
+            <summary>
+                Compares <paramref name="author" /> to the <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> located at <paramref name="index" />.
+                Shorter arrays are considered "less than".
+            </summary>
+            <param name="author">the <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> to compare</param>
+            <param name="index">the index to compare at</param>
+            <returns>the result of <see cref="M:Intersect.Plugins.Manifests.Types.Author.CompareTo(Intersect.Plugins.Manifests.Types.Author)" /> or -1 <paramref name="index" /> is out of bounds</returns>
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.CompareElement(System.String,System.Int32)">
+            <summary>
+                Compares <paramref name="authorString" /> to the <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> located at <paramref name="index" />.
+                Shorter arrays are considered "less than".
+            </summary>
+            <param name="authorString">the <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> <see cref="T:System.String" /> to compare</param>
+            <param name="index">the index to compare at</param>
+            <returns>the result of <see cref="M:Intersect.Plugins.Manifests.Types.Author.CompareTo(Intersect.Plugins.Manifests.Types.Author)" /> or -1 <paramref name="index" /> is out of bounds</returns>
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.EqualsElement(Intersect.Plugins.Manifests.Types.Author,System.Int32)">
+            <summary>
+                Compares equality between <paramref name="author" /> and the <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> located at
+                <paramref name="index" />.
+            </summary>
+            <param name="author">the <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> to compare</param>
+            <param name="index">the index to compare at</param>
+            <returns>the result of <see cref="M:Intersect.Plugins.Manifests.Types.Author.Equals(Intersect.Plugins.Manifests.Types.Author)" /> or false if <paramref name="index" /> is out of bounds</returns>
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.EqualsElement(System.String,System.Int32)">
+            <summary>
+                Compares equality between <paramref name="authorString" /> and the <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> located at
+                <paramref name="index" />.
+            </summary>
+            <param name="authorString">the <see cref="T:Intersect.Plugins.Manifests.Types.Author" /><see cref="T:System.String" />  to compare</param>
+            <param name="index">the index to compare at</param>
+            <returns>the result of <see cref="M:Intersect.Plugins.Manifests.Types.Author.Equals(Intersect.Plugins.Manifests.Types.Author)" /> or false if <paramref name="index" /> is out of bounds</returns>
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.op_Implicit(System.String)~Intersect.Plugins.Manifests.Types.Authors">
+            <summary>
+                Converts a JSON <see cref="T:System.String" /> of <see cref="T:Intersect.Plugins.Manifests.Types.Author" />s into an instance of <see cref="T:Intersect.Plugins.Manifests.Types.Authors" />.
+            </summary>
+            <param name="authorsString">a JSON <see cref="T:System.String" /> of <see cref="T:Intersect.Plugins.Manifests.Types.Author" />s</param>
+            <returns>an <see cref="T:Intersect.Plugins.Manifests.Types.Authors" /> instance</returns>
+            <seealso cref="M:Intersect.Plugins.Manifests.Types.Author.#ctor(System.String)" />
+            <seealso cref="M:Newtonsoft.Json.JsonConvert.DeserializeObject``1(System.String)" />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.op_Implicit(Intersect.Plugins.Manifests.Types.Author)~Intersect.Plugins.Manifests.Types.Authors">
+            <summary>
+                Converts a single <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> into a single-element instance of <see cref="T:Intersect.Plugins.Manifests.Types.Authors" />.
+            </summary>
+            <param name="author">an <see cref="T:Intersect.Plugins.Manifests.Types.Author" /></param>
+            <returns>an <see cref="T:Intersect.Plugins.Manifests.Types.Authors" /> instance</returns>
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.op_Implicit(System.String[])~Intersect.Plugins.Manifests.Types.Authors">
+            <summary>
+                Converts an array of <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> <see cref="T:System.String" />s to an instance of <see cref="T:Intersect.Plugins.Manifests.Types.Authors" />.
+            </summary>
+            <param name="authorStrings">an array of <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> <see cref="T:System.String" />s</param>
+            <returns>an <see cref="T:Intersect.Plugins.Manifests.Types.Authors" /> instance</returns>
+            <seealso cref="M:Intersect.Plugins.Manifests.Types.Author.#ctor(System.String)" />
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.op_Implicit(Intersect.Plugins.Manifests.Types.Author[])~Intersect.Plugins.Manifests.Types.Authors">
+            <summary>
+                Converts an array of <see cref="T:Intersect.Plugins.Manifests.Types.Author" />s to an instance of <see cref="T:Intersect.Plugins.Manifests.Types.Authors" />.
+            </summary>
+            <param name="authors">an array of <see cref="T:Intersect.Plugins.Manifests.Types.Author" />s</param>
+            <returns>an <see cref="T:Intersect.Plugins.Manifests.Types.Author" /> array</returns>
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.op_Implicit(Intersect.Plugins.Manifests.Types.Authors)~System.String">
+            <summary>
+                Converts <see cref="T:Intersect.Plugins.Manifests.Types.Authors" /> to <see cref="T:System.String" /> using <see cref="M:Intersect.Plugins.Manifests.Types.Authors.ToString" />.
+            </summary>
+            <param name="authors">an <see cref="T:Intersect.Plugins.Manifests.Types.Authors" /> instance</param>
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.op_Inequality(Intersect.Plugins.Manifests.Types.Authors,Intersect.Plugins.Manifests.Types.Authors)">
+            <summary>
+                Checks if two <see cref="T:Intersect.Plugins.Manifests.Types.Authors" /> are not equal.
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns>if any of the <see cref="T:Intersect.Plugins.Manifests.Types.Author" />s are not equal</returns>
+        </member>
+        <member name="M:Intersect.Plugins.Manifests.Types.Authors.op_Equality(Intersect.Plugins.Manifests.Types.Authors,Intersect.Plugins.Manifests.Types.Authors)">
+            <summary>
+                Checks if two <see cref="T:Intersect.Plugins.Manifests.Types.Authors" /> are equal.
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns>if all of the <see cref="T:Intersect.Plugins.Manifests.Types.Author" />s are equal</returns>
+        </member>
+        <member name="T:Intersect.Plugins.PluginConfiguration">
+            <summary>
+            The basic plugin configuration class.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.PluginConfiguration.IsEnabled">
+            <summary>
+            If this plugin is enabled or not.
+            </summary>
+        </member>
+        <member name="T:Intersect.Plugins.PluginEntry">
+            <summary>
+            Abstract class that virtually defines all of the methods declared by <see cref="T:Intersect.Plugins.IPluginEntry"/>.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.PluginEntry.OnBootstrap(Intersect.Plugins.IPluginBootstrapContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.PluginEntry.OnStart(Intersect.Plugins.IPluginContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.PluginEntry.OnStop(Intersect.Plugins.IPluginContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.PluginEntry.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.PluginEntry.Dispose(System.Boolean)">
+            <inheritdoc cref="M:System.IDisposable.Dispose" />
+            <param name="disposing">if it is disposing or finalizing</param>
+        </member>
+        <member name="T:Intersect.Plugins.PluginEntry`1">
+            <summary>
+            Abstract class that defines translates between the generic <see cref="T:Intersect.Plugins.IPluginEntry"/> methods and the context type specific methods of <see cref="T:Intersect.Plugins.IPluginEntry`1"/>.
+            </summary>
+            <typeparam name="TPluginContext">The specific plugin context type.</typeparam>
+        </member>
+        <member name="M:Intersect.Plugins.PluginEntry`1.OnStart(Intersect.Plugins.IPluginContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.PluginEntry`1.OnStop(Intersect.Plugins.IPluginContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.PluginEntry`1.OnStart(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Plugins.PluginEntry`1.OnStop(`0)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Plugins.PluginReference">
+            <summary>
+            Reference container type of type, method handles, and other information gathered via reflection.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.PluginReference.#ctor(System.Reflection.Assembly,System.Type,System.Type)">
+            <summary>
+            Initializes a <see cref="T:Intersect.Plugins.PluginReference"/>.
+            </summary>
+            <param name="assembly">The <see cref="P:Intersect.Plugins.PluginReference.Assembly"/> this plugin belongs to.</param>
+            <param name="configurationType">The plugin configuration <see cref="T:System.Type"/>, should descend from or be <see cref="T:Intersect.Plugins.PluginConfiguration"/>.</param>
+            <param name="entryType">The <see cref="T:System.Type"/> of the entry point for the plugin, should descend from <see cref="T:Intersect.Plugins.IPluginEntry"/>.</param>
+        </member>
+        <member name="P:Intersect.Plugins.PluginReference.Assembly">
+            <summary>
+            The <see cref="P:Intersect.Plugins.PluginReference.Assembly"/> this plugin belongs to.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.PluginReference.ConfigurationType">
+            <summary>
+            The plugin configuration <see cref="T:System.Type"/>, should descend from or be <see cref="T:Intersect.Plugins.PluginConfiguration"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.PluginReference.EntryType">
+            <summary>
+            The <see cref="T:System.Type"/> of the entry point for the plugin, should descend from <see cref="T:Intersect.Plugins.IPluginEntry"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.PluginReference.ConfigurationFile">
+            <summary>
+            The path to the configuration file for this plugin.
+            </summary>
+        </member>
+        <member name="P:Intersect.Plugins.PluginReference.Directory">
+            <summary>
+            The path to the directory this plugin is located in.
+            </summary>
+        </member>
+        <member name="M:Intersect.Plugins.PluginReference.CreateInstance">
+            <summary>
+            Create an instance of the plugin entry type.
+            </summary>
+            <returns>an instance of <see cref="T:Intersect.Plugins.IPluginEntry"/> specific to this plugin</returns>
+        </member>
+    </members>
+</doc>
