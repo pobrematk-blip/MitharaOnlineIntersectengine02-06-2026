@@ -1299,12 +1299,6 @@
             Remove all stale item cooldowns.
             </summary>
         </member>
-        <member name="M:Intersect.Server.Entities.PlayerStore.AsItemSource">
-            <summary>
-            Creates an item source for the player store entity.
-            </summary>
-            <returns>A new <see cref="T:Intersect.Server.Framework.Items.EntityItemSource"/> object.</returns>
-        </member>
         <member name="M:Intersect.Server.Entities.Projectile.AddProjectileSpawns">
             <summary>
             Adds projectile spawns based on predefined spawn locations and directions.
@@ -2210,42 +2204,6 @@
         <member name="M:Intersect.Server.Migrations.Sqlite.Game.ResourceStates.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
-        <member name="T:Intersect.Server.Migrations.Sqlite.Game.CreatedPetBase">
-            <inheritdoc />
-        </member>
-        <member name="M:Intersect.Server.Migrations.Sqlite.Game.CreatedPetBase.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:Intersect.Server.Migrations.Sqlite.Game.CreatedPetBase.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:Intersect.Server.Migrations.Sqlite.Game.CreatedPetBase.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:Intersect.Server.Migrations.Sqlite.Game.AddedPetSpells">
-            <inheritdoc />
-        </member>
-        <member name="M:Intersect.Server.Migrations.Sqlite.Game.AddedPetSpells.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:Intersect.Server.Migrations.Sqlite.Game.AddedPetSpells.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:Intersect.Server.Migrations.Sqlite.Game.AddedPetSpells.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:Intersect.Server.Migrations.Sqlite.Game.AddedNpcDeathAnimation">
-            <inheritdoc />
-        </member>
-        <member name="M:Intersect.Server.Migrations.Sqlite.Game.AddedNpcDeathAnimation.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:Intersect.Server.Migrations.Sqlite.Game.AddedNpcDeathAnimation.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:Intersect.Server.Migrations.Sqlite.Game.AddedNpcDeathAnimation.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
         <member name="T:Intersect.Server.Migrations.Sqlite.Logging.Net7Upgrade">
             <inheritdoc />
         </member>
@@ -2340,18 +2298,6 @@
             <inheritdoc />
         </member>
         <member name="M:Intersect.Server.Migrations.Sqlite.Player.ChangeCollationOfUserInputsToCaseInsensitive.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:Intersect.Server.Migrations.Sqlite.Player.AddedPlayerOwnedPets">
-            <inheritdoc />
-        </member>
-        <member name="M:Intersect.Server.Migrations.Sqlite.Player.AddedPlayerOwnedPets.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:Intersect.Server.Migrations.Sqlite.Player.AddedPlayerOwnedPets.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:Intersect.Server.Migrations.Sqlite.Player.AddedPlayerOwnedPets.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
         <member name="P:Intersect.Server.Networking.Client.TimedBufferPacketsRemaining">

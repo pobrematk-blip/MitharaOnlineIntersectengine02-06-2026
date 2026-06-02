@@ -392,9 +392,6 @@
         <member name="P:Intersect.Framework.Core.GameObjects.NPCs.NPCDescriptor.Folder">
             <inheritdoc />
         </member>
-        <member name="P:Intersect.Framework.Core.GameObjects.Pets.PetDescriptor.Folder">
-            <inheritdoc />
-        </member>
         <member name="P:Intersect.Framework.Core.GameObjects.PlayerClass.ClassDescriptor.Folder">
             <inheritdoc />
         </member>
@@ -749,6 +746,11 @@
         <member name="P:Intersect.Configuration.ClientConfiguration.EntityBarDirections">
             <summary>
             Configures the rendering direction of entity bars, vitals in their order, then experience
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.DimmedEventWindowBackground">
+            <summary>
+                Adds dimmed background to EventWindow.
             </summary>
         </member>
         <member name="T:Intersect.Configuration.IConfigurable`1">
@@ -1448,16 +1450,6 @@
         <member name="P:Intersect.Config.PlayerOptions.TradeRange">
             <summary>
             Distance (in tiles) between players in which a trade offer can be sent and accepted.
-            </summary>
-        </member>
-        <member name="P:Intersect.Config.PlayerOptions.PlayerStoreSprite">
-            <summary>
-            Default player store sprite
-            </summary>
-        </member>
-        <member name="P:Intersect.Config.PlayerOptions.AutomaticRespawnTime">
-            <summary>
-            Time in milliseconds until the player automatic respawn
             </summary>
         </member>
         <member name="T:Intersect.Config.ProcessingOptions">

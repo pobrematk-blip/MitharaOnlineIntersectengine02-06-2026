@@ -1,0 +1,86 @@
+Skills de todas as Classes 
+
+
+- Noctori a Distancia
+
+- Maestria Armadura Media distancia
+- Maestria Maestria de Arcos
+- Maestria Cabelo a distancia
+
+- Skill  Regeneração       Lv:1
+- Skill  Tiro Ajustado     Lv:1
+- Skill  Rajada de Flecha  Lv:4
+- Skill  Visão aguçada     Lv:8
+- Skill  Salto agil        Lv:12
+
+
+- Noctori Snipe
+
+- Skill  Camuflagem               Lv:15
+- Skill  Salto Ágil Sniper        Lv:15
+- Skill  Tiro Ajustado Sniper     Lv:15
+- Skill  Visão Aguçada Sniper     Lv:15
+- Skill  Rajada de Flechas Sniper Lv:15
+- Skill  Flecha Elemental Sniper  Lv:18
+- Skill  Olho de Falcão           Lv:21
+- Skill  Disparo Silencioso       Lv:25
+- Skill  Respiração Controlada    Lv:28
+- Skill  Tiro de Desarme          Lv:30
+
+- Noctori Caçador
+
+- Maestria Armadura Media distancia
+- Maestria Maestria de Arcos
+- Maestria Cabelo a distancia
+
+- Skill  Regeneração       Lv:1
+- Skill  Tiro Ajustado     Lv:1
+- Skill  Rajada de Flecha  Lv:4
+- Skill  Visão aguçada     Lv:8
+- Skill  Salto agil        Lv:12
+
+- Noctori Caçador
+
+- Skill  Sherigan Caçador            Lv:15
+- Skill  Salto Ágil Caçador          Lv:15
+- Skill  Tiro Ajustado Caçador       Lv:15
+- Skill  Visão Aguçada Caçador       Lv:15
+- Skill  Rajada de Flechas Caçador   Lv:15
+- Skill  Flechada Elemental          Lv:18
+- Skill  Tiro de Impacto             Lv:21
+- Skill  Trepadeiras Sangrenta       Lv:25
+- Skill  Disparo Silencioso          Lv:30
+
+- Noctori Arqueiro
+
+- Maestria Armadura Media distancia
+- Maestria Maestria de Arcos
+- Maestria Cabelo a distancia
+
+- Skill  Regeneração       Lv:1
+- Skill  Tiro Ajustado     Lv:1
+- Skill  Rajada de Flecha  Lv:4
+- Skill  Visão aguçada     Lv:8
+- Skill  Salto agil        Lv:12
+
+- Noctori Arqueiro
+
+- Skill  Invisibilidade              Lv:15
+- Skill  Salto Ágil Arqueiro         Lv:15
+- Skill  Tiro Ajustado Arqueiro      Lv:15
+- Skill  Visão Aguçada Arqueiro      Lv:15
+- Skill  Rajada de Flechas Arqueiro  Lv:15
+- Skill  Flecha Elemental Arqueiro   Lv:18
+- Skill  Rajada Repulsora            Lv:21
+- Skill  Trepadeiras Sangrenta       Lv:25
+- Skill  Tempestade de Flechas       Lv:30
+
+- Solari a Distancia
+
+- Solari Sniper
+
+- Skill             Lv:
+- Skill             Lv:
+- Skill             Lv:
+- Solari Arqueeiro
+- Solari Caçador
