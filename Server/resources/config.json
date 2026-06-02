@@ -275,9 +275,7 @@
     "RequestTimeout": 300000,
     "ShowLevelByName": false,
     "SkipCharacterSelect": false,
-    "TradeRange": 6,
-    "PlayerStoreSprite": "loja.png",
-    "AutomaticRespawnTime": 60000
+    "TradeRange": 6
   },
   "Party": {
     "MaximumMembers": 5,
@@ -431,7 +429,6 @@
       "Rare",
       "Epic",
       "Legendary"
-    ],
-    "DefaultCoinName": "Gold"
+    ]
   }
 }

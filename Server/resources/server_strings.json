@@ -135,8 +135,7 @@
     "TargetOutOfRange": "Target is out of range!",
     "ToolRequired": "You require a {00} to interact with this resource!",
     "TryForgetBoundSpell": "You cannot forget this spell.",
-    "InvalidTarget": "Invalid target for this spell.",
-    "petlevelup": "Your pet reached the level {0}!"
+    "InvalidTarget": "Invalid target for this spell."
   },
   "Commandoutput": {
     "AccountCount": " - {00} Accounts.",
@@ -693,9 +692,7 @@
     "ForgotSpell": "You've forgotten the {00} spell!",
     "StatPoints": "You have {00} stat points available to be spent!",
     "WarpedTo": "Warped to {00}.",
-    "WarpedToYou": "{00} warped to you.",
-    "petactive": "You already have another pet active.",
-    "cantrenamepet": "The pet name must have at least 3 characters"
+    "WarpedToYou": "{00} warped to you."
   },
   "Portchecking": {
     "AntivirusCheck": "2. Antivirus programs might also be blocking connections. You may need to add Intersect Server.exe to your antivirus exclusions.",
@@ -805,13 +802,5 @@
     "VariableNotString": "The given guild name does not contain any text.",
     "Welcome": "Welcome to {00}!",
     "DeleteGuildLeader": "You cannot delete a character that is a guild {00}. Please disband the guild or transfer ownership before trying again."
-  },
-  "Store": {
-    "nothasitem": "You do not have a listed item to open the store!",
-    "alreadyopenedstore": "You already have an opened store!",
-    "bought": "You received {00} gold for selling {01}x {02}.",
-    "doesnothascoin": "You do not have gold for this!",
-    "doesnothavequantity": "The shop does not have this item quantity for sale!",
-    "cantopenshop": "You cant open an empty shop!"
   }
 }

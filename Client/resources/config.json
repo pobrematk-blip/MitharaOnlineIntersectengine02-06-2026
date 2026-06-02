@@ -45,5 +45,6 @@
   "TypewriterSoundFrequency": 5,
   "TypewriterSounds": [
     "octave-beep-tapped.wav"
-  ]
+  ],
+  "DimmedEventWindowBackground": true
 }

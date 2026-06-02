@@ -89,7 +89,8 @@
     "Stats": "Stats:",
     "Tenacity": "Tenacidade: {00}%",
     "Title": "Informações de Personagem",
-    "StatLabelValue": "{00}: {01}"
+    "StatLabelValue": "{00}: {01}",
+    "ExtraBuffDetails": "Details"
   },
   "CharacterCreation": {
     "Back": "Back",
@@ -102,7 +103,9 @@
     "InvalidName": "Character name is invalid. Please use alphanumeric characters with a length between 2 and 20.",
     "Male": "Mascolino",
     "Name": "Nome:",
-    "Title": "Crear seu Novo Personagem"
+    "Title": "Crear seu Novo Personagem",
+    "Faction": "Facção",
+    "Race": "Raça"
   },
   "CharacterSelection": {
     "Delete": "Delete",
@@ -1138,7 +1141,14 @@
     "UnmuteCaption": "Unmute {00}",
     "UnmutePrompt": "Are you sure that you want to unmute {00}?",
     "WarpMeToPlayer": "Warp Me To",
-    "WarpPlayerToMe": "Warp To Me"
+    "WarpPlayerToMe": "Warp To Me",
+    "Vip": "VIP",
+    "VipSet": "Set VIP",
+    "VipRemove": "Remove VIP",
+    "VipTierNone": "None",
+    "VipTier3Days": "3 Days",
+    "VipTier7Days": "7 Days",
+    "VipTier30Days": "30 Days"
   },
   "Alerts": {
     "FallbackTitle": "Alert",

@@ -364,7 +364,7 @@
           }
         },
         "InnerPanel": {
-          "Bounds": "0,0,345,308",
+          "Bounds": "0,0,360,308",
           "Dock": "None",
           "Padding": "0,0,0,0",
           "AlignmentEdgeDistances": "0,0,0,0",
